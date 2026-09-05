@@ -1,0 +1,46 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Enacted \u2014 Anne Arundel County Land-Use & Zoning Feed",
+  "home_page_url": "https://www.aacounty.org",
+  "feed_url": "feeds/anne_arundel/zoning.json",
+  "description": "Records what changed in enacted land-use law and public water quality. Does not advise, approve, determine, or certify anything.",
+  "_last_ingested": "2026-09-15T01:07:32Z",
+  "items": [
+    {
+      "id": "anne_arundel/bill_18_26",
+      "url": "https://www.aacounty.org/sites/default/files/2026-03/bill-18-26.pdf",
+      "title": "Anne Arundel County: Bill No. 18-26 \u2014 AN ORDINANCE concerning: Comprehensive Zoning \u2013 Region 5 (As Amended)",
+      "summary": "Passed (Veto Overridden). Passed 2026-06-01 \u00b7 Override 2026-06-15 \u00b7 Effective 2026-07-20",
+      "date_published": "2026-03-02T00:00:00Z",
+      "date_modified": "2026-07-30T00:00:00Z",
+      "tags": [
+        "Passed (Veto Overridden)",
+        "zoning"
+      ]
+    },
+    {
+      "id": "anne_arundel/bill_57_26",
+      "url": "https://www.aacounty.org/sites/default/files/2026-06/bill-57-26.pdf",
+      "title": "Anne Arundel County: Bill No. 57-26 \u2014 AN ORDINANCE concerning: Zoning \u2013 Rural Commerce Centers",
+      "summary": "Withdrawn. Introduced 2026-06-15 \u00b7 Withdrawn 2026-07-20",
+      "date_published": "2026-06-15T00:00:00Z",
+      "date_modified": "2026-07-20T00:00:00Z",
+      "tags": [
+        "Withdrawn",
+        "zoning"
+      ]
+    },
+    {
+      "id": "anne_arundel/bill_28_26",
+      "url": "https://www.aacounty.org/sites/default/files/2026-04/bill-28-26.pdf",
+      "title": "Anne Arundel County: Bill No. 28-26 \u2014 AN ORDINANCE concerning: Zoning \u2013 Commercial Districts \u2013 Apartment Dwelling Units",
+      "summary": "Enacted. Passed 2026-05-04 \u00b7 Signed 2026-05-07 \u00b7 Effective 2026-06-21",
+      "date_published": "2026-04-06T00:00:00Z",
+      "date_modified": "2026-06-21T00:00:00Z",
+      "tags": [
+        "Enacted",
+        "zoning"
+      ]
+    }
+  ]
+}

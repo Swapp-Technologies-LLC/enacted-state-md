@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>urn:enacted:feed:md:howard:zoning</id>
+  <title>Enacted — Howard County Land-Use &amp; Zoning Feed</title>
+  <subtitle>Records what changed in enacted land-use law and public water quality. Does not advise, approve, determine, or certify anything.</subtitle>
+  <updated>2026-08-10T00:00:00Z</updated>
+  <link rel="self" href="feeds/howard/zoning.atom"/>
+  <generator uri="https://&lt;org&gt;.github.io/enacted-state-md/">Enacted Syndication Engine</generator>
+  <entry>
+    <id>howard/cb_25_2026</id>
+    <title>Howard County: Council Bill 25-2026 — AN ACT amending the Howard County Zoning Regulations to define 'Cottage Clusters'; to provide where Age-Restricted Adult Housing Cottage Clusters will be permitted by right; to add parking requirements to Age-Restricted Adult Housing Cottage Clusters and multiplexes; to provide criteria for Age-Restricted Adult Housing Cottage Clusters within an Optional Design Project; and generally relating to the Howard County Zoning Regulations.</title>
+    <updated>2026-08-10T00:00:00Z</updated>
+    <published>2026-05-04T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://apps.howardcountymd.gov/olis/LegislationDetail/15035/CB25-2026"/>
+    <summary type="text">Passed as Amended. Passed 2026-06-01 · Signed 2026-06-10 · Effective 2026-08-10</summary>
+    <category term="Passed as Amended"/>
+  </entry>
+  <entry>
+    <id>howard/cb_24_2026</id>
+    <title>Howard County: Council Bill 24-2026 — AN ACT amending the Howard County Zoning Regulations to change the definition of 'Optional Design Project'; add a new subsection in Section 128.0 entitled 'Optional Design Projects in Route 1 Corridor'; expanding eligibility for the Optional Design Project process to certain commercial properties along Route 1; adding additional use criteria; and generally relating to the Howard County Zoning Regulations.</title>
+    <updated>2026-07-14T00:00:00Z</updated>
+    <published>2026-04-06T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://apps.howardcountymd.gov/olis/LegislationDetail/15005/CB24-2026"/>
+    <summary type="text">Passed as Amended. Passed 2026-05-04 · Signed 2026-05-14 · Effective 2026-07-14</summary>
+    <category term="Passed as Amended"/>
+  </entry>
+  <entry>
+    <id>howard/cb_04_2026</id>
+    <title>Howard County: Council Bill 4-2026 — AN ACT amending the Howard County Zoning Regulations to implement the General Plan's recommendations for housing in activity centers, including defining activity center; providing that certain types of development projects in the TOD or TNC zoning districts shall provide more than one housing type; and adding regulations for age-restricted adult housing in the TOD and TNC zoning districts; and generally relating to the Howard County Zoning Regulations.</title>
+    <updated>2026-03-02T00:00:00Z</updated>
+    <published>2026-01-05T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://apps.howardcountymd.gov/olis/LegislationDetail/14951/CB4-2026"/>
+    <summary type="text">Withdrawn. Introduced 2026-01-05 · Withdrawn 2026-03-02</summary>
+    <category term="Withdrawn"/>
+  </entry>
+</feed>

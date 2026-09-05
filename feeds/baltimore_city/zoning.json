@@ -1,0 +1,34 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Enacted \u2014 City of Baltimore Land-Use & Zoning Feed",
+  "home_page_url": "https://baltimore.legistar.com",
+  "feed_url": "feeds/baltimore_city/zoning.json",
+  "description": "Records what changed in enacted land-use law and public water quality. Does not advise, approve, determine, or certify anything.",
+  "_last_ingested": "2026-09-15T01:07:32Z",
+  "items": [
+    {
+      "id": "baltimore_city/ord_26_146",
+      "url": "https://baltimore.legistar.com/LegislationDetail.aspx?ID=7995121&GUID=DFAA7543-A122-4599-B8AC-A5A7CF95AE9C",
+      "title": "City of Baltimore: Council Bill 26-0177 \u2014 Rezoning - 901 S Caton Avenue",
+      "summary": "Enacted. Passed 2026-07-13 \u00b7 Signed 2026-08-10 \u00b7 Effective 2026-09-09",
+      "date_published": "2026-04-27T00:00:00Z",
+      "date_modified": "2026-09-09T00:00:00Z",
+      "tags": [
+        "Enacted",
+        "zoning"
+      ]
+    },
+    {
+      "id": "baltimore_city/ord_26_128",
+      "url": "https://baltimore.legistar.com/LegislationDetail.aspx?ID=7958934&GUID=0F67C3A9-D166-4BFE-91D3-10070032F578",
+      "title": "City of Baltimore: Council Bill 26-0158 \u2014 Data Centers - Moratorium",
+      "summary": "Enacted. Passed 2026-05-11 \u00b7 Signed 2026-06-16 \u00b7 Effective 2026-06-16",
+      "date_published": "2026-03-23T00:00:00Z",
+      "date_modified": "2026-06-16T00:00:00Z",
+      "tags": [
+        "Enacted",
+        "zoning"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>urn:enacted:feed:md:topic:water</id>
+  <title>Enacted — Maryland Water Quality &amp; Resources Topic Feed</title>
+  <subtitle>Records what changed in enacted land-use law and public water quality. Does not advise, approve, determine, or certify anything.</subtitle>
+  <updated>2026-06-01T00:00:00Z</updated>
+  <link rel="self" href="feeds/topics/water.atom"/>
+  <generator uri="https://&lt;org&gt;.github.io/enacted-state-md/">Enacted Syndication Engine</generator>
+  <entry>
+    <id>water/measurements/aa_broad_creek/lead_copper_violation_2025</id>
+    <title>Broad Creek: Lead and Copper Rule Monitoring and Reporting — Violation (Reported 2026-06-01)</title>
+    <updated>2026-06-01T00:00:00Z</updated>
+    <published>2026-06-01T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.aacounty.org/sites/default/files/2026-06/water-quality-report-2025.pdf"/>
+    <summary type="text">As reported by Anne Arundel County Department of Public Works for Broad Creek: Assessed a monitoring and reporting violation for October 1 through 14, 2025. Governing requirement: 30 samples (Maryland Department of the Environment / EPA Lead and Copper Rule; compliance date: October 1 through 14, 2025; basis: Minimum 30 lead and copper samples collected and analyzed by reporting deadline; status: Violation assessed for October 1 through 14, 2025).</summary>
+    <category term="Measurement"/>
+  </entry>
+  <entry>
+    <id>water/measurements/aa_crofton_odenton/lead_copper_violation_2025</id>
+    <title>Crofton/Odenton: Lead and Copper Rule Monitoring and Reporting — Violation (Reported 2026-06-01)</title>
+    <updated>2026-06-01T00:00:00Z</updated>
+    <published>2026-06-01T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.aacounty.org/sites/default/files/2026-06/water-quality-report-2025.pdf"/>
+    <summary type="text">As reported by Anne Arundel County Department of Public Works for Crofton/Odenton: Assessed a monitoring and reporting violation for October 1 through 14, 2025. Governing requirement: 30 samples (Maryland Department of the Environment / EPA Lead and Copper Rule; compliance date: October 1 through 14, 2025; basis: Minimum 30 lead and copper samples collected and analyzed by reporting deadline; status: Violation assessed for October 1 through 14, 2025).</summary>
+    <category term="Measurement"/>
+  </entry>
+  <entry>
+    <id>water/measurements/aa_crownsville/lead_tap_2025</id>
+    <title>Crownsville: Lead — &lt;2.0 ug/L (Reported 2026-06-01)</title>
+    <updated>2026-06-01T00:00:00Z</updated>
+    <published>2026-06-01T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.aacounty.org/sites/default/files/2026-06/water-quality-report-2025.pdf"/>
+    <summary type="text">As reported by Anne Arundel County Department of Public Works for Crownsville: &lt;2.0 ug/L. Governing requirement: 15 ug/L (EPA Lead and Copper Rule (Action Level); compliance date: In force; basis: 90th percentile of customer tap samples).</summary>
+    <category term="Measurement"/>
+  </entry>
+  <entry>
+    <id>water/measurements/aa_glen_burnie/copper_tap_2025</id>
+    <title>Glen Burnie: Copper — 0.07 mg/L (Reported 2026-06-01)</title>
+    <updated>2026-06-01T00:00:00Z</updated>
+    <published>2026-06-01T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.aacounty.org/sites/default/files/2026-06/water-quality-report-2025.pdf"/>
+    <summary type="text">As reported by Anne Arundel County Department of Public Works for Glen Burnie: 0.07 mg/L. Governing requirement: 1.3 mg/L (EPA Lead and Copper Rule (Action Level); compliance date: In force; basis: 90th percentile of customer tap samples).</summary>
+    <category term="Measurement"/>
+  </entry>
+  <entry>
+    <id>state_statutes/critical_area_program</id>
+    <title>Maryland Annotated Code: Chesapeake and Atlantic Coastal Bays Critical Area Protection Program</title>
+    <updated>2026-01-01T00:00:00Z</updated>
+    <published>2026-01-01T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://mgaleg.maryland.gov/mgawebsite/Laws/Statutes"/>
+    <summary type="text">Statewide statutory mandate covering land-use, coastal critical areas, and local authority.</summary>
+    <category term="State Statute"/>
+  </entry>
+  <entry>
+    <id>water/measurements/wssc_customer_tap/lead_tap_2025</id>
+    <title>Distribution System Customer Taps: Lead — &lt;2.0 ug/L (Reported 2025-06-01)</title>
+    <updated>2025-06-01T00:00:00Z</updated>
+    <published>2025-06-01T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.wsscwater.com/wqr"/>
+    <summary type="text">As reported by Washington Suburban Sanitary Commission (WSSC Water) for Distribution System Customer Taps: &lt;2.0 ug/L. Governing requirement: 15 ug/L (EPA Lead and Copper Rule (Action Level); compliance date: In force (Action level lowers to 10 ug/L beginning November 1, 2027); basis: 90th percentile of customer tap samples).</summary>
+    <category term="Measurement"/>
+  </entry>
+  <entry>
+    <id>water/measurements/wssc_patuxent/pfoa_2025</id>
+    <title>Patuxent Water Filtration Plant Tap: Perfluorooctanoic acid (PFOA) — 1.8 ng/L (Reported 2025-06-01)</title>
+    <updated>2025-06-01T00:00:00Z</updated>
+    <published>2025-06-01T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.wsscwater.com/wqr"/>
+    <summary type="text">As reported by Washington Suburban Sanitary Commission (WSSC Water) for Patuxent Water Filtration Plant Tap: 1.8 ng/L. Governing requirement: 4.0 ng/L (EPA National Primary Drinking Water Regulation (MCL); compliance date: Beginning April 26, 2029; basis: Running annual average of quarterly samples; status: Proposed extension to April 26, 2031 for eligible systems that apply for an exemption under SDWA §1416(f) (FR 2026-10086)).</summary>
+    <category term="Measurement"/>
+  </entry>
+  <entry>
+    <id>water/measurements/wssc_patuxent/pfos_2025</id>
+    <title>Patuxent Water Filtration Plant Tap: Perfluorooctanesulfonic acid (PFOS) — 1.8 ng/L (Reported 2025-06-01)</title>
+    <updated>2025-06-01T00:00:00Z</updated>
+    <published>2025-06-01T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.wsscwater.com/wqr"/>
+    <summary type="text">As reported by Washington Suburban Sanitary Commission (WSSC Water) for Patuxent Water Filtration Plant Tap: 1.8 ng/L. Governing requirement: 4.0 ng/L (EPA National Primary Drinking Water Regulation (MCL); compliance date: Beginning April 26, 2029; basis: Running annual average of quarterly samples; status: Proposed extension to April 26, 2031 for eligible systems that apply for an exemption under SDWA §1416(f) (FR 2026-10086)).</summary>
+    <category term="Measurement"/>
+  </entry>
+  <entry>
+    <id>water/measurements/wssc_potomac/pfoa_2025</id>
+    <title>Potomac Water Filtration Plant Tap: Perfluorooctanoic acid (PFOA) — 3.7 ng/L (Reported 2025-06-01)</title>
+    <updated>2025-06-01T00:00:00Z</updated>
+    <published>2025-06-01T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.wsscwater.com/wqr"/>
+    <summary type="text">As reported by Washington Suburban Sanitary Commission (WSSC Water) for Potomac Water Filtration Plant Tap: 3.7 ng/L. Governing requirement: 4.0 ng/L (EPA National Primary Drinking Water Regulation (MCL); compliance date: Beginning April 26, 2029; basis: Running annual average of quarterly samples; status: Proposed extension to April 26, 2031 for eligible systems that apply for an exemption under SDWA §1416(f) (FR 2026-10086)).</summary>
+    <category term="Measurement"/>
+  </entry>
+  <entry>
+    <id>water/measurements/wssc_potomac/pfos_2025</id>
+    <title>Potomac Water Filtration Plant Tap: Perfluorooctanesulfonic acid (PFOS) — 4.2 ng/L (Reported 2025-06-01)</title>
+    <updated>2025-06-01T00:00:00Z</updated>
+    <published>2025-06-01T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.wsscwater.com/wqr"/>
+    <summary type="text">As reported by Washington Suburban Sanitary Commission (WSSC Water) for Potomac Water Filtration Plant Tap: 4.2 ng/L. Governing requirement: 4.0 ng/L (EPA National Primary Drinking Water Regulation (MCL); compliance date: Beginning April 26, 2029; basis: Running annual average of quarterly samples; status: Proposed extension to April 26, 2031 for eligible systems that apply for an exemption under SDWA §1416(f) (FR 2026-10086)).</summary>
+    <category term="Measurement"/>
+  </entry>
+</feed>

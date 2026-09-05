@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>urn:enacted:feed:md:baltimore_city:zoning</id>
+  <title>Enacted — City of Baltimore Land-Use &amp; Zoning Feed</title>
+  <subtitle>Records what changed in enacted land-use law and public water quality. Does not advise, approve, determine, or certify anything.</subtitle>
+  <updated>2026-09-09T00:00:00Z</updated>
+  <link rel="self" href="feeds/baltimore_city/zoning.atom"/>
+  <generator uri="https://&lt;org&gt;.github.io/enacted-state-md/">Enacted Syndication Engine</generator>
+  <entry>
+    <id>baltimore_city/ord_26_146</id>
+    <title>City of Baltimore: Council Bill 26-0177 — Rezoning - 901 S Caton Avenue</title>
+    <updated>2026-09-09T00:00:00Z</updated>
+    <published>2026-04-27T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://baltimore.legistar.com/LegislationDetail.aspx?ID=7995121&amp;GUID=DFAA7543-A122-4599-B8AC-A5A7CF95AE9C"/>
+    <summary type="text">Enacted. Passed 2026-07-13 · Signed 2026-08-10 · Effective 2026-09-09</summary>
+    <category term="Enacted"/>
+  </entry>
+  <entry>
+    <id>baltimore_city/ord_26_128</id>
+    <title>City of Baltimore: Council Bill 26-0158 — Data Centers - Moratorium</title>
+    <updated>2026-06-16T00:00:00Z</updated>
+    <published>2026-03-23T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://baltimore.legistar.com/LegislationDetail.aspx?ID=7958934&amp;GUID=0F67C3A9-D166-4BFE-91D3-10070032F578"/>
+    <summary type="text">Enacted. Passed 2026-05-11 · Signed 2026-06-16 · Effective 2026-06-16</summary>
+    <category term="Enacted"/>
+  </entry>
+</feed>

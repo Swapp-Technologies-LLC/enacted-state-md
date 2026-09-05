@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>urn:enacted:feed:md:frederick:zoning</id>
+  <title>Enacted — Frederick County Land-Use &amp; Zoning Feed</title>
+  <subtitle>Records what changed in enacted land-use law and public water quality. Does not advise, approve, determine, or certify anything.</subtitle>
+  <updated>2024-01-06T00:00:00Z</updated>
+  <link rel="self" href="feeds/frederick/zoning.atom"/>
+  <generator uri="https://&lt;org&gt;.github.io/enacted-state-md/">Enacted Syndication Engine</generator>
+  <entry>
+    <id>frederick/bill_23_21</id>
+    <title>Frederick County: Bill No. 23-21 — Amendments to Chapter 1-19 of the FCC - Zoning Ordinance - Add Cannabis Dispensary, Growing Facility &amp; Processing Facility</title>
+    <updated>2024-01-06T00:00:00Z</updated>
+    <published>2023-10-03T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://frederickcountymd.gov/9291/2023-Council-Bills"/>
+    <summary type="text">Enacted. Passed 2023-11-07 · Signed 2023-11-07 · Effective 2024-01-06</summary>
+    <category term="Enacted"/>
+  </entry>
+  <entry>
+    <id>frederick/bill_23_20</id>
+    <title>Frederick County: Bill No. 23-20 — Limited Landscape Contractor Parking and Storage in the A (Agricultural) District</title>
+    <updated>2023-12-23T00:00:00Z</updated>
+    <published>2023-09-19T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://frederickcountymd.gov/9291/2023-Council-Bills"/>
+    <summary type="text">Enacted. Passed 2023-10-24 · Signed 2023-10-24 · Effective 2023-12-23</summary>
+    <category term="Enacted"/>
+  </entry>
+</feed>

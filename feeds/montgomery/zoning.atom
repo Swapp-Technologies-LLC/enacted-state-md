@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>urn:enacted:feed:md:montgomery:zoning</id>
+  <title>Enacted — Montgomery County Land-Use &amp; Zoning Feed</title>
+  <subtitle>Records what changed in enacted land-use law and public water quality. Does not advise, approve, determine, or certify anything.</subtitle>
+  <updated>2024-01-16T00:00:00Z</updated>
+  <link rel="self" href="feeds/montgomery/zoning.atom"/>
+  <generator uri="https://&lt;org&gt;.github.io/enacted-state-md/">Enacted Syndication Engine</generator>
+  <entry>
+    <id>montgomery/zta_23_09</id>
+    <title>Montgomery County: 23-09 — Farming: Incidental Outdoor Stays</title>
+    <updated>2024-01-16T00:00:00Z</updated>
+    <published>2023-11-07T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://montgomerycountymd.granicus.com/MetaViewer.php?view_id=169&amp;clip_id=17020&amp;meta_id=167133"/>
+    <summary type="text">Pending Committee Review (Public Hearing Held). Introduced 2023-11-07 · Hearing 2024-01-16</summary>
+    <category term="Pending Committee Review (Public Hearing Held)"/>
+  </entry>
+  <entry>
+    <id>montgomery/zta_23_04</id>
+    <title>Montgomery County: 23-04 — Residential Uses: Short Term Residential Rental</title>
+    <updated>2023-06-13T00:00:00Z</updated>
+    <published>2023-04-18T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.montgomerycountymd.gov/COUNCIL/Resources/Files/zta/2023/ZTA%2023-04_Public%20hearing.pdf"/>
+    <summary type="text">Worksession. Introduced 2023-04-18 · Hearing 2023-06-13</summary>
+    <category term="Worksession"/>
+  </entry>
+  <entry>
+    <id>montgomery/zta_23_01</id>
+    <title>Montgomery County: 23-01 — Accessory Residential Uses: Sharing Economy Rental</title>
+    <updated>2023-03-07T00:00:00Z</updated>
+    <published>2023-01-31T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://assets.montgomerycountymd.gov/files/migrated-media/58b355_20230307_4-5.pdf"/>
+    <summary type="text">Introduced. Introduced 2023-01-31 · Hearing 2023-03-07</summary>
+    <category term="Introduced"/>
+  </entry>
+  <entry>
+    <id>montgomery/zta_22_12</id>
+    <title>Montgomery County: 22-12 — Overlay Zones: Clarksburg East &amp; West Environmental Overlay - Exemptions</title>
+    <updated>2023-01-17T00:00:00Z</updated>
+    <published>2022-12-13T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.montgomerycountymd.gov/COUNCIL/Resources/Files/zta/2022/ZTA%2022-12.pdf"/>
+    <summary type="text">Withdrawn. Introduced 2022-12-13</summary>
+    <category term="Withdrawn"/>
+  </entry>
+</feed>

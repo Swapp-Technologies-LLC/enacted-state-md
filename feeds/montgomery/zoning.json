@@ -1,0 +1,58 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Enacted \u2014 Montgomery County Land-Use & Zoning Feed",
+  "home_page_url": "https://www.montgomerycountymd.gov/council",
+  "feed_url": "feeds/montgomery/zoning.json",
+  "description": "Records what changed in enacted land-use law and public water quality. Does not advise, approve, determine, or certify anything.",
+  "_last_ingested": "2026-09-15T01:07:32Z",
+  "items": [
+    {
+      "id": "montgomery/zta_23_09",
+      "url": "https://montgomerycountymd.granicus.com/MetaViewer.php?view_id=169&clip_id=17020&meta_id=167133",
+      "title": "Montgomery County: 23-09 \u2014 Farming: Incidental Outdoor Stays",
+      "summary": "Pending Committee Review (Public Hearing Held). Introduced 2023-11-07 \u00b7 Hearing 2024-01-16",
+      "date_published": "2023-11-07T00:00:00Z",
+      "date_modified": "2024-01-16T00:00:00Z",
+      "tags": [
+        "Pending Committee Review (Public Hearing Held)",
+        "zoning"
+      ]
+    },
+    {
+      "id": "montgomery/zta_23_04",
+      "url": "https://www.montgomerycountymd.gov/COUNCIL/Resources/Files/zta/2023/ZTA%2023-04_Public%20hearing.pdf",
+      "title": "Montgomery County: 23-04 \u2014 Residential Uses: Short Term Residential Rental",
+      "summary": "Worksession. Introduced 2023-04-18 \u00b7 Hearing 2023-06-13",
+      "date_published": "2023-04-18T00:00:00Z",
+      "date_modified": "2023-06-13T00:00:00Z",
+      "tags": [
+        "Worksession",
+        "zoning"
+      ]
+    },
+    {
+      "id": "montgomery/zta_23_01",
+      "url": "https://assets.montgomerycountymd.gov/files/migrated-media/58b355_20230307_4-5.pdf",
+      "title": "Montgomery County: 23-01 \u2014 Accessory Residential Uses: Sharing Economy Rental",
+      "summary": "Introduced. Introduced 2023-01-31 \u00b7 Hearing 2023-03-07",
+      "date_published": "2023-01-31T00:00:00Z",
+      "date_modified": "2023-03-07T00:00:00Z",
+      "tags": [
+        "Introduced",
+        "zoning"
+      ]
+    },
+    {
+      "id": "montgomery/zta_22_12",
+      "url": "https://www.montgomerycountymd.gov/COUNCIL/Resources/Files/zta/2022/ZTA%2022-12.pdf",
+      "title": "Montgomery County: 22-12 \u2014 Overlay Zones: Clarksburg East & West Environmental Overlay - Exemptions",
+      "summary": "Withdrawn. Introduced 2022-12-13",
+      "date_published": "2022-12-13T00:00:00Z",
+      "date_modified": "2023-01-17T00:00:00Z",
+      "tags": [
+        "Withdrawn",
+        "zoning"
+      ]
+    }
+  ]
+}

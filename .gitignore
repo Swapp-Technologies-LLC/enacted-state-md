@@ -1,0 +1,4 @@
+# Cache & artifacts
+.cache/
+__pycache__/
+*.py[cod]

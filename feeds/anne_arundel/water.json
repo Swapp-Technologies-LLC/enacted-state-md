@@ -1,0 +1,58 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Enacted \u2014 Anne Arundel County Water Quality & Resources Feed",
+  "home_page_url": "https://www.aacounty.org",
+  "feed_url": "feeds/anne_arundel/water.json",
+  "description": "Records what changed in enacted land-use law and public water quality. Does not advise, approve, determine, or certify anything.",
+  "_last_ingested": "2026-09-15T01:07:32Z",
+  "items": [
+    {
+      "id": "water/measurements/aa_broad_creek/lead_copper_violation_2025",
+      "url": "https://www.aacounty.org/sites/default/files/2026-06/water-quality-report-2025.pdf",
+      "title": "Broad Creek: Lead and Copper Rule Monitoring and Reporting \u2014 Violation (Reported 2026-06-01)",
+      "summary": "As reported by Anne Arundel County Department of Public Works for Broad Creek: Assessed a monitoring and reporting violation for October 1 through 14, 2025. Governing requirement: 30 samples (Maryland Department of the Environment / EPA Lead and Copper Rule; compliance date: October 1 through 14, 2025; basis: Minimum 30 lead and copper samples collected and analyzed by reporting deadline; status: Violation assessed for October 1 through 14, 2025).",
+      "date_published": "2026-06-01T00:00:00Z",
+      "date_modified": "2026-06-01T00:00:00Z",
+      "tags": [
+        "Measurement",
+        "water"
+      ]
+    },
+    {
+      "id": "water/measurements/aa_crofton_odenton/lead_copper_violation_2025",
+      "url": "https://www.aacounty.org/sites/default/files/2026-06/water-quality-report-2025.pdf",
+      "title": "Crofton/Odenton: Lead and Copper Rule Monitoring and Reporting \u2014 Violation (Reported 2026-06-01)",
+      "summary": "As reported by Anne Arundel County Department of Public Works for Crofton/Odenton: Assessed a monitoring and reporting violation for October 1 through 14, 2025. Governing requirement: 30 samples (Maryland Department of the Environment / EPA Lead and Copper Rule; compliance date: October 1 through 14, 2025; basis: Minimum 30 lead and copper samples collected and analyzed by reporting deadline; status: Violation assessed for October 1 through 14, 2025).",
+      "date_published": "2026-06-01T00:00:00Z",
+      "date_modified": "2026-06-01T00:00:00Z",
+      "tags": [
+        "Measurement",
+        "water"
+      ]
+    },
+    {
+      "id": "water/measurements/aa_crownsville/lead_tap_2025",
+      "url": "https://www.aacounty.org/sites/default/files/2026-06/water-quality-report-2025.pdf",
+      "title": "Crownsville: Lead \u2014 <2.0 ug/L (Reported 2026-06-01)",
+      "summary": "As reported by Anne Arundel County Department of Public Works for Crownsville: <2.0 ug/L. Governing requirement: 15 ug/L (EPA Lead and Copper Rule (Action Level); compliance date: In force; basis: 90th percentile of customer tap samples).",
+      "date_published": "2026-06-01T00:00:00Z",
+      "date_modified": "2026-06-01T00:00:00Z",
+      "tags": [
+        "Measurement",
+        "water"
+      ]
+    },
+    {
+      "id": "water/measurements/aa_glen_burnie/copper_tap_2025",
+      "url": "https://www.aacounty.org/sites/default/files/2026-06/water-quality-report-2025.pdf",
+      "title": "Glen Burnie: Copper \u2014 0.07 mg/L (Reported 2026-06-01)",
+      "summary": "As reported by Anne Arundel County Department of Public Works for Glen Burnie: 0.07 mg/L. Governing requirement: 1.3 mg/L (EPA Lead and Copper Rule (Action Level); compliance date: In force; basis: 90th percentile of customer tap samples).",
+      "date_published": "2026-06-01T00:00:00Z",
+      "date_modified": "2026-06-01T00:00:00Z",
+      "tags": [
+        "Measurement",
+        "water"
+      ]
+    }
+  ]
+}

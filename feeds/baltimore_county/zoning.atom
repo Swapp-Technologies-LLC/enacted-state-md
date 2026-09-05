@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>urn:enacted:feed:md:baltimore_county:zoning</id>
+  <title>Enacted — Baltimore County Land-Use &amp; Zoning Feed</title>
+  <subtitle>Records what changed in enacted land-use law and public water quality. Does not advise, approve, determine, or certify anything.</subtitle>
+  <updated>2026-04-06T00:00:00Z</updated>
+  <link rel="self" href="feeds/baltimore_county/zoning.atom"/>
+  <generator uri="https://&lt;org&gt;.github.io/enacted-state-md/">Enacted Syndication Engine</generator>
+  <entry>
+    <id>baltimore_county/bill_09_26</id>
+    <title>Baltimore County: Bill No. 9-26 — Zoning Regulations - Data Centers and Energy Storage Devices - Partial Repeal and Clarification</title>
+    <updated>2026-04-06T00:00:00Z</updated>
+    <published>2026-01-20T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://countycouncil.baltimorecountymd.gov/legislation/"/>
+    <summary type="text">Enacted. Passed 2026-02-17 · Signed 2026-02-23 · Effective 2026-04-06</summary>
+    <category term="Enacted"/>
+  </entry>
+  <entry>
+    <id>baltimore_county/bill_21_25</id>
+    <title>Baltimore County: Bill No. 21-25 — Zoning Regulations - Solar Facilities - Siting Requirements</title>
+    <updated>2025-05-26T00:00:00Z</updated>
+    <published>2025-03-03T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://countycouncil.baltimorecountymd.gov/legislation/"/>
+    <summary type="text">Enacted. Passed 2025-04-07 · Signed 2025-04-14 · Effective 2025-05-26</summary>
+    <category term="Enacted"/>
+  </entry>
+</feed>

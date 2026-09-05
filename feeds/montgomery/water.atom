@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>urn:enacted:feed:md:montgomery:water</id>
+  <title>Enacted — Montgomery County Water Quality &amp; Resources Feed</title>
+  <subtitle>Records what changed in enacted land-use law and public water quality. Does not advise, approve, determine, or certify anything.</subtitle>
+  <updated>2025-06-01T00:00:00Z</updated>
+  <link rel="self" href="feeds/montgomery/water.atom"/>
+  <generator uri="https://&lt;org&gt;.github.io/enacted-state-md/">Enacted Syndication Engine</generator>
+  <entry>
+    <id>water/measurements/wssc_customer_tap/lead_tap_2025</id>
+    <title>Distribution System Customer Taps: Lead — &lt;2.0 ug/L (Reported 2025-06-01)</title>
+    <updated>2025-06-01T00:00:00Z</updated>
+    <published>2025-06-01T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.wsscwater.com/wqr"/>
+    <summary type="text">As reported by Washington Suburban Sanitary Commission (WSSC Water) for Distribution System Customer Taps: &lt;2.0 ug/L. Governing requirement: 15 ug/L (EPA Lead and Copper Rule (Action Level); compliance date: In force (Action level lowers to 10 ug/L beginning November 1, 2027); basis: 90th percentile of customer tap samples).</summary>
+    <category term="Measurement"/>
+  </entry>
+  <entry>
+    <id>water/measurements/wssc_patuxent/pfoa_2025</id>
+    <title>Patuxent Water Filtration Plant Tap: Perfluorooctanoic acid (PFOA) — 1.8 ng/L (Reported 2025-06-01)</title>
+    <updated>2025-06-01T00:00:00Z</updated>
+    <published>2025-06-01T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.wsscwater.com/wqr"/>
+    <summary type="text">As reported by Washington Suburban Sanitary Commission (WSSC Water) for Patuxent Water Filtration Plant Tap: 1.8 ng/L. Governing requirement: 4.0 ng/L (EPA National Primary Drinking Water Regulation (MCL); compliance date: Beginning April 26, 2029; basis: Running annual average of quarterly samples; status: Proposed extension to April 26, 2031 for eligible systems that apply for an exemption under SDWA §1416(f) (FR 2026-10086)).</summary>
+    <category term="Measurement"/>
+  </entry>
+  <entry>
+    <id>water/measurements/wssc_patuxent/pfos_2025</id>
+    <title>Patuxent Water Filtration Plant Tap: Perfluorooctanesulfonic acid (PFOS) — 1.8 ng/L (Reported 2025-06-01)</title>
+    <updated>2025-06-01T00:00:00Z</updated>
+    <published>2025-06-01T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.wsscwater.com/wqr"/>
+    <summary type="text">As reported by Washington Suburban Sanitary Commission (WSSC Water) for Patuxent Water Filtration Plant Tap: 1.8 ng/L. Governing requirement: 4.0 ng/L (EPA National Primary Drinking Water Regulation (MCL); compliance date: Beginning April 26, 2029; basis: Running annual average of quarterly samples; status: Proposed extension to April 26, 2031 for eligible systems that apply for an exemption under SDWA §1416(f) (FR 2026-10086)).</summary>
+    <category term="Measurement"/>
+  </entry>
+  <entry>
+    <id>water/measurements/wssc_potomac/pfoa_2025</id>
+    <title>Potomac Water Filtration Plant Tap: Perfluorooctanoic acid (PFOA) — 3.7 ng/L (Reported 2025-06-01)</title>
+    <updated>2025-06-01T00:00:00Z</updated>
+    <published>2025-06-01T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.wsscwater.com/wqr"/>
+    <summary type="text">As reported by Washington Suburban Sanitary Commission (WSSC Water) for Potomac Water Filtration Plant Tap: 3.7 ng/L. Governing requirement: 4.0 ng/L (EPA National Primary Drinking Water Regulation (MCL); compliance date: Beginning April 26, 2029; basis: Running annual average of quarterly samples; status: Proposed extension to April 26, 2031 for eligible systems that apply for an exemption under SDWA §1416(f) (FR 2026-10086)).</summary>
+    <category term="Measurement"/>
+  </entry>
+  <entry>
+    <id>water/measurements/wssc_potomac/pfos_2025</id>
+    <title>Potomac Water Filtration Plant Tap: Perfluorooctanesulfonic acid (PFOS) — 4.2 ng/L (Reported 2025-06-01)</title>
+    <updated>2025-06-01T00:00:00Z</updated>
+    <published>2025-06-01T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.wsscwater.com/wqr"/>
+    <summary type="text">As reported by Washington Suburban Sanitary Commission (WSSC Water) for Potomac Water Filtration Plant Tap: 4.2 ng/L. Governing requirement: 4.0 ng/L (EPA National Primary Drinking Water Regulation (MCL); compliance date: Beginning April 26, 2029; basis: Running annual average of quarterly samples; status: Proposed extension to April 26, 2031 for eligible systems that apply for an exemption under SDWA §1416(f) (FR 2026-10086)).</summary>
+    <category term="Measurement"/>
+  </entry>
+</feed>

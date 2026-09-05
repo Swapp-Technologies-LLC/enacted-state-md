@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>urn:enacted:feed:md</id>
+  <title>Enacted — Maryland Statewide Land-Use &amp; Zoning Feed</title>
+  <subtitle>Records what changed in enacted land-use law and public water quality. Does not advise, approve, determine, or certify anything.</subtitle>
+  <updated>2026-12-21T00:00:00Z</updated>
+  <link rel="self" href="feeds/zoning.atom"/>
+  <generator uri="https://&lt;org&gt;.github.io/enacted-state-md/">Enacted Syndication Engine</generator>
+  <entry>
+    <id>prince_georges/cb_020_2026</id>
+    <title>Prince George's County: CB-020-2026 — Administration - Pre-Application Neighborhood Meetings - Transparency in Land Use</title>
+    <updated>2026-12-21T00:00:00Z</updated>
+    <published>2026-05-05T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://princegeorgescountymd.legistar.com/LegislationDetail.aspx?ID=7948658&amp;GUID=AC75E03C-C32D-4BA1-98C1-CF57DB729729"/>
+    <summary type="text">Enacted. Passed 2026-06-22 · Signed 2026-06-22 · Effective 2026-12-21</summary>
+    <category term="Enacted"/>
+  </entry>
+  <entry>
+    <id>baltimore_city/ord_26_146</id>
+    <title>City of Baltimore: Council Bill 26-0177 — Rezoning - 901 S Caton Avenue</title>
+    <updated>2026-09-09T00:00:00Z</updated>
+    <published>2026-04-27T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://baltimore.legistar.com/LegislationDetail.aspx?ID=7995121&amp;GUID=DFAA7543-A122-4599-B8AC-A5A7CF95AE9C"/>
+    <summary type="text">Enacted. Passed 2026-07-13 · Signed 2026-08-10 · Effective 2026-09-09</summary>
+    <category term="Enacted"/>
+  </entry>
+  <entry>
+    <id>howard/cb_25_2026</id>
+    <title>Howard County: Council Bill 25-2026 — AN ACT amending the Howard County Zoning Regulations to define 'Cottage Clusters'; to provide where Age-Restricted Adult Housing Cottage Clusters will be permitted by right; to add parking requirements to Age-Restricted Adult Housing Cottage Clusters and multiplexes; to provide criteria for Age-Restricted Adult Housing Cottage Clusters within an Optional Design Project; and generally relating to the Howard County Zoning Regulations.</title>
+    <updated>2026-08-10T00:00:00Z</updated>
+    <published>2026-05-04T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://apps.howardcountymd.gov/olis/LegislationDetail/15035/CB25-2026"/>
+    <summary type="text">Passed as Amended. Passed 2026-06-01 · Signed 2026-06-10 · Effective 2026-08-10</summary>
+    <category term="Passed as Amended"/>
+  </entry>
+  <entry>
+    <id>anne_arundel/bill_18_26</id>
+    <title>Anne Arundel County: Bill No. 18-26 — AN ORDINANCE concerning: Comprehensive Zoning – Region 5 (As Amended)</title>
+    <updated>2026-07-30T00:00:00Z</updated>
+    <published>2026-03-02T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.aacounty.org/sites/default/files/2026-03/bill-18-26.pdf"/>
+    <summary type="text">Passed (Veto Overridden). Passed 2026-06-01 · Override 2026-06-15 · Effective 2026-07-20</summary>
+    <category term="Passed (Veto Overridden)"/>
+  </entry>
+  <entry>
+    <id>anne_arundel/bill_57_26</id>
+    <title>Anne Arundel County: Bill No. 57-26 — AN ORDINANCE concerning: Zoning – Rural Commerce Centers</title>
+    <updated>2026-07-20T00:00:00Z</updated>
+    <published>2026-06-15T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.aacounty.org/sites/default/files/2026-06/bill-57-26.pdf"/>
+    <summary type="text">Withdrawn. Introduced 2026-06-15 · Withdrawn 2026-07-20</summary>
+    <category term="Withdrawn"/>
+  </entry>
+  <entry>
+    <id>howard/cb_24_2026</id>
+    <title>Howard County: Council Bill 24-2026 — AN ACT amending the Howard County Zoning Regulations to change the definition of 'Optional Design Project'; add a new subsection in Section 128.0 entitled 'Optional Design Projects in Route 1 Corridor'; expanding eligibility for the Optional Design Project process to certain commercial properties along Route 1; adding additional use criteria; and generally relating to the Howard County Zoning Regulations.</title>
+    <updated>2026-07-14T00:00:00Z</updated>
+    <published>2026-04-06T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://apps.howardcountymd.gov/olis/LegislationDetail/15005/CB24-2026"/>
+    <summary type="text">Passed as Amended. Passed 2026-05-04 · Signed 2026-05-14 · Effective 2026-07-14</summary>
+    <category term="Passed as Amended"/>
+  </entry>
+  <entry>
+    <id>anne_arundel/bill_28_26</id>
+    <title>Anne Arundel County: Bill No. 28-26 — AN ORDINANCE concerning: Zoning – Commercial Districts – Apartment Dwelling Units</title>
+    <updated>2026-06-21T00:00:00Z</updated>
+    <published>2026-04-06T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.aacounty.org/sites/default/files/2026-04/bill-28-26.pdf"/>
+    <summary type="text">Enacted. Passed 2026-05-04 · Signed 2026-05-07 · Effective 2026-06-21</summary>
+    <category term="Enacted"/>
+  </entry>
+  <entry>
+    <id>baltimore_city/ord_26_128</id>
+    <title>City of Baltimore: Council Bill 26-0158 — Data Centers - Moratorium</title>
+    <updated>2026-06-16T00:00:00Z</updated>
+    <published>2026-03-23T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://baltimore.legistar.com/LegislationDetail.aspx?ID=7958934&amp;GUID=0F67C3A9-D166-4BFE-91D3-10070032F578"/>
+    <summary type="text">Enacted. Passed 2026-05-11 · Signed 2026-06-16 · Effective 2026-06-16</summary>
+    <category term="Enacted"/>
+  </entry>
+  <entry>
+    <id>baltimore_county/bill_09_26</id>
+    <title>Baltimore County: Bill No. 9-26 — Zoning Regulations - Data Centers and Energy Storage Devices - Partial Repeal and Clarification</title>
+    <updated>2026-04-06T00:00:00Z</updated>
+    <published>2026-01-20T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://countycouncil.baltimorecountymd.gov/legislation/"/>
+    <summary type="text">Enacted. Passed 2026-02-17 · Signed 2026-02-23 · Effective 2026-04-06</summary>
+    <category term="Enacted"/>
+  </entry>
+  <entry>
+    <id>howard/cb_04_2026</id>
+    <title>Howard County: Council Bill 4-2026 — AN ACT amending the Howard County Zoning Regulations to implement the General Plan's recommendations for housing in activity centers, including defining activity center; providing that certain types of development projects in the TOD or TNC zoning districts shall provide more than one housing type; and adding regulations for age-restricted adult housing in the TOD and TNC zoning districts; and generally relating to the Howard County Zoning Regulations.</title>
+    <updated>2026-03-02T00:00:00Z</updated>
+    <published>2026-01-05T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://apps.howardcountymd.gov/olis/LegislationDetail/14951/CB4-2026"/>
+    <summary type="text">Withdrawn. Introduced 2026-01-05 · Withdrawn 2026-03-02</summary>
+    <category term="Withdrawn"/>
+  </entry>
+  <entry>
+    <id>baltimore_county/bill_21_25</id>
+    <title>Baltimore County: Bill No. 21-25 — Zoning Regulations - Solar Facilities - Siting Requirements</title>
+    <updated>2025-05-26T00:00:00Z</updated>
+    <published>2025-03-03T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://countycouncil.baltimorecountymd.gov/legislation/"/>
+    <summary type="text">Enacted. Passed 2025-04-07 · Signed 2025-04-14 · Effective 2025-05-26</summary>
+    <category term="Enacted"/>
+  </entry>
+  <entry>
+    <id>prince_georges/cb_015_2024</id>
+    <title>Prince George's County: CB-015-2024 — An Ordinance Concerning the Zoning Ordinance of Prince George's County - Omnibus Bill</title>
+    <updated>2024-09-03T00:00:00Z</updated>
+    <published>2024-01-30T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://princegeorgescountymd.legistar.com/LegislationDetail.aspx?ID=6563784&amp;GUID=C2A79CE0-D733-43AA-8A6E-56A132002E37"/>
+    <summary type="text">Enacted. Passed 2024-07-16 · Signed 2024-07-16 · Effective 2024-09-03</summary>
+    <category term="Enacted"/>
+  </entry>
+  <entry>
+    <id>montgomery/zta_23_09</id>
+    <title>Montgomery County: 23-09 — Farming: Incidental Outdoor Stays</title>
+    <updated>2024-01-16T00:00:00Z</updated>
+    <published>2023-11-07T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://montgomerycountymd.granicus.com/MetaViewer.php?view_id=169&amp;clip_id=17020&amp;meta_id=167133"/>
+    <summary type="text">Pending Committee Review (Public Hearing Held). Introduced 2023-11-07 · Hearing 2024-01-16</summary>
+    <category term="Pending Committee Review (Public Hearing Held)"/>
+  </entry>
+  <entry>
+    <id>frederick/bill_23_21</id>
+    <title>Frederick County: Bill No. 23-21 — Amendments to Chapter 1-19 of the FCC - Zoning Ordinance - Add Cannabis Dispensary, Growing Facility &amp; Processing Facility</title>
+    <updated>2024-01-06T00:00:00Z</updated>
+    <published>2023-10-03T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://frederickcountymd.gov/9291/2023-Council-Bills"/>
+    <summary type="text">Enacted. Passed 2023-11-07 · Signed 2023-11-07 · Effective 2024-01-06</summary>
+    <category term="Enacted"/>
+  </entry>
+  <entry>
+    <id>frederick/bill_23_20</id>
+    <title>Frederick County: Bill No. 23-20 — Limited Landscape Contractor Parking and Storage in the A (Agricultural) District</title>
+    <updated>2023-12-23T00:00:00Z</updated>
+    <published>2023-09-19T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://frederickcountymd.gov/9291/2023-Council-Bills"/>
+    <summary type="text">Enacted. Passed 2023-10-24 · Signed 2023-10-24 · Effective 2023-12-23</summary>
+    <category term="Enacted"/>
+  </entry>
+  <entry>
+    <id>montgomery/zta_23_04</id>
+    <title>Montgomery County: 23-04 — Residential Uses: Short Term Residential Rental</title>
+    <updated>2023-06-13T00:00:00Z</updated>
+    <published>2023-04-18T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.montgomerycountymd.gov/COUNCIL/Resources/Files/zta/2023/ZTA%2023-04_Public%20hearing.pdf"/>
+    <summary type="text">Worksession. Introduced 2023-04-18 · Hearing 2023-06-13</summary>
+    <category term="Worksession"/>
+  </entry>
+  <entry>
+    <id>montgomery/zta_23_01</id>
+    <title>Montgomery County: 23-01 — Accessory Residential Uses: Sharing Economy Rental</title>
+    <updated>2023-03-07T00:00:00Z</updated>
+    <published>2023-01-31T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://assets.montgomerycountymd.gov/files/migrated-media/58b355_20230307_4-5.pdf"/>
+    <summary type="text">Introduced. Introduced 2023-01-31 · Hearing 2023-03-07</summary>
+    <category term="Introduced"/>
+  </entry>
+  <entry>
+    <id>montgomery/zta_22_12</id>
+    <title>Montgomery County: 22-12 — Overlay Zones: Clarksburg East &amp; West Environmental Overlay - Exemptions</title>
+    <updated>2023-01-17T00:00:00Z</updated>
+    <published>2022-12-13T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://www.montgomerycountymd.gov/COUNCIL/Resources/Files/zta/2022/ZTA%2022-12.pdf"/>
+    <summary type="text">Withdrawn. Introduced 2022-12-13</summary>
+    <category term="Withdrawn"/>
+  </entry>
+</feed>

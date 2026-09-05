@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>urn:enacted:feed:md:prince_georges:zoning</id>
+  <title>Enacted — Prince George's County Land-Use &amp; Zoning Feed</title>
+  <subtitle>Records what changed in enacted land-use law and public water quality. Does not advise, approve, determine, or certify anything.</subtitle>
+  <updated>2026-12-21T00:00:00Z</updated>
+  <link rel="self" href="feeds/prince_georges/zoning.atom"/>
+  <generator uri="https://&lt;org&gt;.github.io/enacted-state-md/">Enacted Syndication Engine</generator>
+  <entry>
+    <id>prince_georges/cb_020_2026</id>
+    <title>Prince George's County: CB-020-2026 — Administration - Pre-Application Neighborhood Meetings - Transparency in Land Use</title>
+    <updated>2026-12-21T00:00:00Z</updated>
+    <published>2026-05-05T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://princegeorgescountymd.legistar.com/LegislationDetail.aspx?ID=7948658&amp;GUID=AC75E03C-C32D-4BA1-98C1-CF57DB729729"/>
+    <summary type="text">Enacted. Passed 2026-06-22 · Signed 2026-06-22 · Effective 2026-12-21</summary>
+    <category term="Enacted"/>
+  </entry>
+  <entry>
+    <id>prince_georges/cb_015_2024</id>
+    <title>Prince George's County: CB-015-2024 — An Ordinance Concerning the Zoning Ordinance of Prince George's County - Omnibus Bill</title>
+    <updated>2024-09-03T00:00:00Z</updated>
+    <published>2024-01-30T00:00:00Z</published>
+    <link rel="alternate" type="text/html" href="https://princegeorgescountymd.legistar.com/LegislationDetail.aspx?ID=6563784&amp;GUID=C2A79CE0-D733-43AA-8A6E-56A132002E37"/>
+    <summary type="text">Enacted. Passed 2024-07-16 · Signed 2024-07-16 · Effective 2024-09-03</summary>
+    <category term="Enacted"/>
+  </entry>
+</feed>
