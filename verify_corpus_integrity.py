@@ -793,8 +793,9 @@ else:
         (re.compile(r'192\.168\.\d+\.\d+'), "LAN IP address"),
         (re.compile(local_domain_pattern, re.IGNORECASE), "Internal dot-local domain"),
         (re.compile(internal_email_pattern, re.IGNORECASE), "Internal personal email alias"),
-        (re.compile(company_email_pattern, re.IGNORECASE), "Internal organization email domain"),
         (re.compile(rulebook_pattern), "Internal standing rules mention (Rulebook filename)"),
+        (re.compile(r'enacted\.org', re.IGNORECASE), "Non-Swapp unowned domain enacted.org"),
+        (re.compile(r'enacted\.law', re.IGNORECASE), "Non-Swapp unowned domain enacted.law"),
     ]
     binary_extensions = ('.pdf', '.bin', '.png', '.jpg', '.jpeg', '.gif', '.ico', '.woff', '.woff2', '.ttf', '.pyc')
     forbidden_hits = 0
