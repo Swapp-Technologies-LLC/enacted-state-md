@@ -1,8 +1,8 @@
 ---
 record_type: measurement
 source_agency: Washington Suburban Sanitary Commission (WSSC Water)
-jurisdiction_key: wssc
-jurisdiction: Montgomery & Prince George's Counties, MD
+jurisdiction: md/wssc
+jurisdiction_name: WSSC Water
 jurisdictions:
 - montgomery
 - prince_georges

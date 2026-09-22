@@ -1,0 +1,31 @@
+{
+  "state": "md",
+  "name": "Maryland",
+  "jurisdictions": {
+    "md/allegany": "Allegany County",
+    "md/anne_arundel": "Anne Arundel County",
+    "md/baltimore_city": "City of Baltimore",
+    "md/baltimore_county": "Baltimore County",
+    "md/calvert": "Calvert County",
+    "md/caroline": "Caroline County",
+    "md/carroll": "Carroll County",
+    "md/cecil": "Cecil County",
+    "md/charles": "Charles County",
+    "md/dorchester": "Dorchester County",
+    "md/frederick": "Frederick County",
+    "md/garrett": "Garrett County",
+    "md/harford": "Harford County",
+    "md/howard": "Howard County",
+    "md/kent": "Kent County",
+    "md/montgomery": "Montgomery County",
+    "md/prince_georges": "Prince George's County",
+    "md/queen_annes": "Queen Anne's County",
+    "md/st_marys": "St. Mary's County",
+    "md/somerset": "Somerset County",
+    "md/talbot": "Talbot County",
+    "md/washington": "Washington County",
+    "md/wicomico": "Wicomico County",
+    "md/worcester": "Worcester County",
+    "md/wssc": "WSSC Water"
+  }
+}

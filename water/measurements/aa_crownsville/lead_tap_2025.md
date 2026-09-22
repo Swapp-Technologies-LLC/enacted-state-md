@@ -1,8 +1,8 @@
 ---
 record_type: measurement
 source_agency: Anne Arundel County Department of Public Works
-jurisdiction_key: anne_arundel
-jurisdiction: Anne Arundel County, MD
+jurisdiction: md/anne_arundel
+jurisdiction_name: Anne Arundel County
 system: Crownsville
 parameter: Lead
 value: <2.0
