@@ -134,3 +134,59 @@ Topic tags are deterministically derived from enacted text and frontmatter secti
 - **Partner-Side Address Resolution**: Partners (such as HouseOver Pro) resolve any user/customer street address or ZIP code to a canonical `jurisdiction_key` (e.g., `md/montgomery`, `md/anne_arundel`, `md/baltimore_city`) on their own infrastructure prior to querying Enacted APIs.
 - **Hard Rejection of Address/Parcel/ZIP Fields by Design**: The Enacted Partner API explicitly and intentionally rejects (HTTP 400 Bad Request) any query carrying `address`, `street`, `parcel`, `parcel_id`, `pin`, `tax_id`, `zipcode`, `postal_code`, `owner`, or `homeowner` fields. Such queries are rejected before entering any data store and are bypassed from the usage ledger.
 - **Vendored Crosswalk Library**: A future vendored crosswalk library (`enacted-crosswalk`) will be provided for partner-side integration to map ZIP codes and address coordinate bounding boxes to official municipal and county jurisdiction keys without transmitting address data to Enacted services.
+
+---
+
+## 10. Recorded Covenants Record Class (`hoa_covenant`) & Data Minimisation
+
+Recorded covenants (declarations, CC&Rs, amendments, supplemental declarations, recorded bylaws, plat notes) are ingested through the public corpus mechanism under the same posture as zoning and environmental records: Enacted records the recorded instrument and its dates; it never says what an association allows or forbids, never resolves a conflict between a covenant and a later rule, and never addresses a lot or an owner.
+
+### 10.1 Corpus Directory Topology
+Recorded covenants reside under the county directory in each state data repository:
+```
+<county_slug>/recorded_covenants/<association_slug>/<instrument_slug>.md
+```
+Example: `montgomery/recorded_covenants/woodland_hills/declaration.md` or `anne_arundel/recorded_covenants/bay_ridge/amendment_01.md`.
+
+### 10.2 Frontmatter Schema
+Every `hoa_covenant` record requires YAML frontmatter adhering to this schema:
+| Field | Type | Description / Allowed Values |
+| :--- | :--- | :--- |
+| `association_name` | string | Exact legal name of the association as stated in the charter / declaration. |
+| `association_slug` | string | Lowercase alphanumeric slug with underscores (e.g., `woodland_hills`). |
+| `county` | string | Canonical county key as in `build.py` (e.g., `md/montgomery` or `montgomery`). |
+| `instrument_type` | enum | `declaration`, `amendment`, `supplemental_declaration`, `bylaws_recorded`, `plat_note`. |
+| `recording_reference` | string | Free text as recorded: liber/folio, book/page, or instrument number. |
+| `recorded_date` | string | ISO date (`YYYY-MM-DD`) when the instrument was recorded in land records. |
+| `effective_date` | string (optional) | ISO date (`YYYY-MM-DD`) only if explicitly stated in the instrument; otherwise omitted. |
+| `supersedes` | string or null | `instrument_slug` of the prior instrument superseded or amended, or `null`. |
+| `amends_sections` | list[string] | List of section citations amended within the declaration (e.g., `["Section 4.02"]`). |
+| `source_kind` | enum | `county_land_records`, `county_depository`, `association_provided`, `owner_provided`. |
+| `source_reference` | string | Citation text (e.g. Liber/Folio citation). URL permitted ONLY when source terms permit linking (`county_depository`, `association_provided`). |
+| `source_sha256` | string | 64-character lowercase hex SHA-256 of the document file on record. |
+| `source_fetched_at` | string | ISO 8601 UTC timestamp (`YYYY-MM-DDTHH:MM:SSZ`) of document acquisition. |
+| `who_to_ask` | object | `{office: "<association name> — registered agent or management company as listed in the association's charter record", contact lines as stated in public record}`. |
+| `record_type` | string | Exactly `covenant`. |
+| `topic` | string | Exactly `hoa`. |
+| `topics` | list[string] | Exactly `["hoa"]`. |
+
+### 10.3 Body Structure
+The Markdown body consists strictly of three sections:
+1. `## 1. Instrument`: Type, recording reference, and recording/effective dates.
+2. `## 2. Recorded text`: Verbatim quoted text:
+   - For amendments: a ` ```diff ` fence showing struck text (`- `) and inserted text (`+ `) against the prior instrument, quoting whole sections only.
+   - For initial declarations: operative articles quoted, with an omissions notice (e.g., `[Articles 1–3 and 5–12 omitted — full text in the recorded instrument]`).
+3. `## 3. Who to ask`: Administrative contact note directing questions to the association's registered agent or management company.
+
+### 10.4 Data Minimisation Rules (Enforced by Automated Gate)
+To protect privacy and minimize non-operative personally identifiable data, the automated gate enforces strict redaction/exclusion:
+- **Never quote**:
+  - Signature pages or execution blocks
+  - Notary acknowledgments or certificates
+  - Grantor or grantee individual personal names
+  - Lot owners' names
+  - Legal descriptions of individual lots (metes and bounds, lot/block parcel schedules)
+- **Banned phrases**: `witness`, `notary`, `acknowledged before me`, `grantor`, `grantee`, `lot owner`.
+- **Address patterns**: Street address patterns are prohibited in covenant bodies.
+- **Permitted names**: The association's name and its official registered agent or management company contact are the only personal/entity names permitted.
+
