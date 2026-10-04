@@ -666,7 +666,7 @@ schema_errs = 0
 for fpath, fm in all_records:
     rel = os.path.relpath(fpath, REPO_BASE)
     rtype = fm.get("record_type")
-    if rtype not in ["legislative", "measurement"]:
+    if rtype not in ["legislative", "measurement", "covenant", "hoa_covenant"]:
         print(f"  FAIL: {rel} invalid or missing record_type: {rtype}")
         schema_errs += 1
         failed_checks += 1
@@ -736,6 +736,12 @@ for fpath, fm in all_records:
             print(f"  FAIL: {rel} measurement record must reside under water/measurements/<system_slug>/")
             schema_errs += 1
             failed_checks += 1
+    elif rtype in ["covenant", "hoa_covenant"]:
+        required_keys = [
+            "association_name", "association_slug", "county", "instrument_type",
+            "recording_reference", "recorded_date", "source_kind", "source_reference",
+            "source_sha256", "source_fetched_at", "who_to_ask"
+        ]
     elif rel.startswith("state_statutes"):
         required_keys = ["statute_title", "primary_source_url"]
     else:
