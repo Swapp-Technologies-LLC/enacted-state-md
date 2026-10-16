@@ -190,3 +190,13 @@ To protect privacy and minimize non-operative personally identifiable data, the 
 - **Address patterns**: Street address patterns are prohibited in covenant bodies.
 - **Permitted names**: The association's name and its official registered agent or management company contact are the only personal/entity names permitted.
 
+---
+
+## 11. Water Absence Detection & Pull Request Operational Status
+
+Automated branch and pull request creation for candidate absence-detection records (`scripts/check_expected_reports.py`) does not exist yet. The candidate detector outputs candidate markdown files locally to `water/measurements/<system>/`. In accordance with Gate 8 and Rule 10, all live water sources remain `active: false` until the GitHub Actions PR-creation workflow is built, tested, and verified.
+
+### 11.1 Measurement Record Publication Dates & Regulator Evidence Cache
+Reports without a printed publication date carry `file_last_saved: YYYY-MM-DD` in frontmatter, extracted mechanically at ingestion from the pinned PDF document's own metadata (`/ModDate`, else `/CreationDate`) so that the site build does not depend on `.cache/pdf_cache/`. When a cached PDF is present at build time, the build verifies the date against the file and fails on drift. State drinking water regulator contact HTML pages (e.g. MDE, VDH) are static evidence git-tracked under `.cache/` (with `.cache/*` ignored except those specific `.html` files) ensuring fresh checkouts in CI have verified backing regulator evidence without network access.
+
+
