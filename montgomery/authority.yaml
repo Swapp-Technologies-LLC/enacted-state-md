@@ -1,12 +1,11 @@
 zoning_office:
-  office: "Zoning"
-  phone: "240-777-6245"
-  email: "patricia.wolford@montgomerycountymd.gov"
+  office: "Department of Permitting Services"
+  phone: "240-777-0311"
   web: "https://www.montgomerycountymd.gov/department-permitting-services/contact-dps"
   source_url: "https://www.montgomerycountymd.gov/department-permitting-services/contact-dps"
   source_sha256: "7e411f542e54497f720ba18db958638698623c00ddeaa9c04f0bbb238cc149e7"
   source_fetched_at: "2026-10-16T06:57:01.138748+00:00"
-  quoted_sentence: "Zoning Patricia Wolford / Section Manager patricia.wolford@montgomerycountymd.gov 240-777-6245"
+  quoted_sentence: "You can reach MC311 for issues related to the Department of Permitting Services, Monday - Friday from 7 a.m. - 7 p.m. In Montgomery County: Call 311 Outside of Montgomery County: 240-777-0311"
 
 legislative_body:
   office: "Legislative Information Services"
