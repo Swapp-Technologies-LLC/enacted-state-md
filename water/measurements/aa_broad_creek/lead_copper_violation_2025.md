@@ -1,5 +1,6 @@
 ---
 record_type: measurement
+source_title: Water Quality Report 2025
 source_agency: Anne Arundel County Department of Public Works
 jurisdiction: md/anne_arundel
 jurisdiction_name: Anne Arundel County
@@ -8,7 +9,10 @@ parameter: Lead and Copper Rule Monitoring and Reporting
 value: Violation
 unit: status
 reporting_period: '2025'
-published_date: '2026-06-01'
+determination:
+  status: violation_reported
+  quote: "As a result, we were assessed a monitoring and reporting violation for October 1 through 14, 2025."
+  source_page: Page 4
 sample_location: Broad Creek Water Service Area
 governing_limit:
   value: '30'
@@ -21,6 +25,7 @@ primary_source_url: https://www.aacounty.org/sites/default/files/2026-06/water-q
 source_pdf: https://www.aacounty.org/sites/default/files/2026-06/water-quality-report-2025.pdf
 source_sha256: 37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576
 source_fetched_at: '2026-09-14T20:04:50.000000+00:00'
+file_last_saved: '2026-06-25'
 tags:
 - water
 agency_finding: Assessed a monitoring and reporting violation for October 1 through
@@ -41,7 +46,6 @@ topics:
 - **Reporting Agency:** Anne Arundel County Department of Public Works
 - **Water System:** Broad Creek Water Service Area
 - **Reporting Period:** October 1 through 14, 2025 (Published in 2025 Water Quality Report)
-- **Publication Date:** June 1, 2026
 - **Finding:** Monitoring and reporting violation assessed by the Maryland Department of the Environment
 - **Governing Requirement:** Minimum 30 lead and copper samples collected and submitted by the reporting deadline
 - **Compliance Period:** October 1 through 14, 2025
