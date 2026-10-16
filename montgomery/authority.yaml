@@ -1,0 +1,18 @@
+zoning_office:
+  office: "Zoning"
+  phone: "240-777-6245"
+  email: "patricia.wolford@montgomerycountymd.gov"
+  web: "https://www.montgomerycountymd.gov/department-permitting-services/contact-dps"
+  source_url: "https://www.montgomerycountymd.gov/department-permitting-services/contact-dps"
+  source_sha256: "7e411f542e54497f720ba18db958638698623c00ddeaa9c04f0bbb238cc149e7"
+  source_fetched_at: "2026-10-16T06:57:01.138748+00:00"
+  quoted_sentence: "Zoning Patricia Wolford / Section Manager patricia.wolford@montgomerycountymd.gov 240-777-6245"
+
+legislative_body:
+  office: "Legislative Information Services"
+  phone: "240-777-7910"
+  web: "https://www.montgomerycountymd.gov/government/legislative-branch/county-council/contact-council"
+  source_url: "https://www.montgomerycountymd.gov/government/legislative-branch/county-council/contact-council"
+  source_sha256: "1780ea8fe67e56042e005cb12c49a788720f86362e0ae5acd327f232fa4c959c"
+  source_fetched_at: "2026-10-16T06:57:01.231945+00:00"
+  quoted_sentence: "Legislative Information Services: 240-777-7910"

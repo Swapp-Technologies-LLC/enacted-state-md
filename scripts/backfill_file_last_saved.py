@@ -6,7 +6,7 @@ Backfills file_last_saved: YYYY-MM-DD into every water measurement record
 whose report prints no publication date, by reading the pinned PDF's metadata
 (/ModDate, else /CreationDate) from .cache/pdf_cache/<sha256>.bin.
 Prints record path + date.
-Governed by AGENTS.md Rule 10: Zero model calls. Pure deterministic code.
+Governed by Rule 10: Zero model calls. Pure deterministic code.
 """
 
 import os

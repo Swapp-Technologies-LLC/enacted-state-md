@@ -1,0 +1,8 @@
+zoning_office:
+  office: "Zoning Administrator"
+  phone: "410-396-4126"
+  web: "https://planning.baltimorecity.gov/contact"
+  source_url: "https://planning.baltimorecity.gov/contact"
+  source_sha256: "916e48a6262d725fa5b868e4ebd64f223192d830e10edce92fde7e7361ca5790"
+  source_fetched_at: "2026-10-16T06:56:57.671943+00:00"
+  quoted_sentence: "For requests related to zoning verification, please reach out to the Zoning Administrator, Geoff Veale, 410-396-4126."

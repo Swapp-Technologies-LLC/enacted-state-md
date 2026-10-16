@@ -1,0 +1,8 @@
+zoning_office:
+  office: "Zoning Administration"
+  phone: "301-600-2328"
+  web: "https://www.frederickcountymd.gov/7949/Zoning"
+  source_url: "https://www.frederickcountymd.gov/7949/Zoning"
+  source_sha256: "b3737dadccfd49c50eaacdd088d07328cef4e1cfe1a3661407597886e760b761"
+  source_fetched_at: "2026-10-16T06:56:58.268841+00:00"
+  quoted_sentence: "Contact Us Zoning Administration 30 N. Market St. Frederick, MD 21701 Ph: 301-600-2328"

@@ -1,0 +1,8 @@
+zoning_office:
+  office: "Zoning Section"
+  phone: "301-952-4277"
+  web: "https://www.pgplanning.org/planning-sections/zoning"
+  source_url: "https://www.pgplanning.org/planning-sections/zoning"
+  source_sha256: "88eb8fad9af63f0a047ab53641c4c47366496ec6b331e46df1fa3a00ae2e6368"
+  source_fetched_at: "2026-10-16T06:57:01.300157+00:00"
+  quoted_sentence: "Jeremy Hurlbutt Planning Supervisor, Zoning Section PHONE: 301-952-4277"

@@ -1,0 +1,9 @@
+zoning_office:
+  office: "Zoning Review Office"
+  phone: "410-887-3391"
+  email: "paizoning@baltimorecountymd.gov"
+  web: "https://www.baltimorecountymd.gov/departments/pai/zoning"
+  source_url: "https://www.baltimorecountymd.gov/departments/pai/zoning"
+  source_sha256: "d421c58be4cf5c14d7be51899827923a639ed696a42104c3ce867d2f77953fad"
+  source_fetched_at: "2026-10-16T06:56:57.796148+00:00"
+  quoted_sentence: "Contact Us Zoning Review Office County Office Building 111 West Chesapeake Avenue Room 124 Towson, Maryland 21204 Hours Monday through Friday 8:30 a.m. to 4:30 p.m. Email paizoning@baltimorecountymd.gov Phone 410-887-3391"

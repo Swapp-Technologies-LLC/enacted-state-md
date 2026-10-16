@@ -1,0 +1,8 @@
+zoning_office:
+  office: "Planning & Zoning"
+  phone: "410-313-2350"
+  web: "https://www.howardcountymd.gov/planning-zoning"
+  source_url: "https://www.howardcountymd.gov/planning-zoning"
+  source_sha256: "6d65425b9d28188a916dac63514c185af17c84cd7e75df94a61e6cb78d9d4b1b"
+  source_fetched_at: "2026-10-16T06:57:01.058660+00:00"
+  quoted_sentence: "Planning & Zoning 3430 Court House Drive Ellicott City , MD 21043 United States 410-313-2350"
