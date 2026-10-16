@@ -1,0 +1,19 @@
+sources:
+  - id: test_fixture_source
+    title: "Fixture Water Quality Report"
+    index_url: "https://example.invalid/water/reports"
+    content: "Test fixture report data."
+    cadence: annual
+    cadence_basis:
+      rule:
+        citation: "TEST RULE § 0.0"
+        quoted_sentence: "Test fixture systems shall deliver water monitoring summaries on the prescribed fixture schedule."
+    active: true
+    expected_by: "July 1 annually following compliance reporting period"
+    grace_days: 30
+    last_found:
+      title: "Fixture Water Quality Report 2024"
+      period: "2024"
+      date: "2025-06-01"
+      url: "https://example.invalid/water/report_2024.pdf"
+      sha256: "0000000000000000000000000000000000000000000000000000000000000000"

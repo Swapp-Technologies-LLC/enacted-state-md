@@ -29,6 +29,11 @@ else:
 FREE_TIER_DELAY_DAYS = int(os.environ.get("FREE_TIER_DELAY_DAYS", 0))
 FEED_BASE_URL = os.environ.get("FEED_BASE_URL", "https://<org>.github.io/enacted-state-md/")
 
+SITE_DIR = os.environ.get("ENACTED_SITE_DIR", os.path.abspath(os.path.join(REPO_BASE, "..", "enacted-site")))
+if SITE_DIR not in sys.path:
+    sys.path.insert(0, SITE_DIR)
+from build import format_water_heading
+
 POSTURE_LINE = "Records what changed in enacted land-use law and public water quality. Does not advise, approve, determine, or certify anything."
 
 BANNED_PHRASES = [
@@ -64,9 +69,58 @@ JURISDICTION_HOMEPAGES = {
 TOPIC_DISPLAY_NAMES = {
     "zoning": "Land-Use & Zoning",
     "water": "Water Quality & Resources",
-    "pfas": "PFAS Forever Chemicals",
-    "data-center": "Data Centers"
 }
+
+TOPIC_HEALTH_RELATED = {
+    "zoning": False,
+    "water": True,
+    "pfas": True,
+    "housing": False,
+    "commercial": False,
+    "planning": False,
+    "industrial": False,
+    "hoa": False,  # founder ruling, Oct 15, 2026: recorded covenants are not health-related
+}
+
+def closing_line(topics, health_related_record: bool = False) -> str:
+    """
+    Returns closing posture line based on health_related topic settings and record flags (ratified Oct 4 & 13, 2026, water rules §8):
+    - "Not legal or health advice." if any topic is health-related (water: True, pfas: True) OR health_related_record: {value: true}
+    - "Not legal advice." if all topics are non-health (zoning: False) and health_related_record is not True
+    - Raises ValueError if an unknown/unruled topic is encountered.
+    """
+    if not topics and not health_related_record:
+        raise ValueError("topics cannot be empty for closing_line")
+    has_health = bool(health_related_record)
+    if topics:
+        if isinstance(topics, str):
+            topics = [topics]
+        for t in topics:
+            if t not in TOPIC_HEALTH_RELATED:
+                raise ValueError(f"Topic '{t}' has unruled health_related status; only the topics in TOPIC_HEALTH_RELATED are ruled.")
+            if TOPIC_HEALTH_RELATED[t]:
+                has_health = True
+    return "Not legal or health advice." if has_health else "Not legal advice."
+
+
+def validate_determination(det) -> bool:
+    """
+    Validates determination block of water measurement record (ratified Oct 4, 2026).
+    Must be a dict with status in (violation_reported, no_violation_reported, limit_not_yet_in_force, not_stated),
+    non-empty quoted text from primary source, and non-empty source page.
+    """
+    if not isinstance(det, dict):
+        raise ValueError("Water measurement record must include a 'determination' object")
+    status = det.get("status")
+    valid_statuses = ("violation_reported", "no_violation_reported", "limit_not_yet_in_force", "not_stated")
+    if status not in valid_statuses:
+        raise ValueError(f"Invalid determination status '{status}'; must be one of: {', '.join(valid_statuses)}")
+    if not det.get("quote") or not isinstance(det.get("quote"), str):
+        raise ValueError("Determination must have non-empty 'quote' from primary record")
+    if not det.get("source_page") or not isinstance(det.get("source_page"), str):
+        raise ValueError("Determination must have non-empty 'source_page' citation")
+    return True
+
 
 def normalize_rfc3339(d_str: str) -> str:
     if not d_str or str(d_str).lower() in ["none", "n/a", "[pending verification]"]:
@@ -274,12 +328,11 @@ def load_all_verified_items(repo_base: str):
                 jur_display_parts = [JURISDICTION_DISPLAY_NAMES.get(j, j.replace("_", " ").title()) for j in jurs]
                 jur_display = " & ".join(jur_display_parts) if len(jur_display_parts) > 1 else jur_display_parts[0]
                 
-                if unit and unit != "status":
-                    item_title = f"{system_name}: {param} — {val} {unit} (Reported {pub_date})"
-                else:
-                    item_title = f"{system_name}: {param} — {val} (Reported {pub_date})"
+                item_title = format_water_heading(fm)
                 category = "Measurement"
                 
+                validate_determination(fm.get("determination"))
+
                 # Rule: A measurement item may never render value-vs-limit without the compliance date beside it.
                 gov_limit = fm.get("governing_limit", {})
                 limit_val = gov_limit.get("value", "")

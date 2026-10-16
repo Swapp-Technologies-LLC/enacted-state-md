@@ -1,0 +1,18 @@
+sources:
+  - id: aa_dpw_wqr
+    title: "Water Quality Report"
+    index_url: "[FOUNDER: pending side-chat return]"
+    content: "Annual drinking water quality measurements, compliance data, and monitoring reports across Anne Arundel County water service areas."
+    cadence: annual
+    cadence_basis:
+      rule:
+        citation: "40 CFR § 141.152(b)"
+        quoted_sentence: "Each existing community water system must deliver reports according to § 141.155 by July 1 each year."
+    active: false
+    issue_pattern: "(?:water[-_ ]quality[-_ ]report|ccr)[-_ ]*{period}"
+    expected_by: "July 1 annually following compliance reporting period"
+    grace_days: 30
+    last_found:
+      title: "Water Quality Report 2025"
+      url: "https://www.aacounty.org/sites/default/files/2026-06/water-quality-report-2025.pdf"
+      sha256: "37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576"

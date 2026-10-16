@@ -1,0 +1,39 @@
+sources:
+  - id: wssc_wqr
+    title: "Water Quality Report"
+    index_url: "https://www.wsscwater.com/waterquality"
+    content: "Annual drinking water quality report, detected regulated and unregulated contaminants, and compliance monitoring results."
+    cadence: annual
+    cadence_basis:
+      agency_statement:
+        url: "https://www.wsscwater.com/waterquality"
+        date_read: "2026-10-06"
+        quoted_sentence: "Our Water Quality Report, which is also known as our Consumer Confidence Report, is published every year by April 1, well in advance of the U.S. Environmental Protection Agency's July 1 deadline."
+    active: false
+    issue_pattern: "(?:{period}[-_ ]*(?:water[-_ ]*quality[-_ ]*report|wqr)|(?:water[-_ ]*quality[-_ ]*report|wqr)[-_ ]*{period})"
+    expected_by: "April 1 annually"
+    grace_days: 30
+    last_found:
+      title: "2025 Water Quality Report"
+      url: "https://www.wsscwater.com/sites/default/files/2026-06/2025_Water_Quality_Report_508.pdf"
+      sha256: "57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa"
+
+  - id: wssc_tap_water_analysis
+    title: "Comprehensive Tap Water Analysis Report"
+    index_url: "https://www.wsscwater.com/what-we-do/water-quality/tap-water-analysis-report"
+    content: "Comprehensive tap water analysis reports by year."
+    cadence: annual
+    cadence_basis: "[FOUNDER: statement not found on page]"
+    active: false
+    expected_by: "April 1 annually"
+    grace_days: 30
+
+  - id: wssc_pfas_quarterly
+    title: "Quarterly PFAS Compliance Monitoring"
+    index_url: "https://www.wsscwater.com/pfas-results"
+    content: "Quarterly PFAS compliance monitoring sample results and running annual averages."
+    cadence: quarterly
+    cadence_basis: "[FOUNDER: statement not found on page]"
+    active: false
+    expected_by: "30 days after quarter end"
+    grace_days: 30

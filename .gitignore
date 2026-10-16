@@ -3,3 +3,7 @@
 !.cache/ebca511cae2b69a421d820b7d4f6fb26fe240c8baa8970f2ef3a12ba90b4f79e.html
 __pycache__/
 *.py[cod]
+
+# Local newsletter previews (generate_newsletter.py writes them here) and test cache
+dev/
+.pytest_cache/

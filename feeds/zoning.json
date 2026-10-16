@@ -4,7 +4,7 @@
   "home_page_url": "https://mgaleg.maryland.gov",
   "feed_url": "feeds/zoning.json",
   "description": "Records what changed in enacted land-use law and public water quality. Does not advise, approve, determine, or certify anything.",
-  "_last_ingested": "2026-09-15T01:07:32Z",
+  "_last_ingested": "2026-10-13T09:56:51Z",
   "items": [
     {
       "id": "prince_georges/cb_020_2026",
