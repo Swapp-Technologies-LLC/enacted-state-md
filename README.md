@@ -23,6 +23,21 @@ Nothing here is legal advice, and using it does not create an attorney-client re
 
 Browse these records on **[enacted.app](https://enacted.app/coverage/)**, or follow a county by feed at **[enacted.app/feeds](https://enacted.app/feeds/)**. Both are free.
 
+## Contents
+
+- [What's in it](#whats-in-it)
+- [Coverage](#coverage)
+  - [Water](#water)
+  - [Zoning and land use](#zoning-and-land-use)
+  - [Statewide law](#statewide-law)
+- [How a record is made](#how-a-record-is-made)
+  - [Record fields](#record-fields)
+- [Checking the records yourself](#checking-the-records-yourself)
+- [Reuse and licences](#reuse-and-licences)
+- [Corrections](#corrections)
+- [About](#about)
+
+
 ## What's in it
 
 | Path | What it holds |
@@ -40,7 +55,35 @@ Browse these records on **[enacted.app](https://enacted.app/coverage/)**, or fol
 
 ## Coverage
 
-8 of Maryland's 24 county-level jurisdictions have records. The [coverage page](https://enacted.app/coverage/) shows the same thing on a map.
+Each topic below has a short summary and the full list in a dropdown. The [coverage page](https://enacted.app/coverage/) shows the same thing on a map.
+
+### Water
+
+Drinking-water results and notices from Anne Arundel County's public water systems and WSSC Water, which serves Montgomery and Prince George's counties.
+
+<details>
+<summary>All 9 water records</summary>
+
+| Water system | Utility | Serves | Parameter | Period | Record |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| Broad Creek | Anne Arundel County DPW | Anne Arundel County | Lead and copper monitoring and reporting | 2025 | [record](water/measurements/aa_broad_creek/lead_copper_violation_2025.md) |
+| Crofton/Odenton | Anne Arundel County DPW | Anne Arundel County | Lead and copper monitoring and reporting | 2025 | [record](water/measurements/aa_crofton_odenton/lead_copper_violation_2025.md) |
+| Crownsville | Anne Arundel County DPW | Anne Arundel County | Lead | 2023 | [record](water/measurements/aa_crownsville/lead_tap_2025.md) |
+| Glen Burnie | Anne Arundel County DPW | Anne Arundel County | Copper | 2023 | [record](water/measurements/aa_glen_burnie/copper_tap_2025.md) |
+| Distribution System Customer Taps | WSSC Water | Montgomery County, Prince George's County | Lead | 2023 | [record](water/measurements/wssc_customer_tap/lead_tap_2025.md) |
+| Patuxent Water Filtration Plant Tap | WSSC Water | Montgomery County, Prince George's County | PFOA | 2025 | [record](water/measurements/wssc_patuxent/pfoa_2025.md) |
+| Patuxent Water Filtration Plant Tap | WSSC Water | Montgomery County, Prince George's County | PFOS | 2025 | [record](water/measurements/wssc_patuxent/pfos_2025.md) |
+| Potomac Water Filtration Plant Tap | WSSC Water | Montgomery County, Prince George's County | PFOA | 2025 | [record](water/measurements/wssc_potomac/pfoa_2025.md) |
+| Potomac Water Filtration Plant Tap | WSSC Water | Montgomery County, Prince George's County | PFOS | 2025 | [record](water/measurements/wssc_potomac/pfos_2025.md) |
+
+</details>
+
+### Zoning and land use
+
+8 of Maryland's 24 county-level jurisdictions have records.
+
+<details>
+<summary>All 24 jurisdictions</summary>
 
 | Jurisdiction | Folder | Status |
 | :-- | :-- | :-- |
@@ -69,7 +112,23 @@ Browse these records on **[enacted.app](https://enacted.app/coverage/)**, or fol
 | Wicomico County | [`wicomico/`](wicomico/) | Not covered yet: code published only on eCode360 ([details](wicomico/SOURCING_BLOCKED.md)) |
 | Worcester County | [`worcester/`](worcester/) | Not covered yet: code published only on eCode360 ([details](worcester/SOURCING_BLOCKED.md)) |
 
-Water systems with records: Anne Arundel County (`aa_broad_creek`, `aa_crofton_odenton`, `aa_crownsville`, `aa_glen_burnie`) and WSSC Water (`wssc_customer_tap`, `wssc_patuxent`, `wssc_potomac`).
+</details>
+
+### Statewide law
+
+The state laws that county zoning is written under.
+
+<details>
+<summary>All 3 statewide records</summary>
+
+| Law | What it covers | Record |
+| :-- | :-- | :-- |
+| Land Use Article, Division I | Single-jurisdiction planning and zoning (most counties, Baltimore City and municipalities) | [`land_use_article_division_1.md`](state_statutes/land_use_article_division_1.md) |
+| Land Use Article, Division II | Maryland-National Capital Park and Planning Commission (Montgomery and Prince George's counties) | [`land_use_article_division_2.md`](state_statutes/land_use_article_division_2.md) |
+| Natural Resources Article, Title 8, Subtitle 18 | Chesapeake and Atlantic Coastal Bays Critical Area Protection Program | [`critical_area_program.md`](state_statutes/critical_area_program.md) |
+
+</details>
+
 
 Records are added and refreshed by deterministic fetch scripts run by hand. Scheduled fetch-and-check workflows are staged in `.github/workflows-pending/` and are not switched on yet, so a change at the source appears here only after the next run.
 
