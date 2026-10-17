@@ -111,7 +111,7 @@ Repositories are organized on a per-state basis (`enacted-state-md`) containing 
 
 ## 7. Demand Capture & Private Demand Ledger
 
-- **Intake Surface (`request_coverage.html`)**: Clean, static web form hosted via GitHub Pages enabling users to submit coverage requests by jurisdiction and topic.
+- **Intake Surface**: Coverage requests are taken by the form at `https://enacted.app/request-coverage/`, served by the site and its Worker. This repository has no intake form (the old static `request_coverage.html` was removed on 2026-10-17).
 - **Private Counts**: Aggregate waitlist counts and subscriber metrics are strictly confidential and must never be published publicly or surfaced in marketing copy.
 - **Deterministic Demand Ledger (`scripts/demand_ledger.py`)**: Runs weekly to compile waitlist entries, feed subscriptions, and search demand into a confidential founder report (`reports/demand_ledger_YYYY-MM-DD.md`) with deterministic prioritization scores.
 

@@ -979,20 +979,25 @@ def run_verification():
         else:
             print("  ✓ [Gate 8.b] 0 forbidden strings found across all text files in staging.")
     
-        # (c) LICENSE contains the founder placeholder
+        # (c) Licences (founder ruling 2026-10-17): records CC0 1.0 in LICENSE-DATA, code MIT in LICENSE
         license_path = os.path.join(STAGING_DIR, "LICENSE")
-        if not os.path.exists(license_path):
-            print("  FAIL: LICENSE file missing in staging!")
+        license_data_path = os.path.join(STAGING_DIR, "LICENSE-DATA")
+        if not os.path.exists(license_path) or not os.path.exists(license_data_path):
+            print("  FAIL: LICENSE (MIT, code) or LICENSE-DATA (CC0 1.0, records) missing in staging!")
             failed_checks += 1
         else:
             with open(license_path, "r", encoding="utf-8") as f:
                 lic_content = f.read()
-            expected_lic_placeholder = "[FOUNDER: license ruling pending — CC0 proposed]"
-            if expected_lic_placeholder in lic_content:
-                print(f"  ✓ [Gate 8.c] LICENSE contains exact placeholder: '{expected_lic_placeholder}'.")
-            else:
-                print("  FAIL: LICENSE missing founder ruling placeholder!")
+            with open(license_data_path, "r", encoding="utf-8") as f:
+                lic_data_content = f.read()
+            if not lic_content.startswith("MIT License") or "Copyright (c) 2026 Swapp Technologies LLC" not in lic_content:
+                print("  FAIL: LICENSE is not the MIT licence with the Swapp Technologies LLC notice!")
                 failed_checks += 1
+            elif "CC0 1.0 Universal" not in lic_data_content:
+                print("  FAIL: LICENSE-DATA is not the CC0 1.0 Universal legal code!")
+                failed_checks += 1
+            else:
+                print("  ✓ [Gate 8.c] LICENSE is MIT (code) and LICENSE-DATA is CC0 1.0 (records).")
     
         # (d) README.md contains the exact posture line
         readme_path = os.path.join(STAGING_DIR, "README.md")
@@ -1007,6 +1012,11 @@ def run_verification():
                 print(f"  ✓ [Gate 8.d] README.md contains exact posture line.")
             else:
                 print("  FAIL: README.md missing required posture line!")
+                failed_checks += 1
+            if "LICENSE-DATA" in readme_content and "CC0 1.0" in readme_content and "MIT" in readme_content:
+                print("  ✓ [Gate 8.d] README.md names both licences and what each covers.")
+            else:
+                print("  FAIL: README.md does not say which files are CC0 1.0 and which are MIT!")
                 failed_checks += 1
     
         # (e) Check git commit author identity per Rule 9 if git repo

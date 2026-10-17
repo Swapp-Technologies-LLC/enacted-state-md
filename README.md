@@ -1,93 +1,114 @@
-# Enacted: Maryland Legal Repository (`enacted-state-md`)
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/readme/banner-dark.svg">
+    <img alt="Enacted — Maryland. What changed. What’s current. Who to ask." src="docs/readme/banner-light.svg" width="100%">
+  </picture>
+</p>
 
-This repository contains verified primary-source records of enacted Maryland land-use, zoning, and building law across all 24 county-level jurisdictions, statewide enabling statutes, and public water quality measurement records.
+<p align="center">
+  <img alt="Records: Markdown + YAML" src="docs/readme/badge-records.svg">
+  <img alt="Feeds: Atom 1.0 and JSON Feed 1.1" src="docs/readme/badge-feeds.svg">
+  <img alt="Provenance: SHA-256 per source" src="docs/readme/badge-provenance.svg">
+  <img alt="Models in pipeline: none" src="docs/readme/badge-models.svg">
+  <img alt="Checks: Python 3.12+" src="docs/readme/badge-python.svg">
+  <a href="LICENSE-DATA"><img alt="Records licence: CC0 1.0" src="docs/readme/badge-license-data.svg"></a>
+  <a href="LICENSE"><img alt="Code: MIT" src="docs/readme/badge-license-code.svg"></a>
+</p>
 
-**Parent Entity:** Swapp Technologies LLC (Organized in Maryland)  
-**Repository Scope:** Maryland Land-Use, Municipal Zoning Law & Public Water Quality  
-**Posture:** This repository records the enacted law. It does not advise, approve, determine, or certify anything.  
+# Enacted: Maryland records
 
----
+This repository records the enacted law. It does not advise, approve, determine, or certify anything.
 
-## 1. What This Repository Is
+Nothing here is legal advice, and using it does not create an attorney-client relationship with anyone. The government source cited in each record controls: a record may have been amended, superseded or corrected since it was fetched. If a decision depends on a rule, read the cited source and, where it matters, ask the office named for that jurisdiction or a licensed professional there.
 
-Enacted records what changed, when it took effect, and who to ask:
-1. **Verbatim Statutory & Measurement Records**: Quoted provisions mechanically extracted from primary enacted instruments and official agency reports.
-2. **Deterministic Version History**: Structured changes and legislative chronologies with exact effective dates.
-3. **Primary Municipal Contacts**: Official municipal planning, zoning, and utility departments responsible for administering each local jurisdiction.
+Browse these records on **[enacted.app](https://enacted.app/coverage/)**, or follow a county by feed at **[enacted.app/feeds](https://enacted.app/feeds/)**. Both are free.
 
-### Standard Verification Line
-*This repository records the enacted law. It does not advise, approve, determine, or certify anything.*  
-All text quotes, reports, shows, and records primary government documents. It does not provide legal advice or apply law to specific facts.
+## What's in it
 
----
+| Path | What it holds |
+| :-- | :-- |
+| `<county>/` | Zoning and land-use records for that jurisdiction, one Markdown file per instrument (council bill, ordinance, zoning text amendment) |
+| `<county>/authority.yaml` | Who to ask: the office's public line, quoted from the government's own contact page, with that page's SHA-256 |
+| `<county>/SOURCING_BLOCKED.md` | Why a jurisdiction has no records yet |
+| `state_statutes/` | Statewide enabling law: Land Use Article Divisions I and II, and the Critical Area Program |
+| `water/measurements/<system>/` | Published drinking-water results and notices for each water system (lead, copper, PFOA, PFOS), one file per parameter and year |
+| `water/regulator.yaml` | The Maryland Department of the Environment's Water Supply Program line, from a saved, hash-checked page |
+| `feeds/` | Atom and JSON feeds built from these records; the checker confirms every item maps to a record |
+| `.cache/` | Saved copies of the contact and regulator pages, so their hashes can be recomputed |
+| `coverage.json` | Every jurisdiction this repository tracks |
+| `verify_corpus_integrity.py`, `tests/`, `scripts/`, `generate_*.py` | The checks, and the deterministic tools that fetch records and build feeds and digests |
 
-## 2. Sourcing Standards & Aggregator Blocklist
+## Coverage
 
-All records in this repository are derived strictly from primary government portals (Maryland General Assembly, county legislative databases, Legistar systems, and official open data portals).
+8 of Maryland's 24 county-level jurisdictions have records. The [coverage page](https://enacted.app/coverage/) shows the same thing on a map.
 
-### Aggregator Hard Blocklist
-Under Swapp Technologies LLC record integrity rules, third-party code aggregators are strictly blocklisted:
-* **Municode** (`municode.com` / CivicPlus)
-* **American Legal Publishing** (`amlegal.com`)
-* **eCode360** (`ecode360.com` / General Code)
+| Jurisdiction | Folder | Status |
+| :-- | :-- | :-- |
+| Anne Arundel County | [`anne_arundel/`](anne_arundel/) | Records |
+| City of Baltimore | [`baltimore_city/`](baltimore_city/) | Records |
+| Baltimore County | [`baltimore_county/`](baltimore_county/) | Records |
+| Frederick County | [`frederick/`](frederick/) | Records |
+| Harford County | [`harford/`](harford/) | Records |
+| Howard County | [`howard/`](howard/) | Records |
+| Montgomery County | [`montgomery/`](montgomery/) | Records |
+| Prince George's County | [`prince_georges/`](prince_georges/) | Records |
+| Allegany County | [`allegany/`](allegany/) | Not covered yet: code published only on eCode360 ([details](allegany/SOURCING_BLOCKED.md)) |
+| Calvert County | [`calvert/`](calvert/) | Not covered yet: code published only on eCode360 ([details](calvert/SOURCING_BLOCKED.md)) |
+| Caroline County | [`caroline/`](caroline/) | Not covered yet: code published only on eCode360 ([details](caroline/SOURCING_BLOCKED.md)) |
+| Carroll County | [`carroll/`](carroll/) | Not covered yet: code published only on American Legal Publishing ([details](carroll/SOURCING_BLOCKED.md)) |
+| Cecil County | [`cecil/`](cecil/) | Not covered yet: code published only on eCode360 ([details](cecil/SOURCING_BLOCKED.md)) |
+| Charles County | [`charles/`](charles/) | Not covered yet: code published only on eCode360 ([details](charles/SOURCING_BLOCKED.md)) |
+| Dorchester County | [`dorchester/`](dorchester/) | Not covered yet: no countywide code; town codes only on General Code ([details](dorchester/SOURCING_BLOCKED.md)) |
+| Garrett County | [`garrett/`](garrett/) | Not covered yet: no countywide zoning; code only on American Legal Publishing ([details](garrett/SOURCING_BLOCKED.md)) |
+| Kent County | [`kent/`](kent/) | Not covered yet: code published only on eCode360 ([details](kent/SOURCING_BLOCKED.md)) |
+| Queen Anne's County | [`queen_annes/`](queen_annes/) | Not covered yet: code published only on eCode360 ([details](queen_annes/SOURCING_BLOCKED.md)) |
+| Somerset County | [`somerset/`](somerset/) | Not covered yet: no county code online; town codes only on eCode360 ([details](somerset/SOURCING_BLOCKED.md)) |
+| St. Mary's County | [`st_marys/`](st_marys/) | Not covered yet: code published only on Municode ([details](st_marys/SOURCING_BLOCKED.md)) |
+| Talbot County | [`talbot/`](talbot/) | Not covered yet: code published only on eCode360 ([details](talbot/SOURCING_BLOCKED.md)) |
+| Washington County | [`washington/`](washington/) | Not covered yet: code published only on eCode360 ([details](washington/SOURCING_BLOCKED.md)) |
+| Wicomico County | [`wicomico/`](wicomico/) | Not covered yet: code published only on eCode360 ([details](wicomico/SOURCING_BLOCKED.md)) |
+| Worcester County | [`worcester/`](worcester/) | Not covered yet: code published only on eCode360 ([details](worcester/SOURCING_BLOCKED.md)) |
 
-Jurisdictions whose codes are accessible only through blocklisted third-party aggregators contain a `SOURCING_BLOCKED.md` file detailing the evaluation and remain unpopulated. An unpopulated directory with a verified `SOURCING_BLOCKED.md` is a compliant, ratified state.
+Water systems with records: Anne Arundel County (`aa_broad_creek`, `aa_crofton_odenton`, `aa_crownsville`, `aa_glen_burnie`) and WSSC Water (`wssc_customer_tap`, `wssc_patuxent`, `wssc_potomac`).
 
----
+Records are added and refreshed by deterministic fetch scripts run by hand. Scheduled fetch-and-check workflows are staged in `.github/workflows-pending/` and are not switched on yet, so a change at the source appears here only after the next run.
 
-## 3. Ingestion Conventions & Multi-Topic Topology
+## How a record is made
 
-* **Multi-Topic State Repository**: Repositories are organized per state (`enacted-state-md`) containing all topics for that state (Land-Use/Zoning, Public Water Quality, PFAS, Data Centers). Topics are directories and tags, never separate repos.
-* **Measurement Records**: Public water measurement records live under `water/measurements/<system_slug>/<parameter>_<year>.md with explicit per-system attribution, governing limits, compliance dates, and basis`.
-* **Primary Document Hashes**: Every record file includes the full 64-character SHA-256 hash of the source document fetched at generation time (`source_sha256`).
-* **Fetch Timestamps**: Every record file includes the actual wall-clock ISO 8601 UTC timestamp of retrieval (`source_fetched_at`).
-* **The `LAST_INGESTED` Convention**: Automated feeds and periodic dispatches record the latest ingestion timestamp (`LAST_INGESTED: <ISO timestamp>`).
-* **Divergence Rules**: Where a summary page or legislative title diverges from the enacted instrument, the enacted text controls and the divergence is recorded.
+- **From the government's own site.** Each record names its source (`primary_source_url`, and `source_pdf` where the instrument is a file), the SHA-256 of the exact file fetched (`source_sha256`) and when it was fetched, in UTC (`source_fetched_at`).
+- **Quoted, not summarised.** Quoted text is copied mechanically from that file. Where a title or summary page differs from the enacted text, the enacted text controls and the difference is noted in the record.
+- **No commercial code publishers.** Sites such as Municode, American Legal Publishing, eCode360 and enCodePlus are not used. When a jurisdiction's code is published only there, its folder holds a `SOURCING_BLOCKED.md` saying what was checked, and no records.
+- **No news or commentary.** Articles and opinion pieces are never cited.
+- **No AI models.** Nothing in fetching, building, comparing or sending these records calls a model.
 
----
+### Record fields
 
-## 4. News & Journalistic Sourcing Policy (Founder Ruling 2026-09-15)
+Every legislative record opens with YAML front matter that includes `primary_source_url`, `source_sha256`, `source_fetched_at`, `action_status` and `effective_date`; [PROVENANCE.md](PROVENANCE.md) lists the full set. A date the source doesn't state is written as `[pending verification]`, never left blank.
 
-* **No News Articles or Commentary in Corpus:** News articles, journalistic stories, op-eds, blogs, and press commentary are NEVER linked, quoted, or surfaced in this repository, its syndication feeds, or client dispatches.
-* **Internal Operational Trigger Only:** News mentions and public tips serve exclusively as operational triggers to initiate an immediate deterministic poll of the primary government portal. If no primary legislative instrument or official measurement report is found on the official portal, no record is generated.
-* **Official Government Press Releases:** Official agency press releases and formal public notices published by government bodies are classified as primary records and may only be ingested under hard provenance rules (HTTP 200, cryptographic SHA-256 hash, ISO timestamp, mechanical quotation).
+## Checking the records yourself
 
----
+```bash
+pip install pyyaml jinja2 feedparser pytest
+python verify_corpus_integrity.py   # re-fetches cited sources, so it needs network access
+python -m pytest tests
+```
 
-## 5. Syndication Feeds & Demand Surface
+Every hash can also be checked by hand: download the file a record cites (or open the matching page in `.cache/`) and compare its SHA-256 with the record's `source_sha256`.
 
-* **Syndication Feeds (`feeds/`)**: Published via GitHub Pages at `feeds/<jur>/<topic>.atom|json`, statewide topic aggregates `feeds/topics/<topic>.atom|json`, and master aggregate `feeds/zoning.atom|json`.
-* **Request Coverage Surface (`request_coverage.html`)**: Static intake form enabling users to request primary-source coverage for their jurisdiction and topic.
-* **Confidential Demand Ledger (`scripts/demand_ledger.py`)**: Generates deterministic weekly internal demand summaries for founder review. Aggregate demand counts are strictly private and never published.
+## Reuse and licences
 
----
+- **Records: CC0 1.0** ([LICENSE-DATA](LICENSE-DATA)). The record files and their YAML metadata, the contact files, the feeds, `coverage.json` and the documentation are dedicated to the public domain. Use them for anything, with no permission or credit needed. If you do give credit, a link to the cited government source is the most useful kind.
+- **Code: MIT** ([LICENSE](LICENSE)). `verify_corpus_integrity.py`, `generate_feeds.py`, `generate_newsletter.py`, `scripts/`, `tests/` and the workflow files. Keep the copyright notice when you copy them.
+- **Not covered by either.** Text quoted from a government document keeps whatever status it has at its source; the dedication covers what Swapp Technologies added (the selection, structure and metadata). The saved pages in `.cache/` belong to their publishers and are kept only so their hashes can be recomputed. The Enacted name, its mark and the images in `docs/readme/` are not licensed.
 
-## 6. Jurisdiction Directory
+## Corrections
 
-| Jurisdiction | Status | Primary Code / Ingestion Framework |
-| :--- | :--- | :--- |
-| **Statewide** | Populated | Land Use Article (Divisions I & II), Critical Area Program |
-| **Anne Arundel** | Populated | Article 18 (Zoning), Council Bills 18-26, 28-26, 57-26; Public Water (PWSID MD0020004, MD0020008, MD0020009) |
-| **Baltimore City** | Populated | Article 32 (Zoning), Ordinances 26-128, 26-146 |
-| **Baltimore County** | Populated | BCZR, Council Bills 9-26, 21-25 |
-| **Frederick** | Populated | Chapter 1-19 (Zoning), Council Bills 23-21, 23-20 |
-| **Harford** | Populated | Chapter 267 (Zoning Code) |
-| **Howard** | Populated | HCZR, Council Bills 25-2026, 24-2026, 04-2026 |
-| **Montgomery** | Populated | Chapter 59 (Zoning), Socrata ZTA Feed Index; WSSC Water (PWSID MD0150004) |
-| **Prince George's** | Populated | Subtitle 27 (Zoning), Council Bills CB-015-2024, CB-020-2026 |
-| **Allegany** | Blocked | `SOURCING_BLOCKED.md` (eCode360) |
-| **Calvert** | Blocked | `SOURCING_BLOCKED.md` (eCode360) |
-| **Caroline** | Blocked | `SOURCING_BLOCKED.md` (eCode360) |
-| **Carroll** | Blocked | `SOURCING_BLOCKED.md` (American Legal Publishing) |
-| **Cecil** | Blocked | `SOURCING_BLOCKED.md` (eCode360) |
-| **Charles** | Blocked | `SOURCING_BLOCKED.md` (eCode360) |
-| **Dorchester** | Blocked | `SOURCING_BLOCKED.md` (No countywide code / General Code) |
-| **Garrett** | Blocked | `SOURCING_BLOCKED.md` (No countywide code / AmLegal) |
-| **Kent** | Blocked | `SOURCING_BLOCKED.md` (eCode360) |
-| **Queen Anne's** | Blocked | `SOURCING_BLOCKED.md` (eCode360) |
-| **Somerset** | Blocked | `SOURCING_BLOCKED.md` (No online primary portal / eCode360) |
-| **St. Mary's** | Blocked | `SOURCING_BLOCKED.md` (Municode) |
-| **Talbot** | Blocked | `SOURCING_BLOCKED.md` (eCode360) |
-| **Washington** | Blocked | `SOURCING_BLOCKED.md` (eCode360) |
-| **Wicomico** | Blocked | `SOURCING_BLOCKED.md` (eCode360) |
-| **Worcester** | Blocked | `SOURCING_BLOCKED.md` (eCode360) |
+If you find an error (a wrong date, a broken source link, a quote that doesn't match its source), open an issue on this repository with the record's path and the source you checked. A correction goes through the same checks as every other record.
+
+Enacted can't say whether or how a rule applies to a particular property, project or license. The office listed in that jurisdiction's `authority.yaml` can.
+
+## About
+
+Published by Swapp Technologies LLC (Maryland). The site that presents these records is [enacted.app](https://enacted.app). Developer notes, including how the scheduled workflows are switched on, are in [README-dev.md](README-dev.md).
+
+Related repositories: [enacted-state-dc](https://github.com/Swapp-Technologies-LLC/enacted-state-dc) · [enacted-state-va](https://github.com/Swapp-Technologies-LLC/enacted-state-va) · [enacted-federal](https://github.com/Swapp-Technologies-LLC/enacted-federal)
