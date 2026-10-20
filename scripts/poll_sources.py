@@ -5,22 +5,31 @@ Swapp Technologies LLC (Maryland)
 
 Invariant: Zero model in the path (Rule 10). Hard generation rule only.
 Exits non-zero with failing selector / URL if any required extraction fails.
+Updates status/sources.json and manages auto-alert issues (ig02).
 """
 
 import sys
 import argparse
 import os
+from pathlib import Path
 
 if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
 
-# Ensure scripts directory is in path
 SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(SCRIPTS_DIR)
 if SCRIPTS_DIR not in sys.path:
     sys.path.insert(0, SCRIPTS_DIR)
 
 import poll_montgomery
 import poll_anne_arundel
+from crawler import EnactedCrawler
+from source_health import (
+    load_source_health,
+    save_source_health,
+    manage_source_alert_issues
+)
+
 
 def main():
     parser = argparse.ArgumentParser(description="Deterministic Legislative Ingestion Poller Dispatcher")
@@ -32,27 +41,34 @@ def main():
     )
     args = parser.parse_args()
 
+    status_path = Path(ROOT_DIR) / "status" / "sources.json"
+    health_data = load_source_health(status_path)
+    crawler = EnactedCrawler()
+
     total_ingested = 0
     errors = []
 
     if args.jurisdiction in ["all", "montgomery"]:
         try:
             print("\n=== Running Montgomery County Poller ===")
-            total_ingested += poll_montgomery.poll()
+            total_ingested += poll_montgomery.poll(crawler=crawler, health_data=health_data)
         except Exception as e:
             errors.append(("montgomery", poll_montgomery.API_ENDPOINT, str(e)))
 
     if args.jurisdiction in ["all", "anne_arundel"]:
         try:
             print("\n=== Running Anne Arundel County Poller ===")
-            total_ingested += poll_anne_arundel.poll()
+            total_ingested += poll_anne_arundel.poll(crawler=crawler, health_data=health_data)
         except Exception as e:
             errors.append(("anne_arundel", poll_anne_arundel.PORTAL_URL, str(e)))
+
+    save_source_health(health_data, status_path)
+    manage_source_alert_issues(health_data)
 
     print("\n=======================================================")
     print(f"Deterministic Polling Run Completed.")
     print(f"Total new/updated records ingested: {total_ingested}")
-    
+
     if errors:
         print(f"\nCRITICAL: {len(errors)} poller(s) failed during execution:", file=sys.stderr)
         for jur, url, err in errors:
@@ -62,6 +78,7 @@ def main():
     else:
         print("All pollers completed successfully with 0 errors.")
         sys.exit(0)
+
 
 if __name__ == "__main__":
     main()

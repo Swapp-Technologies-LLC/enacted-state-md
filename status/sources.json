@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "last_run": "2026-10-20T16:00:00Z",
+  "sources": {
+    "anne_arundel_zoning": {
+      "consecutive_failures": 0,
+      "last_changed": "2026-09-14T00:00:00Z",
+      "last_reached": "2026-10-20T16:00:00Z",
+      "source_id": "anne_arundel_zoning",
+      "status": "ok",
+      "url": "https://www.aacounty.org/county-council/legislation"
+    },
+    "montgomery_zoning": {
+      "consecutive_failures": 0,
+      "last_changed": "2026-09-14T00:00:00Z",
+      "last_reached": "2026-10-20T16:00:00Z",
+      "source_id": "montgomery_zoning",
+      "status": "ok",
+      "url": "https://data.montgomerycountymd.gov/resource/3hex-pk9g.json?$order=intro_date%20DESC&$limit=25"
+    },
+    "aa_dpw_wqr": {
+      "consecutive_failures": 0,
+      "last_changed": "2026-09-14T00:00:00Z",
+      "last_reached": "2026-10-20T16:00:00Z",
+      "source_id": "aa_dpw_wqr",
+      "status": "ok",
+      "url": "https://www.aacounty.org/sites/default/files/2026-06/water-quality-report-2025.pdf"
+    },
+    "wssc_wqr": {
+      "consecutive_failures": 0,
+      "last_changed": "2026-09-14T00:00:00Z",
+      "last_reached": "2026-10-20T16:00:00Z",
+      "source_id": "wssc_wqr",
+      "status": "ok",
+      "url": "https://www.wsscwater.com/sites/default/files/2026-06/2025_Water_Quality_Report_508.pdf"
+    }
+  }
+}

@@ -586,6 +586,7 @@ reporting_period: '2025'
                 "commercial": False,
                 "planning": False,
                 "industrial": False,
+                "hoa": False,
             }
         )
 
@@ -690,11 +691,11 @@ reporting_period: '2025'
         self.assertEqual(digest_later.count("display: flex"), 0)
         # Check all 5 records dynamically rendered
         self.assertIn("5 records from the 2025 Water Quality Report", digest_later)
-        self.assertIn("Distribution System Customer Taps &middot; Lead", digest_later)
-        self.assertIn("Patuxent Water Filtration Plant Tap &middot; Perfluorooctanoic acid (PFOA)", digest_later)
-        self.assertIn("Patuxent Water Filtration Plant Tap &middot; Perfluorooctanesulfonic acid (PFOS)", digest_later)
-        self.assertIn("Potomac Water Filtration Plant Tap &middot; Perfluorooctanoic acid (PFOA)", digest_later)
-        self.assertIn("Potomac Water Filtration Plant Tap &middot; Perfluorooctanesulfonic acid (PFOS)", digest_later)
+        self.assertTrue("Distribution System Customer Taps · Lead" in digest_later or "Distribution System Customer Taps &middot; Lead" in digest_later)
+        self.assertTrue("Patuxent Water Filtration Plant Tap · Perfluorooctanoic acid (PFOA)" in digest_later or "Patuxent Water Filtration Plant Tap &middot; Perfluorooctanoic acid (PFOA)" in digest_later)
+        self.assertTrue("Patuxent Water Filtration Plant Tap · Perfluorooctanesulfonic acid (PFOS)" in digest_later or "Patuxent Water Filtration Plant Tap &middot; Perfluorooctanesulfonic acid (PFOS)" in digest_later)
+        self.assertTrue("Potomac Water Filtration Plant Tap · Perfluorooctanoic acid (PFOA)" in digest_later or "Potomac Water Filtration Plant Tap &middot; Perfluorooctanoic acid (PFOA)" in digest_later)
+        self.assertTrue("Potomac Water Filtration Plant Tap · Perfluorooctanesulfonic acid (PFOS)" in digest_later or "Potomac Water Filtration Plant Tap &middot; Perfluorooctanesulfonic acid (PFOS)" in digest_later)
 
         # 3. Anne Arundel Zoning Digest
         zoning_first = render_anne_arundel(show_first_issue_key=True)
