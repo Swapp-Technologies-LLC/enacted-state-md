@@ -25,33 +25,39 @@ When publishing this repository on GitHub under the organization account, config
      - Do not allow direct pushes to `main`: `Checked`
 3. **Auto-Merge Policy:**
    - **Auto-merge stays strictly OFF for every source** until the founder issues an explicit ruling per source based on an established track record.
-   - All automated pull requests opened by `ingest.yml` require human review before merge.
+   - All automated pull requests require human review before merge; a human merges.
 
 ---
 
-## 2. CI Workflow Activation (Post-Push)
+## 2. CI Workflows & Bot Automation
 
-The automated workflows are staged in `.github/workflows-pending/`:
-- `ingest.yml`: Scheduled deterministic legislative polling (Montgomery daily, Anne Arundel twice weekly). Opens pull requests via `peter-evans/create-pull-request`. Never pushes directly to `main`.
-- `verify.yml`: Triggers on `push` and `pull_request` to `main`. Runs `python verify_corpus_integrity.py` and blocks merge on any red gate.
+The repository contains three deterministic workflows under `.github/workflows/`:
+- `verify.yml`: Runs on `push` and `pull_request` targeting `main` (and manual `workflow_dispatch`). The workflow job is `Record Integrity & Gate Suite`, which serves as the required status check for pull requests. It runs `scripts/wording_gate.py` and `verify_corpus_integrity.py` and blocks merging on any failing gate.
+- `ingest-zoning.yml`: Deterministic legislative record harvest with zero model in the path. Polls primary government portals, regenerates syndication feeds and newsletters, runs verification gates, and opens pull requests. It never pushes directly to `main`.
+- `ingest-water.yml`: Deterministic drinking water source and report checker with zero model in the path. Checks primary water authority portals, re-hashes and caches reports, runs verification gates, and opens pull requests. It never pushes directly to `main`.
 
-### Activation Step:
-After the founder creates the GitHub organization, creates the `enacted-state-md` repository, and completes the initial push:
-```bash
-git mv .github/workflows-pending .github/workflows
-git commit -m "chore(ci): activate ingestion and verification workflows"
-git push origin main
-```
+### Schedules:
+The schedules are currently commented out in both ingestion workflows (`# Disabled until /bot/ is live (sa06) and ig03 has run`) until `/bot/` is live and the first supervised run has occurred. The planned staggered daily UTC cron times specified in the workflow comments are:
+- `ingest-zoning.yml`: planned for 06:15 UTC (`15 6 * * *`)
+- `ingest-water.yml`: planned for 06:45 UTC (`45 6 * * *`)
 
-### Required Repository Secret (Founder Setup):
-Before activating `ingest.yml`, configure the following secret under **Settings > Secrets and variables > Actions > New repository secret**:
-- **Name:** `ENACTED_BOT_TOKEN`
-- **Type:** Fine-grained Personal Access Token (PAT) created by the founder for the bot account.
-- **Permissions Required:**
-  - Repository permissions:
-    - `Contents: Read and write` (to branch and commit harvested records)
-    - `Pull requests: Read and write` (to open automated pull requests)
-- **Why this is required:** Pull requests created with GitHub's default `GITHUB_TOKEN` do not trigger downstream workflow runs (GitHub Actions security policy). Because `verify.yml` must execute and pass its complete gate suite on all automated ingestion PRs before human review and merge, `ingest.yml` uses `token: ${{ secrets.ENACTED_BOT_TOKEN }}` for the `peter-evans/create-pull-request` step. All other steps (such as opening issue alerts on poller failure) continue to use the standard `GITHUB_TOKEN`.
+### Bot Identity:
+Pull requests are opened by the **Swapp Bot** GitHub App, installed on this repository only. Each ingestion run mints a short-lived token scoped to this repository using `actions/create-github-app-token`. This is why `verify.yml` runs on bot pull requests; pull requests opened with `GITHUB_TOKEN` would not trigger it under GitHub Actions security policy. `GITHUB_TOKEN` stays read-only apart from `issues: write` for failure alerts.
+
+### Required Repository Secrets:
+Before automated ingestion runs, the following secrets must be configured under **Settings > Secrets and variables > Actions > Repository secrets**:
+- `SWAPP_BOT_CLIENT_ID`: The GitHub App's Client ID (shown on the App's General settings page).
+- `SWAPP_BOT_PRIVATE_KEY`: The GitHub App's private key (`.pem` format).
+
+### Labels the Workflows Use:
+The ingestion workflows use four repository labels when opening failure issues or pull requests. They must exist in the repo; a missing label means the failure issue is not created:
+- `ingestion-failure`: Applied to issues opened when a deterministic poller or verification gate fails.
+- `source-alert`: Applied alongside `ingestion-failure` when a poller selector fails against a primary government portal.
+- `automated-ingest`: Applied to pull requests opened for automated record or report updates.
+- `needs-review`: Applied to all automated pull requests to flag them for human review before merge.
+
+### Merging:
+The `main` branch is protected by a ruleset: pull request with one approving review, the verify check, no force push, no deletion. A human merges; auto-merge is off.
 
 ---
 

@@ -21,10 +21,14 @@ Tests:
     a status flip -> updates status/sources.json.
 11. status/sources.json schema validation.
 12. Stub issue manager lifecycle: open on failure, comment on repeat, close on recovery.
+13. README-dev.md doc-hygiene: zero retired tokens (ENACTED_BOT_TOKEN, workflows-pending,
+    SWAPP_BOT_APP_ID, Personal Access Token), names SWAPP_BOT_CLIENT_ID & SWAPP_BOT_PRIVATE_KEY,
+    and all four workflow labels; all referenced workflow files exist.
 """
 
 import os
 import sys
+import re
 import json
 import yaml
 import time
@@ -655,6 +659,49 @@ class TestIngestSliceI1(unittest.TestCase):
         self.assertEqual(len(actions), 1)
         self.assertEqual(actions[0]["action"], "closed")
         self.assertEqual(len(client.list_open_issues()), 0)
+
+    # 13. README-dev.md Doc-Hygiene Test
+    def test_readme_dev_doc_hygiene(self):
+        readme_dev_path = REPO_DIR / "README-dev.md"
+        self.assertTrue(readme_dev_path.exists(), "README-dev.md must exist in repository root")
+        content = readme_dev_path.read_text(encoding="utf-8")
+
+        banned_tokens = [
+            "ENACTED_BOT_TOKEN",
+            "workflows-pending",
+            "SWAPP_BOT_APP_ID",
+            "Personal Access Token",
+        ]
+        for token in banned_tokens:
+            self.assertNotIn(
+                token, content,
+                f"Forbidden stale token '{token}' found in README-dev.md"
+            )
+
+        required_tokens = [
+            "SWAPP_BOT_CLIENT_ID",
+            "SWAPP_BOT_PRIVATE_KEY",
+            "ingestion-failure",
+            "source-alert",
+            "automated-ingest",
+            "needs-review",
+        ]
+        for token in required_tokens:
+            self.assertIn(
+                token, content,
+                f"Required token '{token}' missing from README-dev.md"
+            )
+
+        # Every workflow file named in README-dev.md exists in .github/workflows/
+        workflows_dir = REPO_DIR / ".github" / "workflows"
+        workflow_mentions = set(re.findall(r"[\w-]+\.ya?ml", content))
+        self.assertTrue(len(workflow_mentions) > 0, "Expected workflow references in README-dev.md")
+        for wf_name in workflow_mentions:
+            wf_file = workflows_dir / wf_name
+            self.assertTrue(
+                wf_file.exists(),
+                f"Workflow '{wf_name}' named in README-dev.md does not exist in .github/workflows/"
+            )
 
 
 if __name__ == "__main__":
