@@ -1,0 +1,79 @@
+[
+  {
+    "zta_no": "24-01",
+    "title": "Household Living: Civic and Institutional Users",
+    "zta": "https://www.montgomerycountymd.gov/COUNCIL/Resources/Files/20240116_1A.pdf",
+    "ordinance_no": "20-12",
+    "ordinance": {
+      "url": "https://www.montgomerycountymd.gov/COUNCIL/Resources/Files/ZTA%2024-01(1).pdf"
+    },
+    "analyst": "Livhu Ndou",
+    "sponsor_s": "Stewart, Friedson",
+    "co_sponsor_s_": "Fani-Gonazalez,Glass, Sayles, Mink, Luedtke, Balcombe, Albornoz, Katz",
+    "introduction_date": "1/16/2024",
+    "introduction_report": "https://www.montgomerycountymd.gov/COUNCIL/Resources/Files/20240116_1A.pdf",
+    "public_hearing_date": "2024-02-27T00:00:00.000",
+    "public_hearing_report": {
+      "url": "https://montgomerycountymd.granicus.com/MetaViewer.php?view_id=169&clip_id=17207&meta_id=172645"
+    },
+    "action_date": "2024-04-02T00:00:00.000",
+    "action_report": {
+      "url": "https://montgomerycountymd.granicus.com/MetaViewer.php?view_id=169&clip_id=17265&meta_id=174717"
+    },
+    "action_addendum": {
+      "url": "https://montgomerycountymd.granicus.com/MetaViewer.php?view_id=169&clip_id=17226&meta_id=173215"
+    },
+    "committee": "PHP",
+    "worksession_date": "3/11/2024",
+    "worksession_report": {
+      "url": "https://www.montgomerycountymd.gov/COUNCIL/Resources/Files/20240311_PHP2.pdf"
+    },
+    "action_status": "Adopted",
+    "adopted_date": "4/2/2024",
+    "effective_date": "4/22/2024"
+  },
+  {
+    "zta_no": "23-11",
+    "title": "Regulatory Approvals: Conditional Use",
+    "zta": "https://www.montgomerycountymd.gov/COUNCIL/Resources/Files/20240205_PHP2-3.pdf",
+    "ordinance_no": "20-09",
+    "ordinance": {
+      "url": "https://www.montgomerycountymd.gov/COUNCIL/Resources/Files/CORRECTED%20%20-%20ZTA%2023-11.pdf"
+    },
+    "analyst": "Livhu Ndou",
+    "sponsor_s": "Friedson",
+    "introduction_date": "12/12/2023",
+    "introduction_report": "https://montgomerycountymd.granicus.com/MetaViewer.php?view_id=169&clip_id=17095&meta_id=169126",
+    "public_hearing_date": "2024-01-23T00:00:00.000",
+    "public_hearing_report": {
+      "url": "https://montgomerycountymd.granicus.com/MetaViewer.php?view_id=169&clip_id=17120&meta_id=170249"
+    },
+    "action_date": "2024-02-13T00:00:00.000",
+    "action_report": {
+      "url": "https://montgomerycountymd.granicus.com/MetaViewer.php?view_id=169&clip_id=17181&meta_id=171979"
+    },
+    "committee": "PHP",
+    "worksession_date": "2/5/2024",
+    "worksession_report": {
+      "url": "https://montgomerycountymd.granicus.com/MetaViewer.php?view_id=169&clip_id=17145&meta_id=171275"
+    },
+    "action_status": "Adopted",
+    "adopted_date": "2/13/2023",
+    "effective_date": "3/4/2024"
+  },
+  {
+    "zta_no": "23-09",
+    "title": "Farming: Incidental Outdoor Stays",
+    "zta": "https://www.montgomerycountymd.gov/COUNCIL/Resources/Files/20240116_5-5.pdf",
+    "analyst": "Livhu Ndou",
+    "sponsor_s": "Fani-Gonzalez",
+    "co_sponsor_s_": "Glass, Friedson, Sayles",
+    "introduction_date": "11/7/2023",
+    "introduction_report": "https://montgomerycountymd.granicus.com/MetaViewer.php?view_id=169&clip_id=17020&meta_id=167133",
+    "public_hearing_date": "2024-01-16T00:00:00.000",
+    "public_hearing_report": {
+      "url": "https://montgomerycountymd.granicus.com/MetaViewer.php?view_id=169&clip_id=17100&meta_id=169692"
+    },
+    "committee": "PHP"
+  }
+]

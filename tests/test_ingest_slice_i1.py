@@ -60,6 +60,9 @@ from source_health import (
     get_iso_now
 )
 from check_water_sources import run_water_checks, load_all_system_sources
+from bs4 import BeautifulSoup
+import poll_montgomery
+import poll_anne_arundel
 
 
 class TestIngestSliceI1(unittest.TestCase):
@@ -702,6 +705,148 @@ class TestIngestSliceI1(unittest.TestCase):
                 wf_file.exists(),
                 f"Workflow '{wf_name}' named in README-dev.md does not exist in .github/workflows/"
             )
+
+    # 14. Poller Code No-Inference Grep Test
+    def test_poller_code_no_inference_grep(self):
+        scripts_to_check = [
+            SCRIPTS_DIR / "poll_montgomery.py",
+            SCRIPTS_DIR / "poll_anne_arundel.py",
+            SCRIPTS_DIR / "check_water_sources.py",
+        ]
+        banned_patterns = [
+            ("[pending verification]", "placeholder sponsor/status default"),
+            ('or "Introduced"', "inferred fallback status"),
+            ("or 'Introduced'", "inferred fallback status"),
+            ('"action_status": "Introduced"', "hardcoded action_status default"),
+            ("'action_status': 'Introduced'", "hardcoded action_status default"),
+            ("montgomerycountymd.gov/COUNCIL/Resources/Files/zta/", "constructed URL template"),
+        ]
+        for script_path in scripts_to_check:
+            self.assertTrue(script_path.exists(), f"Script {script_path.name} must exist")
+            text = script_path.read_text(encoding="utf-8")
+            for pattern, reason in banned_patterns:
+                self.assertNotIn(
+                    pattern, text,
+                    f"Forbidden pattern '{pattern}' ({reason}) found in {script_path.name}"
+                )
+
+    # 15. Montgomery Schema Contract Validation Test
+    def test_montgomery_schema_contract_validation(self):
+        fixture_path = TESTS_DIR / "fixtures" / "montgomery_zoning_response.json"
+        contract_path = REPO_DIR / "sources" / "contracts" / "montgomery_zoning.yaml"
+        self.assertTrue(fixture_path.exists(), "Montgomery response fixture must exist")
+        self.assertTrue(contract_path.exists(), "Montgomery contract must exist")
+
+        fixture_data = json.loads(fixture_path.read_text(encoding="utf-8"))
+        contract = yaml.safe_load(contract_path.read_text(encoding="utf-8"))
+
+        # Real fixture passes contract check
+        poll_montgomery.check_schema_contract(fixture_data, contract)
+
+        # Missing or renamed field raises "schema changed: <field>"
+        bad_fixture = [{"renamed_col": "val", "title": "Some Title"}]
+        with self.assertRaises(ValueError) as ctx:
+            poll_montgomery.check_schema_contract(bad_fixture, contract)
+        self.assertIn("schema changed: zta_no", str(ctx.exception))
+
+    # 16. Montgomery Stale Source Handling Test
+    def test_montgomery_stale_source_handling(self):
+        mock_crawler = EnactedCrawler(min_interval=0.0, obey_robots=False)
+        mock_crawler.fetch = MagicMock(side_effect=AssertionError("Fetch must not be called when source is stale"))
+
+        stale_health = {
+            "sources": {
+                "montgomery_zoning": {
+                    "status": "stale",
+                    "stale_reason": "newest row 24-01, metadata date June 6, 2024"
+                }
+            }
+        }
+        res = poll_montgomery.poll(crawler=mock_crawler, health_data=stale_health)
+        self.assertEqual(res, 0)
+        mock_crawler.fetch.assert_not_called()
+
+    # 17. Montgomery Missing Required Fields Skips Without Defaults
+    def test_montgomery_missing_required_fields_skips_without_defaults(self):
+        tmp_dir = self.tmp_path / "montgomery_out"
+        tmp_dir.mkdir(parents=True, exist_ok=True)
+
+        # Batch has contract-satisfying record plus record missing action_status (like live ZTA 23-09)
+        batch = [
+            {
+                "zta_no": "24-01",
+                "title": "Existing Valid ZTA",
+                "introduction_date": "2024-01-16",
+                "sponsor_s": "Councilmember Stewart",
+                "action_status": "Adopted",
+                "ordinance": {"url": "https://example.gov/24-01.pdf"}
+            },
+            {
+                "zta_no": "99-99",
+                "title": "Test Missing Status ZTA",
+                "introduction_date": "2026-01-01",
+                "sponsor_s": "Councilmember Test",
+                "ordinance": {"url": "https://example.gov/doc.pdf"}
+                # action_status intentionally omitted
+            }
+        ]
+
+        # Simulate 24-01 already existing on disk so it is not re-ingested
+        (tmp_dir / "zta_24_01.md").write_text("existing", encoding="utf-8")
+
+        with patch("poll_montgomery.MONTGOMERY_DIR", str(tmp_dir)):
+            mock_crawler = EnactedCrawler(min_interval=0.0, obey_robots=False)
+            mock_crawler.fetch = MagicMock(return_value=(True, 200, json.dumps(batch).encode("utf-8"), ""))
+            # Call poll with non-stale health_data
+            ingested = poll_montgomery.poll(
+                crawler=mock_crawler,
+                health_data={"sources": {"montgomery_zoning": {"status": "ok"}}}
+            )
+            self.assertEqual(ingested, 0)
+            # Only zta_24_01.md exists; 99-99 was skipped without defaulting
+            created_files = [f.name for f in tmp_dir.glob("*.md")]
+            self.assertEqual(created_files, ["zta_24_01.md"], "Record missing required field must be skipped")
+
+    # 18. Anne Arundel Schema Contract Validation Test
+    def test_anne_arundel_schema_contract_validation(self):
+        fixture_path = TESTS_DIR / "fixtures" / "anne_arundel_portal_response.html"
+        contract_path = REPO_DIR / "sources" / "contracts" / "anne_arundel_zoning.yaml"
+        self.assertTrue(fixture_path.exists(), "Anne Arundel response fixture must exist")
+        self.assertTrue(contract_path.exists(), "Anne Arundel contract must exist")
+
+        html_text = fixture_path.read_text(encoding="utf-8")
+        soup = BeautifulSoup(html_text, "html.parser")
+        contract = yaml.safe_load(contract_path.read_text(encoding="utf-8"))
+
+        # Real fixture has 0 tables and 0 tr rows -> must fail schema contract
+        with self.assertRaises(ValueError) as ctx:
+            poll_anne_arundel.check_html_schema_contract(soup, contract)
+        self.assertIn("schema changed: table", str(ctx.exception))
+
+    # 19. Anne Arundel Missing Required Fields Skips
+    def test_anne_arundel_missing_required_fields_skips(self):
+        tmp_dir = self.tmp_path / "aa_out"
+        tmp_dir.mkdir(parents=True, exist_ok=True)
+
+        # Row HTML missing action_status and missing title match
+        mock_html = (
+            "<html><body><table><tr>"
+            "<td>Bill No. 99-99</td>"
+            "<td><a href=\"/sites/default/files/bill-99-99.pdf\">PDF</a></td>"
+            "</tr></table></body></html>"
+        )
+        mock_crawler = EnactedCrawler(min_interval=0.0, obey_robots=False)
+        mock_crawler.fetch = MagicMock(return_value=(True, 200, mock_html.encode("utf-8"), ""))
+
+        with patch("poll_anne_arundel.AA_DIR", str(tmp_dir)):
+            # Pass empty contract so contract selector passes, isolating field extraction skip
+            ingested = poll_anne_arundel.poll(
+                crawler=mock_crawler,
+                health_data={"sources": {"anne_arundel_zoning": {"status": "ok"}}},
+                contract_path="/nonexistent/contract.yaml"
+            )
+            self.assertEqual(ingested, 0)
+            self.assertEqual(len(list(tmp_dir.glob("*.md"))), 0)
 
 
 if __name__ == "__main__":

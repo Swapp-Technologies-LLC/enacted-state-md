@@ -1,0 +1,18 @@
+# Schema contract for Anne Arundel County Council Zoning Legislation
+# Captured from portal read on 2026-10-27T07:19:23Z
+source_id: anne_arundel_zoning
+source_type: html_scrape
+endpoint: https://www.aacounty.org/county-council/legislation
+
+required_selectors:
+  - table
+  - tr
+
+required_fields:
+  - bill_no
+  - title
+  - action_status
+  - pdf_url
+
+audit_status: failed_selector_check
+audit_note: "Live page is informational landing page with 0 table and 0 tr elements. Legislation links point offsite/subpages."
