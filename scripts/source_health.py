@@ -139,7 +139,10 @@ def save_source_health(
                 "| Source ID | Status | Consecutive Failures | Last Reached | Last Changed |",
                 "| :--- | :--- | :--- | :--- | :--- |"
             ]
-            for sid, sinfo in sorted(health_data.get("sources", {}).items()):
+            # List stale sources first, then remaining sources alphabetically
+            source_items = list(health_data.get("sources", {}).items())
+            source_items.sort(key=lambda item: (0 if item[1].get("status") == "stale" else 1, item[0]))
+            for sid, sinfo in source_items:
                 st = sinfo.get("status", "unknown")
                 fails = sinfo.get("consecutive_failures", 0)
                 reached = sinfo.get("last_reached") or "never"
@@ -351,10 +354,32 @@ def manage_source_alert_issues(
         failures = info.get("consecutive_failures", 0)
         url = info.get("url", "")
         status_msg = info.get("status", "")
+        stale_reason = info.get("stale_reason", "")
 
         existing_issue = issue_by_source.get(source_id)
 
-        if failures > 0:
+        if status_msg == "stale":
+            if existing_issue is None:
+                title = f"[Source Alert] {source_id} stale — awaiting replacement"
+                reason_text = stale_reason or "Source dataset is stale."
+                body = (
+                    f"### Automated Ingestion Source Health Alert (Stale Source)\n\n"
+                    f"- **Source ID:** `{source_id}`\n"
+                    f"- **URL:** {url}\n"
+                    f"- **Status:** `stale`\n"
+                    f"- **Reason:** {reason_text}\n"
+                    f"- **First Detected:** {now}\n\n"
+                    f"This source is marked stale and requires replacement or upstream update. "
+                    f"Per Rule 10, no model was called and no fields were inferred. "
+                    f"This issue will remain open while the source is stale."
+                )
+                num = issue_client.create_issue(title, body, labels=["source-alert", "stale-source"])
+                actions.append({"action": "opened", "source_id": source_id, "issue_number": num})
+            else:
+                num = existing_issue.get("number", 0)
+                actions.append({"action": "kept_open", "source_id": source_id, "issue_number": num})
+
+        elif failures > 0:
             if existing_issue is None:
                 title = f"[Source Alert] {source_id} unreachable"
                 body = (
@@ -379,7 +404,7 @@ def manage_source_alert_issues(
                 issue_client.comment_issue(num, comment_body)
                 actions.append({"action": "commented", "source_id": source_id, "issue_number": num})
 
-        elif failures == 0:
+        elif failures == 0 and status_msg != "stale":
             if existing_issue is not None:
                 num = existing_issue["number"]
                 close_comment = (

@@ -1,18 +1,39 @@
 # Schema contract for Anne Arundel County Council Zoning Legislation
-# Captured from portal read on 2026-10-27T07:19:23Z
+# Captured from live read on 2026-11-01T17:42:39Z
 source_id: anne_arundel_zoning
 source_type: html_scrape
-endpoint: https://www.aacounty.org/county-council/legislation
 
-required_selectors:
-  - table
-  - tr
+listing_endpoints:
+  past_legislation: https://www.aacounty.org/county-council/legislation/past-legislation
+  current_legislation: https://www.aacounty.org/county-council/legislation
+
+listing_selectors:
+  teaser: ".zn-legislation.zn-teaser"
+  title_link: ".zn-title a"
+  status: ".zn-legislation-schedule"
+
+zoning_inclusion_rule:
+  description: "Bill title as printed begins 'AN ORDINANCE concerning: Zoning' or 'AN ORDINANCE concerning: Subdivision and Development' (after any '(As Amended)' prefix)."
+  prefix_strip_regex: "^\\(As Amended\\)\\s*"
+  allowed_prefixes:
+    - "AN ORDINANCE concerning: Zoning"
+    - "AN ORDINANCE concerning: Subdivision and Development"
+
+bill_page_pattern: "https://www.aacounty.org/county-council/legislation/bill-no-<n>-<yy>"
+
+bill_page_selectors:
+  number: "h1"
+  title: ".zn-field-intro, .zn-field-short-description"
+  sponsor: ".zn-field-introduced-by"
+  schedule_timeline: ".zn-legislation-schedule li.zn-timeline-entry"
+  schedule_label: ".zn-schedule-label"
+  schedule_date: ".zn-date"
+  document_pdf: ".zn-legislation-documents a[href$='.pdf']"
 
 required_fields:
-  - bill_no
+  - bill_number
   - title
+  - sponsor
+  - schedule
   - action_status
   - pdf_url
-
-audit_status: failed_selector_check
-audit_note: "Live page is informational landing page with 0 table and 0 tr elements. Legislation links point offsite/subpages."

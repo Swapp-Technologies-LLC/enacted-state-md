@@ -809,44 +809,134 @@ class TestIngestSliceI1(unittest.TestCase):
 
     # 18. Anne Arundel Schema Contract Validation Test
     def test_anne_arundel_schema_contract_validation(self):
-        fixture_path = TESTS_DIR / "fixtures" / "anne_arundel_portal_response.html"
         contract_path = REPO_DIR / "sources" / "contracts" / "anne_arundel_zoning.yaml"
-        self.assertTrue(fixture_path.exists(), "Anne Arundel response fixture must exist")
         self.assertTrue(contract_path.exists(), "Anne Arundel contract must exist")
-
-        html_text = fixture_path.read_text(encoding="utf-8")
-        soup = BeautifulSoup(html_text, "html.parser")
         contract = yaml.safe_load(contract_path.read_text(encoding="utf-8"))
 
-        # Real fixture has 0 tables and 0 tr rows -> must fail schema contract
+        # 1. Past legislation listing fixture
+        past_fixture = TESTS_DIR / "fixtures" / "aa_past_legislation.html"
+        self.assertTrue(past_fixture.exists(), "aa_past_legislation.html fixture must exist")
+        past_soup = BeautifulSoup(past_fixture.read_text(encoding="utf-8"), "html.parser")
+        poll_anne_arundel.check_html_schema_contract(past_soup, contract, is_bill_page=False)
+
+        # 2. Bill detail page fixture (Bill 67-26)
+        bill_fixture = TESTS_DIR / "fixtures" / "aa_bill_67_26.html"
+        self.assertTrue(bill_fixture.exists(), "aa_bill_67_26.html fixture must exist")
+        bill_soup = BeautifulSoup(bill_fixture.read_text(encoding="utf-8"), "html.parser")
+        poll_anne_arundel.check_html_schema_contract(bill_soup, contract, is_bill_page=True)
+
+        # 3. Bad HTML missing required selector raises schema changed error
+        bad_soup = BeautifulSoup("<html><body><p>No content</p></body></html>", "html.parser")
         with self.assertRaises(ValueError) as ctx:
-            poll_anne_arundel.check_html_schema_contract(soup, contract)
-        self.assertIn("schema changed: table", str(ctx.exception))
+            poll_anne_arundel.check_html_schema_contract(bad_soup, contract, is_bill_page=False)
+        self.assertIn("schema changed:", str(ctx.exception))
 
-    # 19. Anne Arundel Missing Required Fields Skips
+    # 19. Anne Arundel Zoning Inclusion Rule Classification Test
+    def test_anne_arundel_zoning_rule_classification(self):
+        # Inclusions: "AN ORDINANCE concerning: Zoning" and "AN ORDINANCE concerning: Subdivision and Development"
+        self.assertTrue(poll_anne_arundel.matches_zoning_rule("AN ORDINANCE concerning: Zoning – BWI Mixed Use Overlay Area"))
+        self.assertTrue(poll_anne_arundel.matches_zoning_rule("(As Amended) AN ORDINANCE concerning: Zoning – BWI Mixed Use Overlay Area"))
+        self.assertTrue(poll_anne_arundel.matches_zoning_rule("Bill No. 67-26: (As Amended) AN ORDINANCE concerning: Zoning – BWI Mixed Use"))
+        self.assertTrue(poll_anne_arundel.matches_zoning_rule("AN ORDINANCE concerning: Subdivision and Development – Cottage Homes"))
+
+        # Exclusions: Other subject matters
+        self.assertFalse(poll_anne_arundel.matches_zoning_rule("AN ORDINANCE concerning: Current Expense Budget – FY27"))
+        self.assertFalse(poll_anne_arundel.matches_zoning_rule("AN ORDINANCE concerning: Public Safety – Police Department"))
+        self.assertFalse(poll_anne_arundel.matches_zoning_rule("AN ORDINANCE concerning: Personnel – Salaries"))
+
+    # 20. Anne Arundel Missing Required Fields Skips
     def test_anne_arundel_missing_required_fields_skips(self):
-        tmp_dir = self.tmp_path / "aa_out"
-        tmp_dir.mkdir(parents=True, exist_ok=True)
-
-        # Row HTML missing action_status and missing title match
-        mock_html = (
-            "<html><body><table><tr>"
-            "<td>Bill No. 99-99</td>"
-            "<td><a href=\"/sites/default/files/bill-99-99.pdf\">PDF</a></td>"
-            "</tr></table></body></html>"
+        # Missing sponsor
+        mock_html_no_sponsor = (
+            "<html><body>"
+            "<h1>Bill No. 99-99</h1>"
+            "<div class=\"zn-field-intro\">AN ORDINANCE concerning: Zoning - Test</div>"
+            "<div class=\"zn-legislation-documents\"><a href=\"/test.pdf\">PDF</a></div>"
+            "</body></html>"
         )
-        mock_crawler = EnactedCrawler(min_interval=0.0, obey_robots=False)
-        mock_crawler.fetch = MagicMock(return_value=(True, 200, mock_html.encode("utf-8"), ""))
+        rec = poll_anne_arundel.parse_bill_page(mock_html_no_sponsor, "https://example.gov/bill-no-99-99")
+        self.assertIsNone(rec, "Record with missing sponsor must return None and skip")
 
-        with patch("poll_anne_arundel.AA_DIR", str(tmp_dir)):
-            # Pass empty contract so contract selector passes, isolating field extraction skip
-            ingested = poll_anne_arundel.poll(
-                crawler=mock_crawler,
-                health_data={"sources": {"anne_arundel_zoning": {"status": "ok"}}},
-                contract_path="/nonexistent/contract.yaml"
-            )
-            self.assertEqual(ingested, 0)
-            self.assertEqual(len(list(tmp_dir.glob("*.md"))), 0)
+        # Missing PDF
+        mock_html_no_pdf = (
+            "<html><body>"
+            "<h1>Bill No. 99-99</h1>"
+            "<div class=\"zn-field-intro\">AN ORDINANCE concerning: Zoning - Test</div>"
+            "<div class=\"zn-field-introduced-by\">Mr. Smith</div>"
+            "</body></html>"
+        )
+        rec = poll_anne_arundel.parse_bill_page(mock_html_no_pdf, "https://example.gov/bill-no-99-99")
+        self.assertIsNone(rec, "Record with missing PDF must return None and skip")
+
+    # 21. Verify Gate No Direct Network Grep Test
+    def test_verify_gate_no_direct_network_grep(self):
+        verify_py = REPO_DIR / "verify_corpus_integrity.py"
+        self.assertTrue(verify_py.exists(), "verify_corpus_integrity.py must exist")
+        text = verify_py.read_text(encoding="utf-8")
+        forbidden = ["urllib.request", "requests", "urlopen", "curl.exe"]
+        for f_word in forbidden:
+            self.assertNotIn(f_word, text, f"Direct network primitive '{f_word}' forbidden in verify_corpus_integrity.py")
+
+    # 22. Verify Gate Robots.txt Skip Mock Test
+    def test_verify_gate_robots_txt_skip(self):
+        # EnactedCrawler with disallowed host
+        crawler = EnactedCrawler(min_interval=0.0, obey_robots=True)
+        crawler.register_robots_txt("blocked.gov", "User-agent: *\nDisallow: /\n")
+        crawler.register_robots_txt("allowed.gov", "User-agent: *\nAllow: /\n")
+
+        # Blocked URL is not permitted and not fetched
+        self.assertFalse(crawler.can_fetch("https://blocked.gov/doc.pdf"))
+        # Allowed URL is permitted
+        self.assertTrue(crawler.can_fetch("https://allowed.gov/doc.pdf"))
+
+    # 23. Stale Source Alert Lifecycle & Run Summary Order Test
+    def test_stale_source_alert_lifecycle(self):
+        client = StubIssueClient()
+        health = {
+            "version": "1.0",
+            "last_run": get_iso_now(),
+            "sources": {
+                "active_src": {
+                    "source_id": "active_src",
+                    "status": "ok",
+                    "consecutive_failures": 0,
+                    "url": "https://example.gov/active"
+                },
+                "stale_src": {
+                    "source_id": "stale_src",
+                    "status": "stale",
+                    "stale_reason": "metadata date June 6, 2024",
+                    "consecutive_failures": 0,
+                    "url": "https://example.gov/stale"
+                }
+            }
+        }
+
+        # Step 1: Manage issues opens a stale alert issue
+        actions = manage_source_alert_issues(health, issue_client=client)
+        stale_actions = [a for a in actions if a["source_id"] == "stale_src"]
+        self.assertEqual(len(stale_actions), 1)
+        self.assertEqual(stale_actions[0]["action"], "opened")
+        open_issues = client.list_open_issues(label="source-alert")
+        self.assertEqual(len(open_issues), 1)
+        self.assertIn("stale_src stale", open_issues[0]["title"])
+
+        # Step 2: Next run keeps the stale issue open (does NOT close it!)
+        actions2 = manage_source_alert_issues(health, issue_client=client)
+        stale_actions2 = [a for a in actions2 if a["source_id"] == "stale_src"]
+        self.assertEqual(len(stale_actions2), 1)
+        self.assertEqual(stale_actions2[0]["action"], "kept_open")
+        self.assertEqual(len(client.list_open_issues(label="source-alert")), 1)
+
+        # Step 3: Summary table sorts stale sources first
+        summary_file = self.tmp_path / "step_summary.md"
+        save_source_health(health, status_path=self.tmp_path / "sources.json", only_if_meaningful=False, step_summary_path=summary_file)
+        summary_text = summary_file.read_text(encoding="utf-8")
+        stale_idx = summary_text.find("stale_src")
+        active_idx = summary_text.find("active_src")
+        self.assertNotEqual(stale_idx, -1)
+        self.assertNotEqual(active_idx, -1)
+        self.assertLess(stale_idx, active_idx, "Stale source must appear before active source in summary table")
 
 
 if __name__ == "__main__":

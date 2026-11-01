@@ -8,6 +8,11 @@ metadata_rows_updated_at: 1717681388 # 2024-06-06T13:43:08Z
 status: stale
 stale_reason: "newest row 24-01, metadata date June 6, 2024"
 
+candidate_replacement:
+  endpoint: https://www.montgomerycountymd.gov/government/legislative-branch/county-council/resources/zoning-text-amendments-subdivision-regulation-amendments
+  status: blocked
+  blocked_reason: "County terms (written permission requested Oct 27) and robots for assets/granicus hosts unconfirmed"
+
 required_fields:
   - zta_no
   - title
