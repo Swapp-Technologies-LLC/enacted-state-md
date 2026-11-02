@@ -9,9 +9,8 @@ import sys
 import json
 import re
 import yaml
-import urllib.request
-import urllib.robotparser
 from urllib.parse import urlparse
+from scripts.crawler import EnactedCrawler
 import ssl
 import hashlib
 import subprocess
@@ -174,16 +173,8 @@ def run_verification():
     print("  ENACTED / RECORD INTEGRITY VERIFICATION SUITE")
     print("===============================================================\n")
 
-    ctx = ssl.create_default_context()
-    ctx.check_hostname = False
-    ctx.verify_mode = ssl.CERT_NONE
-    
-    ua_str = os.environ.get("ENACTED_USER_AGENT", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 (compatible; EnactedCorpusBot/1.0)")
-    net_headers = {
-        "User-Agent": ua_str,
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.5"
-    }
+    crawler = EnactedCrawler(min_interval=float(os.environ.get("VERIFY_CRAWLER_INTERVAL", "0.1")))
+    robots_skipped_by_host = {}
     
     # -------------------------------------------------------------
     # CHECK 1: Quarantine Resolution & Live Record Verification
@@ -583,6 +574,7 @@ def run_verification():
     rehash_passed = 0
     rehash_failed = 0
     rehash_skipped = 0
+    rehash_robots_skipped = 0
     
     for fpath, fm in sorted(all_records, key=lambda x: x[0]):
         rel = os.path.relpath(fpath, REPO_BASE)
@@ -598,6 +590,26 @@ def run_verification():
             continue
     
         cache_file = os.path.join(cache_dir, f"{expected_sha}.pdf")
+
+        # Robots.txt check: disallowed URLs are never fetched
+        if not crawler.can_fetch(pdf_url):
+            host = urlparse(pdf_url).netloc.lower()
+            robots_skipped_by_host[host] = robots_skipped_by_host.get(host, 0) + 1
+            rehash_robots_skipped += 1
+            if os.path.exists(cache_file):
+                with open(cache_file, "rb") as cf:
+                    cdata = cf.read()
+                c_sha = hashlib.sha256(cdata).hexdigest()
+                if c_sha == expected_sha:
+                    print(f"  not fetched: robots ({pdf_url}) [cached file sha confirmed: {expected_sha[:12]}...]")
+                else:
+                    print(f"  FAIL: cached file hash mismatch for {rel}: expected {expected_sha}, got {c_sha}")
+                    rehash_failed += 1
+                    failed_checks += 1
+            else:
+                print(f"  not fetched: robots ({pdf_url})")
+            continue
+
         if not force_rehash and os.path.exists(cache_file):
             with open(cache_file, "rb") as cf:
                 cdata = cf.read()
@@ -607,26 +619,30 @@ def run_verification():
                 rehash_passed += 1
                 continue
     
-        # Fetch fresh from primary source
+        # Fetch fresh from primary source via EnactedCrawler
         try:
-            req = urllib.request.Request(pdf_url, headers=net_headers)
-            with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:
-                if resp.status != 200:
-                    print(f"  FAIL: HTTP {resp.status} fetching PDF for {rel} from {pdf_url}")
-                    rehash_failed += 1
-                    failed_checks += 1
-                    continue
-                data = resp.read()
-                calc_sha = hashlib.sha256(data).hexdigest()
-                if calc_sha == expected_sha:
-                    print(f"  ✓ {rel.ljust(48)}: SHA-256 match (re-downloaded: {calc_sha[:12]}...)")
-                    with open(cache_file, "wb") as cf:
-                        cf.write(data)
-                    rehash_passed += 1
-                else:
-                    print(f"  FAIL HASH MISMATCH on {rel}: expected {expected_sha}, got {calc_sha}")
-                    rehash_failed += 1
-                    failed_checks += 1
+            allowed, status_code, data, err = crawler.fetch(pdf_url, timeout=25)
+            if not allowed:
+                host = urlparse(pdf_url).netloc.lower()
+                robots_skipped_by_host[host] = robots_skipped_by_host.get(host, 0) + 1
+                rehash_robots_skipped += 1
+                print(f"  not fetched: robots ({pdf_url})")
+                continue
+            if status_code != 200:
+                print(f"  FAIL: HTTP {status_code} fetching PDF for {rel} from {pdf_url}: {err}")
+                rehash_failed += 1
+                failed_checks += 1
+                continue
+            calc_sha = hashlib.sha256(data).hexdigest()
+            if calc_sha == expected_sha:
+                print(f"  ✓ {rel.ljust(48)}: SHA-256 match (re-downloaded: {calc_sha[:12]}...)")
+                with open(cache_file, "wb") as cf:
+                    cf.write(data)
+                rehash_passed += 1
+            else:
+                print(f"  FAIL HASH MISMATCH on {rel}: expected {expected_sha}, got {calc_sha}")
+                rehash_failed += 1
+                failed_checks += 1
         except Exception as e:
             print(f"  FAIL: Exception re-downloading PDF for {rel} from {pdf_url}: {e}")
             rehash_failed += 1
@@ -765,27 +781,33 @@ def run_verification():
     
     print(f"  Checking HTTP 200 liveness for {len(unique_urls)} unique corpus URLs...")
     dead_urls = 0
+    liveness_passed = 0
+    liveness_robots_skipped = 0
     for u in sorted(unique_urls):
-        status_ok = False
-        last_err = None
-        for _attempt in range(2):
-            try:
-                req = urllib.request.Request(u, headers=net_headers)
-                with urllib.request.urlopen(req, context=ctx, timeout=25) as resp:
-                    if resp.status == 200:
-                        status_ok = True
-                        break
-                    else:
-                        last_err = f"HTTP {resp.status}"
-            except Exception as e:
-                last_err = str(e)
-        if not status_ok:
-            print(f"  FAIL: Connection error on corpus URL {u}: {last_err}")
+        if not crawler.can_fetch(u):
+            host = urlparse(u).netloc.lower()
+            robots_skipped_by_host[host] = robots_skipped_by_host.get(host, 0) + 1
+            liveness_robots_skipped += 1
+            print(f"  not fetched: robots ({u})")
+            continue
+
+        allowed, status_code, body, err = crawler.fetch(u, timeout=25)
+        if not allowed:
+            host = urlparse(u).netloc.lower()
+            robots_skipped_by_host[host] = robots_skipped_by_host.get(host, 0) + 1
+            liveness_robots_skipped += 1
+            print(f"  not fetched: robots ({u})")
+            continue
+
+        if status_code == 200:
+            liveness_passed += 1
+        else:
+            print(f"  FAIL: Connection error on corpus URL {u}: HTTP {status_code} {err}")
             dead_urls += 1
             failed_checks += 1
     
     if dead_urls == 0:
-        print(f"  ✓ 100% of {len(unique_urls)} corpus primary source URLs returned HTTP 200 at gate time.")
+        print(f"  ✓ {liveness_passed} allowed corpus primary source URLs returned HTTP 200 at gate time ({liveness_robots_skipped} robots skipped).")
     
     # -------------------------------------------------------------
     # CHECK 7f: Gate 7f — Record Schema & Frontmatter Completeness
@@ -1074,6 +1096,11 @@ def run_verification():
             else:
                 print(f"  ✓ {jur}: Verified authority.yaml contact integrity.")
     
+        if robots_skipped_by_host:
+            print("\nRobots.txt Skipped URLs by Host:")
+            for host, count in sorted(robots_skipped_by_host.items()):
+                print(f"  - {host}: {count} URL(s) skipped")
+
         print("\n===============================================================")
         if failed_checks == 0:
             print("  ALL RECORD INTEGRITY VERIFICATION GATES PASSED! ✅")

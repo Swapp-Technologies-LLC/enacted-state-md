@@ -1,0 +1,54 @@
+# Schema contract for Montgomery County Zoning Text Amendments (ZTAs)
+# Captured from live Socrata dataset 3hex-pk9g on 2026-10-27T07:19:18Z
+source_id: montgomery_zoning
+source_type: socrata_json
+endpoint: https://data.montgomerycountymd.gov/resource/3hex-pk9g.json
+metadata_endpoint: https://data.montgomerycountymd.gov/views/3hex-pk9g.json
+metadata_rows_updated_at: 1717681388 # 2024-06-06T13:43:08Z
+status: stale
+stale_reason: "newest row 24-01, metadata date June 6, 2024"
+
+candidate_replacement:
+  endpoint: https://www.montgomerycountymd.gov/government/legislative-branch/county-council/resources/zoning-text-amendments-subdivision-regulation-amendments
+  status: blocked
+  blocked_reason: "County terms (written permission requested Oct 27) and robots for assets/granicus hosts unconfirmed"
+
+required_fields:
+  - zta_no
+  - title
+  - introduction_date
+  - sponsor_s
+  - action_status
+
+primary_url_fields:
+  - ordinance
+  - zta
+
+observed_fields:
+  - zta_no
+  - title
+  - zta
+  - ordinance_no
+  - ordinance
+  - analyst
+  - sponsor_s
+  - co_sponsor_s_
+  - introduction_date
+  - introduction_report
+  - public_hearing_date
+  - public_hearing_report
+  - action_date
+  - action_report
+  - committee
+  - action_status
+  - adopted_date
+  - disapproved_date
+  - effective_date
+
+banned_inferred_fields:
+  - intro_date # non-existent, causes HTTP 400
+  - zta_number # non-existent, poller must use zta_no
+  - plain_english_summary # non-existent
+  - lead_sponsors # non-existent, poller must use sponsor_s
+  - council_action # non-existent, poller must use action_status
+  - pdf_link # non-existent, poller must use ordinance or zta

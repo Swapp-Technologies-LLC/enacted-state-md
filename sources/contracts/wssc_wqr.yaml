@@ -1,0 +1,14 @@
+# Schema contract for WSSC Water Quality Reports index
+# Captured from portal read on 2026-10-27T07:19:29Z
+source_id: wssc_wqr
+source_type: html_index
+endpoint: https://www.wsscwater.com/waterquality
+
+required_selectors:
+  - a[href*="Water_Quality_Report"]
+
+expected_patterns:
+  - (?:{period}[-_ ]*(?:water[-_ ]*quality[-_ ]*report|wqr)|(?:water[-_ ]*quality[-_ ]*report|wqr)[-_ ]*{period})
+
+audit_status: ok
+audit_note: "Index contains direct links to annual water quality report PDFs."

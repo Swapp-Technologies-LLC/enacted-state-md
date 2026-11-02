@@ -6,15 +6,18 @@ Swapp Technologies LLC (Maryland)
 Invariant: Zero model in the path (Rule 10). Hard generation rule only.
 Extracts mechanically from official Socrata API and county PDF documents.
 Honours robots.txt and 5 s host spacing via EnactedCrawler.
+Schema contract enforced: any missing required field skips or fails with 'schema changed: <field>'.
+Zero inferred defaults, zero constructed URLs, zero fallback field names.
 """
 
 import os
 import sys
 import json
 import re
+import yaml
 import hashlib
 from datetime import datetime, timezone
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, List
 
 if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
@@ -22,7 +25,8 @@ if hasattr(sys.stdout, 'reconfigure'):
 SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPTS_DIR)
 MONTGOMERY_DIR = os.path.join(ROOT_DIR, "montgomery", "zta_amendments")
-API_ENDPOINT = "https://data.montgomerycountymd.gov/resource/3hex-pk9g.json?$order=intro_date%20DESC&$limit=25"
+API_ENDPOINT = "https://data.montgomerycountymd.gov/resource/3hex-pk9g.json"
+CONTRACT_PATH = os.path.join(ROOT_DIR, "sources", "contracts", "montgomery_zoning.yaml")
 
 if SCRIPTS_DIR not in sys.path:
     sys.path.insert(0, SCRIPTS_DIR)
@@ -33,12 +37,61 @@ from source_health import record_source_check, get_iso_now
 ENACTED_USER_AGENT = "EnactedBot/1.0 (+https://enacted.app/bot/)"
 
 
-def poll(crawler: Optional[EnactedCrawler] = None, health_data: Optional[Dict[str, Any]] = None) -> int:
-    c = crawler or EnactedCrawler()
-    print(f"[Montgomery Poller] Fetching ZTAs from {API_ENDPOINT}...")
+def load_schema_contract(contract_path: Optional[str] = None) -> Dict[str, Any]:
+    p = contract_path or CONTRACT_PATH
+    if not os.path.exists(p):
+        return {}
+    with open(p, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f) or {}
 
-    allowed, status_code, body, err = c.fetch(API_ENDPOINT)
+
+def check_schema_contract(records: List[Dict[str, Any]], contract: Dict[str, Any]):
+    """
+    Checks that every required field from contract is present across candidate records.
+    If a required field is missing from all records in the batch, fails with 'schema changed: <field>'.
+    """
+    required = contract.get("required_fields", ["zta_no", "title", "introduction_date", "sponsor_s", "action_status"])
+    if not records:
+        return
+
+    # Check that the required field keys exist in at least one record or dataset schema
+    all_keys = set()
+    for r in records:
+        all_keys.update(r.keys())
+
+    for req_field in required:
+        if req_field not in all_keys:
+            raise ValueError(f"schema changed: {req_field}")
+
+
+def poll(
+    crawler: Optional[EnactedCrawler] = None,
+    health_data: Optional[Dict[str, Any]] = None,
+    contract_path: Optional[str] = None
+) -> int:
+    c = crawler or EnactedCrawler()
     now_iso = get_iso_now()
+
+    # Check if source is marked stale in health data or on-disk registry
+    source_status = None
+    if health_data and "sources" in health_data:
+        source_status = health_data.get("sources", {}).get("montgomery_zoning", {}).get("status")
+    if not source_status:
+        st_path = os.path.join(ROOT_DIR, "status", "sources.json")
+        if os.path.exists(st_path):
+            try:
+                with open(st_path, "r", encoding="utf-8") as f:
+                    reg = json.load(f)
+                    source_status = reg.get("sources", {}).get("montgomery_zoning", {}).get("status")
+            except Exception:
+                pass
+
+    if source_status == "stale":
+        print("[Montgomery Poller] source stale — awaiting replacement")
+        return 0
+
+    print(f"[Montgomery Poller] Fetching ZTAs from {API_ENDPOINT}...")
+    allowed, status_code, body, err = c.fetch(API_ENDPOINT)
 
     if not allowed:
         print(f"WARNING: Socrata API disallowed by robots.txt: {API_ENDPOINT}", file=sys.stderr)
@@ -81,32 +134,54 @@ def poll(crawler: Optional[EnactedCrawler] = None, health_data: Optional[Dict[st
             )
         sys.exit(1)
 
+    contract = load_schema_contract(contract_path)
+    if contract:
+        check_schema_contract(records, contract)
+
     print(f"[Montgomery Poller] Retrieved {len(records)} candidate ZTA entries.")
     updated_count = 0
 
     for rec in records:
-        zta_no = rec.get("zta_number") or rec.get("zta_no")
+        zta_no = rec.get("zta_no")
         if not zta_no:
-            print(f"WARNING: Skipping entry without zta_number in Socrata payload.", file=sys.stderr)
+            print(f"WARNING: Skipping entry missing required field 'zta_no'.", file=sys.stderr)
             continue
 
         clean_num = zta_no.strip().replace("-", "_").lower()
         target_md = os.path.join(MONTGOMERY_DIR, f"zta_{clean_num}.md")
 
-        title = rec.get("plain_english_summary") or rec.get("title") or f"ZTA {zta_no}"
-        sponsors = rec.get("lead_sponsors") or "[pending verification]"
-        intro_date = rec.get("intro_date", "")
+        title = rec.get("title")
+        if not title:
+            print(f"WARNING: Skipping entry {zta_no} missing required field 'title'.", file=sys.stderr)
+            continue
+
+        sponsors = rec.get("sponsor_s")
+        if not sponsors:
+            print(f"WARNING: Skipping entry {zta_no} missing required field 'sponsor_s'.", file=sys.stderr)
+            continue
+
+        intro_date = rec.get("introduction_date")
+        if not intro_date:
+            print(f"WARNING: Skipping entry {zta_no} missing required field 'introduction_date'.", file=sys.stderr)
+            continue
         if "T" in intro_date:
             intro_date = intro_date.split("T")[0]
 
-        action_status = rec.get("council_action") or "Introduced"
-        action_date = rec.get("action_date", "")
-        if "T" in action_date:
-            action_date = action_date.split("T")[0]
+        action_status = rec.get("action_status")
+        if not action_status:
+            print(f"WARNING: Skipping entry {zta_no} missing required field 'action_status'.", file=sys.stderr)
+            continue
 
-        pdf_url = rec.get("pdf_link", {}).get("url") if isinstance(rec.get("pdf_link"), dict) else rec.get("pdf_link")
+        # Extract primary PDF link strictly from source record (ordinance or zta)
+        ordinance_obj = rec.get("ordinance")
+        pdf_url = ordinance_obj.get("url") if isinstance(ordinance_obj, dict) else (ordinance_obj if isinstance(ordinance_obj, str) else None)
         if not pdf_url:
-            pdf_url = f"https://www.montgomerycountymd.gov/COUNCIL/Resources/Files/zta/{intro_date[:4] if intro_date else '2024'}/ZTA%20{zta_no}.pdf"
+            zta_obj = rec.get("zta")
+            pdf_url = zta_obj.get("url") if isinstance(zta_obj, dict) else (zta_obj if isinstance(zta_obj, str) else None)
+
+        if not pdf_url or not isinstance(pdf_url, str) or not pdf_url.startswith("http"):
+            print(f"WARNING: Skipping entry {zta_no}: missing primary document URL in source record.", file=sys.stderr)
+            continue
 
         if os.path.exists(target_md):
             continue
