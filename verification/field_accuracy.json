@@ -1,0 +1,1783 @@
+{
+  "repository": "enacted-state-md",
+  "check_timestamp": "2026-11-02T02:28:54.355599+00:00",
+  "date_renderings_rules": [
+    "YYYY-MM-DD",
+    "MM/DD/YYYY",
+    "M/D/YYYY",
+    "M/DD/YYYY",
+    "MM/D/YYYY",
+    "Month D, YYYY",
+    "Month DD, YYYY",
+    "Mon D, YYYY",
+    "Mon. D, YYYY",
+    "Mon DD, YYYY",
+    "Mon. DD, YYYY",
+    "D Month YYYY",
+    "DD Month YYYY",
+    "D Mon YYYY",
+    "D Mon. YYYY",
+    "Month YYYY",
+    "Mon YYYY",
+    "Mon. YYYY"
+  ],
+  "records": [
+    {
+      "record": "anne_arundel\\council_bills\\bill_18_26.md",
+      "record_type": "legislative",
+      "jurisdiction": "Anne Arundel County, MD",
+      "sources_available": [
+        ".cache\\pdf_cache\\cd721c41f43e5e3ab7d07158caef884dc73db14dc93636b5966d24f64e098529.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "AN ORDINANCE concerning: Comprehensive Zoning \u2013 Region 5 (As Amended)",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\cd721c41f43e5e3ab7d07158caef884dc73db14dc93636b5966d24f64e098529.pdf",
+          "location": null
+        },
+        "action_status": {
+          "result": "not found",
+          "recorded_value": "Passed (Veto Overridden)",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\cd721c41f43e5e3ab7d07158caef884dc73db14dc93636b5966d24f64e098529.pdf",
+          "location": null
+        },
+        "introduced_date": {
+          "result": "found",
+          "recorded_value": "2026-03-02",
+          "matched_string": "March 2, 2026",
+          "source_file": ".cache\\pdf_cache\\cd721c41f43e5e3ab7d07158caef884dc73db14dc93636b5966d24f64e098529.pdf",
+          "location": "page 1, line 13"
+        },
+        "passed_date": {
+          "result": "found",
+          "recorded_value": "2026-06-01",
+          "matched_string": "June 1, 2026",
+          "source_file": ".cache\\pdf_cache\\cd721c41f43e5e3ab7d07158caef884dc73db14dc93636b5966d24f64e098529.pdf",
+          "location": "page 1, line 21"
+        },
+        "effective_date_base": {
+          "result": "found",
+          "recorded_value": "2026-07-20",
+          "matched_string": "July 20, 2026",
+          "source_file": ".cache\\pdf_cache\\cd721c41f43e5e3ab7d07158caef884dc73db14dc93636b5966d24f64e098529.pdf",
+          "location": "page 3, line 20"
+        },
+        "effective_date_overridden_amendments": {
+          "result": "found",
+          "recorded_value": "2026-07-30",
+          "matched_string": "July 30, 2026",
+          "source_file": ".cache\\pdf_cache\\cd721c41f43e5e3ab7d07158caef884dc73db14dc93636b5966d24f64e098529.pdf",
+          "location": "page 3, line 30"
+        },
+        "vetoed_date": {
+          "result": "found",
+          "recorded_value": "2026-06-05",
+          "matched_string": "June 5, 2026",
+          "source_file": ".cache\\pdf_cache\\cd721c41f43e5e3ab7d07158caef884dc73db14dc93636b5966d24f64e098529.pdf",
+          "location": "page 1, line 22"
+        },
+        "veto_override_date": {
+          "result": "found",
+          "recorded_value": "2026-06-15",
+          "matched_string": "June 15, 2026",
+          "source_file": ".cache\\pdf_cache\\cd721c41f43e5e3ab7d07158caef884dc73db14dc93636b5966d24f64e098529.pdf",
+          "location": "page 3, line 24"
+        },
+        "bill_number": {
+          "result": "found",
+          "recorded_value": "Bill No. 18-26",
+          "matched_string": "Bill No. 18-26",
+          "source_file": ".cache\\pdf_cache\\cd721c41f43e5e3ab7d07158caef884dc73db14dc93636b5966d24f64e098529.pdf",
+          "location": "page 1, line 10"
+        },
+        "sponsor": {
+          "result": "found",
+          "recorded_value": "Ms. Hummer, Chair (by request of the County Executive)",
+          "matched_string": "Ms. Hummer, Chair (by request of the County Executive)",
+          "source_file": ".cache\\pdf_cache\\cd721c41f43e5e3ab7d07158caef884dc73db14dc93636b5966d24f64e098529.pdf",
+          "location": "page 1"
+        }
+      }
+    },
+    {
+      "record": "anne_arundel\\council_bills\\bill_28_26.md",
+      "record_type": "legislative",
+      "jurisdiction": "Anne Arundel County, MD",
+      "sources_available": [
+        ".cache\\pdf_cache\\ff38f058a6f7bfd3a120beed401433f4e094186c2e5d72f1fa5719397060aa61.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "AN ORDINANCE concerning: Zoning \u2013 Commercial Districts \u2013 Apartment Dwelling Units",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\ff38f058a6f7bfd3a120beed401433f4e094186c2e5d72f1fa5719397060aa61.pdf",
+          "location": null
+        },
+        "action_status": {
+          "result": "not found",
+          "recorded_value": "Enacted",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\ff38f058a6f7bfd3a120beed401433f4e094186c2e5d72f1fa5719397060aa61.pdf",
+          "location": null
+        },
+        "introduced_date": {
+          "result": "found",
+          "recorded_value": "2026-04-06",
+          "matched_string": "April 6, 2026",
+          "source_file": ".cache\\pdf_cache\\ff38f058a6f7bfd3a120beed401433f4e094186c2e5d72f1fa5719397060aa61.pdf",
+          "location": "page 1, line 11"
+        },
+        "passed_date": {
+          "result": "found",
+          "recorded_value": "2026-05-04",
+          "matched_string": "May 4, 2026",
+          "source_file": ".cache\\pdf_cache\\ff38f058a6f7bfd3a120beed401433f4e094186c2e5d72f1fa5719397060aa61.pdf",
+          "location": "page 1, line 15"
+        },
+        "enacted_date": {
+          "result": "not found",
+          "recorded_value": "2026-05-07",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\ff38f058a6f7bfd3a120beed401433f4e094186c2e5d72f1fa5719397060aa61.pdf",
+          "location": null
+        },
+        "effective_date": {
+          "result": "found",
+          "recorded_value": "2026-06-21",
+          "matched_string": "June 21, 2026",
+          "source_file": ".cache\\pdf_cache\\ff38f058a6f7bfd3a120beed401433f4e094186c2e5d72f1fa5719397060aa61.pdf",
+          "location": "page 2, line 34"
+        },
+        "bill_number": {
+          "result": "found",
+          "recorded_value": "Bill No. 28-26",
+          "matched_string": "Bill No. 28-26",
+          "source_file": ".cache\\pdf_cache\\ff38f058a6f7bfd3a120beed401433f4e094186c2e5d72f1fa5719397060aa61.pdf",
+          "location": "page 1, line 9"
+        },
+        "sponsor": {
+          "result": "found",
+          "recorded_value": "Mr. Volke",
+          "matched_string": "Mr. Volke",
+          "source_file": ".cache\\pdf_cache\\ff38f058a6f7bfd3a120beed401433f4e094186c2e5d72f1fa5719397060aa61.pdf",
+          "location": "page 1, line 10"
+        }
+      }
+    },
+    {
+      "record": "anne_arundel\\council_bills\\bill_57_26.md",
+      "record_type": "legislative",
+      "jurisdiction": "Anne Arundel County, MD",
+      "sources_available": [
+        ".cache\\pdf_cache\\900c3da1c5008059524c31f0e6ed6e9939fa06cb0eda1bebc8afc924746ac4fb.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "AN ORDINANCE concerning: Zoning \u2013 Rural Commerce Centers",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\900c3da1c5008059524c31f0e6ed6e9939fa06cb0eda1bebc8afc924746ac4fb.pdf",
+          "location": null
+        },
+        "action_status": {
+          "result": "not found",
+          "recorded_value": "Withdrawn",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\900c3da1c5008059524c31f0e6ed6e9939fa06cb0eda1bebc8afc924746ac4fb.pdf",
+          "location": null
+        },
+        "introduced_date": {
+          "result": "found",
+          "recorded_value": "2026-06-15",
+          "matched_string": "June 15, 2026",
+          "source_file": ".cache\\pdf_cache\\900c3da1c5008059524c31f0e6ed6e9939fa06cb0eda1bebc8afc924746ac4fb.pdf",
+          "location": "page 1, line 10"
+        },
+        "bill_number": {
+          "result": "found",
+          "recorded_value": "Bill No. 57-26",
+          "matched_string": "Bill No. 57-26",
+          "source_file": ".cache\\pdf_cache\\900c3da1c5008059524c31f0e6ed6e9939fa06cb0eda1bebc8afc924746ac4fb.pdf",
+          "location": "page 1, line 8"
+        },
+        "sponsor": {
+          "result": "found",
+          "recorded_value": "Ms. Fiedler",
+          "matched_string": "Ms. Fiedler",
+          "source_file": ".cache\\pdf_cache\\900c3da1c5008059524c31f0e6ed6e9939fa06cb0eda1bebc8afc924746ac4fb.pdf",
+          "location": "page 1, line 9"
+        }
+      }
+    },
+    {
+      "record": "baltimore_city\\council_bills\\ord_26_128.md",
+      "record_type": "legislative",
+      "jurisdiction": "City of Baltimore, Maryland",
+      "sources_available": [
+        ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "Data Centers - Moratorium",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
+          "location": null
+        },
+        "action_status": {
+          "result": "not found",
+          "recorded_value": "Enacted",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
+          "location": null
+        },
+        "introduced_date": {
+          "result": "not found",
+          "recorded_value": "2026-03-23",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
+          "location": null
+        },
+        "passed_date": {
+          "result": "not found",
+          "recorded_value": "2026-05-11",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
+          "location": null
+        },
+        "enacted_date": {
+          "result": "not found",
+          "recorded_value": "2026-06-16",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
+          "location": null
+        },
+        "effective_date": {
+          "result": "not found",
+          "recorded_value": "2026-06-16",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
+          "location": null
+        },
+        "bill_number": {
+          "result": "not found",
+          "recorded_value": "Council Bill 26-0158",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
+          "location": null
+        },
+        "ordinance_number": {
+          "result": "not found",
+          "recorded_value": "Ordinance 26-128",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
+          "location": null
+        },
+        "sponsor": {
+          "result": "not found",
+          "recorded_value": "Zeke Cohen",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
+          "location": null
+        }
+      }
+    },
+    {
+      "record": "baltimore_city\\council_bills\\ord_26_146.md",
+      "record_type": "legislative",
+      "jurisdiction": "City of Baltimore, Maryland",
+      "sources_available": [
+        ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "Rezoning - 901 S Caton Avenue",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
+          "location": null
+        },
+        "action_status": {
+          "result": "not found",
+          "recorded_value": "Enacted",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
+          "location": null
+        },
+        "introduced_date": {
+          "result": "not found",
+          "recorded_value": "2026-04-27",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
+          "location": null
+        },
+        "passed_date": {
+          "result": "not found",
+          "recorded_value": "2026-07-13",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
+          "location": null
+        },
+        "enacted_date": {
+          "result": "not found",
+          "recorded_value": "2026-08-10",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
+          "location": null
+        },
+        "effective_date": {
+          "result": "not found",
+          "recorded_value": "2026-09-09",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
+          "location": null
+        },
+        "bill_number": {
+          "result": "not found",
+          "recorded_value": "Council Bill 26-0177",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
+          "location": null
+        },
+        "ordinance_number": {
+          "result": "not found",
+          "recorded_value": "Ordinance 26-146",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
+          "location": null
+        },
+        "sponsor": {
+          "result": "not found",
+          "recorded_value": "John Bullock",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
+          "location": null
+        }
+      }
+    },
+    {
+      "record": "baltimore_county\\council_bills\\bill_09_26.md",
+      "record_type": "legislative",
+      "jurisdiction": "Baltimore County, Maryland",
+      "sources_available": [
+        ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "Zoning Regulations - Data Centers and Energy Storage Devices - Partial Repeal and Clarification",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf",
+          "location": null
+        },
+        "action_status": {
+          "result": "not found",
+          "recorded_value": "Enacted",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf",
+          "location": null
+        },
+        "introduced_date": {
+          "result": "found",
+          "recorded_value": "2026-01-20",
+          "matched_string": "January 20, 2026",
+          "source_file": ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf",
+          "location": "page 1, line 16"
+        },
+        "passed_date": {
+          "result": "not found",
+          "recorded_value": "2026-02-17",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf",
+          "location": null
+        },
+        "enacted_date": {
+          "result": "not found",
+          "recorded_value": "2026-02-23",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf",
+          "location": null
+        },
+        "effective_date": {
+          "result": "not found",
+          "recorded_value": "2026-04-06",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf",
+          "location": null
+        },
+        "bill_number": {
+          "result": "found",
+          "recorded_value": "Bill No. 9-26",
+          "matched_string": "Bill No. 9-26",
+          "source_file": ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf",
+          "location": "page 1, line 10"
+        },
+        "sponsor": {
+          "result": "not found",
+          "recorded_value": "Councilman Patoka",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf",
+          "location": null
+        }
+      }
+    },
+    {
+      "record": "baltimore_county\\council_bills\\bill_21_25.md",
+      "record_type": "legislative",
+      "jurisdiction": "Baltimore County, Maryland",
+      "sources_available": [
+        ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "Zoning Regulations - Solar Facilities - Siting Requirements",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf",
+          "location": null
+        },
+        "action_status": {
+          "result": "not found",
+          "recorded_value": "Enacted",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf",
+          "location": null
+        },
+        "introduced_date": {
+          "result": "not found",
+          "recorded_value": "2025-03-03",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf",
+          "location": null
+        },
+        "passed_date": {
+          "result": "not found",
+          "recorded_value": "2025-04-07",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf",
+          "location": null
+        },
+        "enacted_date": {
+          "result": "not found",
+          "recorded_value": "2025-04-14",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf",
+          "location": null
+        },
+        "effective_date": {
+          "result": "not found",
+          "recorded_value": "2025-05-26",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf",
+          "location": null
+        },
+        "bill_number": {
+          "result": "found",
+          "recorded_value": "Bill No. 21-25",
+          "matched_string": "Bill No. 21-25",
+          "source_file": ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf",
+          "location": "page 1, line 10"
+        },
+        "sponsor": {
+          "result": "not found",
+          "recorded_value": "Councilman Marks",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf",
+          "location": null
+        }
+      }
+    },
+    {
+      "record": "frederick\\council_bills\\bill_23_20.md",
+      "record_type": "legislative",
+      "jurisdiction": "Frederick County, Maryland",
+      "sources_available": [
+        ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "Limited Landscape Contractor Parking and Storage in the A (Agricultural) District",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf",
+          "location": null
+        },
+        "action_status": {
+          "result": "not found",
+          "recorded_value": "Enacted",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf",
+          "location": null
+        },
+        "introduced_date": {
+          "result": "not found",
+          "recorded_value": "2023-09-19",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf",
+          "location": null
+        },
+        "passed_date": {
+          "result": "not found",
+          "recorded_value": "2023-10-24",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf",
+          "location": null
+        },
+        "enacted_date": {
+          "result": "not found",
+          "recorded_value": "2023-10-24",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf",
+          "location": null
+        },
+        "effective_date": {
+          "result": "not found",
+          "recorded_value": "2023-12-23",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf",
+          "location": null
+        },
+        "bill_number": {
+          "result": "not found",
+          "recorded_value": "Bill No. 23-20",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf",
+          "location": null
+        },
+        "sponsor": {
+          "result": "not found",
+          "recorded_value": "Council Member Blue",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf",
+          "location": null
+        }
+      }
+    },
+    {
+      "record": "frederick\\council_bills\\bill_23_21.md",
+      "record_type": "legislative",
+      "jurisdiction": "Frederick County, Maryland",
+      "sources_available": [
+        ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "Amendments to Chapter 1-19 of the FCC - Zoning Ordinance - Add Cannabis Dispensary, Growing Facility & Processing Facility",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf",
+          "location": null
+        },
+        "action_status": {
+          "result": "not found",
+          "recorded_value": "Enacted",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf",
+          "location": null
+        },
+        "introduced_date": {
+          "result": "not found",
+          "recorded_value": "2023-10-03",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf",
+          "location": null
+        },
+        "passed_date": {
+          "result": "not found",
+          "recorded_value": "2023-11-07",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf",
+          "location": null
+        },
+        "enacted_date": {
+          "result": "not found",
+          "recorded_value": "2023-11-07",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf",
+          "location": null
+        },
+        "effective_date": {
+          "result": "not found",
+          "recorded_value": "2024-01-06",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf",
+          "location": null
+        },
+        "bill_number": {
+          "result": "not found",
+          "recorded_value": "Bill No. 23-21",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf",
+          "location": null
+        },
+        "sponsor": {
+          "result": "not found",
+          "recorded_value": "Council Member Knapp",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf",
+          "location": null
+        }
+      }
+    },
+    {
+      "record": "harford\\zoning_code\\chapter_267_zoning.md",
+      "record_type": "legislative",
+      "jurisdiction": "Harford County, Maryland",
+      "sources_available": [
+        ".cache\\pdf_cache\\17433598d45de41ede4047dca6a084d5f0bd5c6a1d41dd3c565c7505429aea05.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "Harford County Development Regulations - Chapter 267 (Zoning)",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\17433598d45de41ede4047dca6a084d5f0bd5c6a1d41dd3c565c7505429aea05.pdf",
+          "location": null
+        },
+        "action_status": {
+          "result": "not found",
+          "recorded_value": "Enacted",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\17433598d45de41ede4047dca6a084d5f0bd5c6a1d41dd3c565c7505429aea05.pdf",
+          "location": null
+        },
+        "effective_date": {
+          "result": "not found",
+          "recorded_value": "In force",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\17433598d45de41ede4047dca6a084d5f0bd5c6a1d41dd3c565c7505429aea05.pdf",
+          "location": null
+        }
+      }
+    },
+    {
+      "record": "howard\\council_bills\\cb_04_2026.md",
+      "record_type": "legislative",
+      "jurisdiction": "Howard County, MD",
+      "sources_available": [
+        ".cache\\pdf_cache\\164d145d7acaebe52ef0ee7b2ce32ace7e4a5ac75199653bd5c99e4bdbca7a1f.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "AN ACT amending the Howard County Zoning Regulations to implement the General Plan's recommendations for housing in activity centers, including defining activity center; providing that certain types of development projects in the TOD or TNC zoning districts shall provide more than one housing type; and adding regulations for age-restricted adult housing in the TOD and TNC zoning districts; and generally relating to the Howard County Zoning Regulations.",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\164d145d7acaebe52ef0ee7b2ce32ace7e4a5ac75199653bd5c99e4bdbca7a1f.pdf",
+          "location": null
+        },
+        "action_status": {
+          "result": "not found",
+          "recorded_value": "Withdrawn",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\164d145d7acaebe52ef0ee7b2ce32ace7e4a5ac75199653bd5c99e4bdbca7a1f.pdf",
+          "location": null
+        },
+        "introduced_date": {
+          "result": "found",
+          "recorded_value": "2026-01-05",
+          "matched_string": "January 5, 2026",
+          "source_file": ".cache\\pdf_cache\\164d145d7acaebe52ef0ee7b2ce32ace7e4a5ac75199653bd5c99e4bdbca7a1f.pdf",
+          "location": "page 50, line 11"
+        },
+        "effective_date": {
+          "result": "not found",
+          "recorded_value": "None (Withdrawn - did not take effect)",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\164d145d7acaebe52ef0ee7b2ce32ace7e4a5ac75199653bd5c99e4bdbca7a1f.pdf",
+          "location": null
+        },
+        "bill_number": {
+          "result": "found",
+          "recorded_value": "Council Bill 4-2026",
+          "matched_string": "4-2026",
+          "source_file": ".cache\\pdf_cache\\164d145d7acaebe52ef0ee7b2ce32ace7e4a5ac75199653bd5c99e4bdbca7a1f.pdf",
+          "location": "page 50, line 7"
+        },
+        "sponsor": {
+          "result": "found",
+          "recorded_value": "The Chairperson at the request of the County Executive",
+          "matched_string": "The Chairperson at the request of the County Executive",
+          "source_file": ".cache\\pdf_cache\\164d145d7acaebe52ef0ee7b2ce32ace7e4a5ac75199653bd5c99e4bdbca7a1f.pdf",
+          "location": "page 1, line 22"
+        }
+      }
+    },
+    {
+      "record": "howard\\council_bills\\cb_24_2026.md",
+      "record_type": "legislative",
+      "jurisdiction": "Howard County, MD",
+      "sources_available": [
+        ".cache\\pdf_cache\\ab74327e9562a33f675611ab46450b427292ad9d0862643843315a6a403ec0e6.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "AN ACT amending the Howard County Zoning Regulations to change the definition of 'Optional Design Project'; add a new subsection in Section 128.0 entitled 'Optional Design Projects in Route 1 Corridor'; expanding eligibility for the Optional Design Project process to certain commercial properties along Route 1; adding additional use criteria; and generally relating to the Howard County Zoning Regulations.",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\ab74327e9562a33f675611ab46450b427292ad9d0862643843315a6a403ec0e6.pdf",
+          "location": null
+        },
+        "action_status": {
+          "result": "not found",
+          "recorded_value": "Passed as Amended",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\ab74327e9562a33f675611ab46450b427292ad9d0862643843315a6a403ec0e6.pdf",
+          "location": null
+        },
+        "introduced_date": {
+          "result": "not found",
+          "recorded_value": "2026-04-06",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\ab74327e9562a33f675611ab46450b427292ad9d0862643843315a6a403ec0e6.pdf",
+          "location": null
+        },
+        "passed_date": {
+          "result": "found",
+          "recorded_value": "2026-05-04",
+          "matched_string": "May 4, 2026",
+          "source_file": ".cache\\pdf_cache\\ab74327e9562a33f675611ab46450b427292ad9d0862643843315a6a403ec0e6.pdf",
+          "location": "page 58, line 4"
+        },
+        "effective_date": {
+          "result": "not found",
+          "recorded_value": "2026-07-14",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\ab74327e9562a33f675611ab46450b427292ad9d0862643843315a6a403ec0e6.pdf",
+          "location": null
+        },
+        "bill_number": {
+          "result": "found",
+          "recorded_value": "Council Bill 24-2026",
+          "matched_string": "2026",
+          "source_file": ".cache\\pdf_cache\\ab74327e9562a33f675611ab46450b427292ad9d0862643843315a6a403ec0e6.pdf",
+          "location": "page 1, line 7"
+        },
+        "sponsor": {
+          "result": "found",
+          "recorded_value": "The Chairperson at the request of 10052 Washington Boulevard, LLC",
+          "matched_string": "The Chairperson at the request of 10052 Washington Boulevard, LLC",
+          "source_file": ".cache\\pdf_cache\\ab74327e9562a33f675611ab46450b427292ad9d0862643843315a6a403ec0e6.pdf",
+          "location": "page 1, line 9"
+        }
+      }
+    },
+    {
+      "record": "howard\\council_bills\\cb_25_2026.md",
+      "record_type": "legislative",
+      "jurisdiction": "Howard County, MD",
+      "sources_available": [
+        ".cache\\pdf_cache\\67dda74f72709fcfd4e6a0278927d3955601dce27fb2b2e6ba1585b2a28dad00.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "AN ACT amending the Howard County Zoning Regulations to define 'Cottage Clusters'; to provide where Age-Restricted Adult Housing Cottage Clusters will be permitted by right; to add parking requirements to Age-Restricted Adult Housing Cottage Clusters and multiplexes; to provide criteria for Age-Restricted Adult Housing Cottage Clusters within an Optional Design Project; and generally relating to the Howard County Zoning Regulations.",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\67dda74f72709fcfd4e6a0278927d3955601dce27fb2b2e6ba1585b2a28dad00.pdf",
+          "location": null
+        },
+        "action_status": {
+          "result": "not found",
+          "recorded_value": "Passed as Amended",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\67dda74f72709fcfd4e6a0278927d3955601dce27fb2b2e6ba1585b2a28dad00.pdf",
+          "location": null
+        },
+        "introduced_date": {
+          "result": "not found",
+          "recorded_value": "2026-05-04",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\67dda74f72709fcfd4e6a0278927d3955601dce27fb2b2e6ba1585b2a28dad00.pdf",
+          "location": null
+        },
+        "passed_date": {
+          "result": "found",
+          "recorded_value": "2026-06-01",
+          "matched_string": "June 1, 2026",
+          "source_file": ".cache\\pdf_cache\\67dda74f72709fcfd4e6a0278927d3955601dce27fb2b2e6ba1585b2a28dad00.pdf",
+          "location": "page 17, line 3"
+        },
+        "effective_date": {
+          "result": "not found",
+          "recorded_value": "2026-08-10",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\67dda74f72709fcfd4e6a0278927d3955601dce27fb2b2e6ba1585b2a28dad00.pdf",
+          "location": null
+        },
+        "bill_number": {
+          "result": "found",
+          "recorded_value": "Council Bill 25-2026",
+          "matched_string": "25-2026",
+          "source_file": ".cache\\pdf_cache\\67dda74f72709fcfd4e6a0278927d3955601dce27fb2b2e6ba1585b2a28dad00.pdf",
+          "location": "page 15, line 1"
+        },
+        "sponsor": {
+          "result": "found",
+          "recorded_value": "The Chairperson at the request of the County Executive",
+          "matched_string": "The Chairperson at the request of the County Executive",
+          "source_file": ".cache\\pdf_cache\\67dda74f72709fcfd4e6a0278927d3955601dce27fb2b2e6ba1585b2a28dad00.pdf",
+          "location": "page 1, line 9"
+        }
+      }
+    },
+    {
+      "record": "montgomery\\zta_amendments\\zta_22_12.md",
+      "record_type": "legislative",
+      "jurisdiction": "Maryland / Montgomery County",
+      "sources_available": [
+        ".cache\\pdf_cache\\a967857a8729db30f69f6484b600afcf7d24404450afde9e4a5748ff30228b73.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "Overlay Zones: Clarksburg East & West Environmental Overlay - Exemptions",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\a967857a8729db30f69f6484b600afcf7d24404450afde9e4a5748ff30228b73.pdf",
+          "location": null
+        },
+        "action_status": {
+          "result": "not found",
+          "recorded_value": "Withdrawn",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\a967857a8729db30f69f6484b600afcf7d24404450afde9e4a5748ff30228b73.pdf",
+          "location": null
+        },
+        "introduced_date": {
+          "result": "found",
+          "recorded_value": "12/13/2022",
+          "matched_string": "December 13, 2022",
+          "source_file": ".cache\\pdf_cache\\a967857a8729db30f69f6484b600afcf7d24404450afde9e4a5748ff30228b73.pdf",
+          "location": "page 1, line 10"
+        },
+        "public_hearing_date": {
+          "result": "not found",
+          "recorded_value": "2023-01-17",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\a967857a8729db30f69f6484b600afcf7d24404450afde9e4a5748ff30228b73.pdf",
+          "location": null
+        },
+        "zta_number": {
+          "result": "found",
+          "recorded_value": "22-12",
+          "matched_string": "22-12",
+          "source_file": ".cache\\pdf_cache\\a967857a8729db30f69f6484b600afcf7d24404450afde9e4a5748ff30228b73.pdf",
+          "location": "page 1, line 3"
+        },
+        "sponsor": {
+          "result": "not found",
+          "recorded_value": "County President Glass at the request of the Planning Board",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\a967857a8729db30f69f6484b600afcf7d24404450afde9e4a5748ff30228b73.pdf",
+          "location": null
+        }
+      }
+    },
+    {
+      "record": "montgomery\\zta_amendments\\zta_23_01.md",
+      "record_type": "legislative",
+      "jurisdiction": "Maryland / Montgomery County",
+      "sources_available": [
+        ".cache\\pdf_cache\\dee97c5e152a3fa0a7e2bafaf8c69c10eb8941ead2d22ff9e5c4d2deb0729b62.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "Accessory Residential Uses: Sharing Economy Rental",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\dee97c5e152a3fa0a7e2bafaf8c69c10eb8941ead2d22ff9e5c4d2deb0729b62.pdf",
+          "location": null
+        },
+        "action_status": {
+          "result": "found",
+          "recorded_value": "Introduced",
+          "matched_string": "Introduced",
+          "source_file": ".cache\\pdf_cache\\dee97c5e152a3fa0a7e2bafaf8c69c10eb8941ead2d22ff9e5c4d2deb0729b62.pdf",
+          "location": "page 5, line 5"
+        },
+        "introduced_date": {
+          "result": "found",
+          "recorded_value": "1/31/2023",
+          "matched_string": "1/31/2023",
+          "source_file": ".cache\\pdf_cache\\dee97c5e152a3fa0a7e2bafaf8c69c10eb8941ead2d22ff9e5c4d2deb0729b62.pdf",
+          "location": "page 25, line 20"
+        },
+        "public_hearing_date": {
+          "result": "found",
+          "recorded_value": "2023-03-07",
+          "matched_string": "March 7, 2023",
+          "source_file": ".cache\\pdf_cache\\dee97c5e152a3fa0a7e2bafaf8c69c10eb8941ead2d22ff9e5c4d2deb0729b62.pdf",
+          "location": "page 1, line 9"
+        },
+        "zta_number": {
+          "result": "found",
+          "recorded_value": "23-01",
+          "matched_string": "23-01",
+          "source_file": ".cache\\pdf_cache\\dee97c5e152a3fa0a7e2bafaf8c69c10eb8941ead2d22ff9e5c4d2deb0729b62.pdf",
+          "location": "page 1, line 15"
+        },
+        "sponsor": {
+          "result": "found",
+          "recorded_value": "Jawando",
+          "matched_string": "Jawando",
+          "source_file": ".cache\\pdf_cache\\dee97c5e152a3fa0a7e2bafaf8c69c10eb8941ead2d22ff9e5c4d2deb0729b62.pdf",
+          "location": "page 1, line 17"
+        }
+      }
+    },
+    {
+      "record": "montgomery\\zta_amendments\\zta_23_04.md",
+      "record_type": "legislative",
+      "jurisdiction": "Maryland / Montgomery County",
+      "sources_available": [
+        ".cache\\pdf_cache\\ef0f2b11973de23d55825cbba4f1cd0327e016dfb7a36b8d20990641bada7221.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "Residential Uses: Short Term Residential Rental",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\ef0f2b11973de23d55825cbba4f1cd0327e016dfb7a36b8d20990641bada7221.pdf",
+          "location": null
+        },
+        "action_status": {
+          "result": "not found",
+          "recorded_value": "Worksession",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\ef0f2b11973de23d55825cbba4f1cd0327e016dfb7a36b8d20990641bada7221.pdf",
+          "location": null
+        },
+        "introduced_date": {
+          "result": "found",
+          "recorded_value": "4/18/2023",
+          "matched_string": "April 18, 2023",
+          "source_file": ".cache\\pdf_cache\\ef0f2b11973de23d55825cbba4f1cd0327e016dfb7a36b8d20990641bada7221.pdf",
+          "location": "page 3, line 5"
+        },
+        "public_hearing_date": {
+          "result": "found",
+          "recorded_value": "2023-06-13",
+          "matched_string": "June 13, 2023",
+          "source_file": ".cache\\pdf_cache\\ef0f2b11973de23d55825cbba4f1cd0327e016dfb7a36b8d20990641bada7221.pdf",
+          "location": "page 1, line 10"
+        },
+        "zta_number": {
+          "result": "found",
+          "recorded_value": "23-04",
+          "matched_string": "23-04",
+          "source_file": ".cache\\pdf_cache\\ef0f2b11973de23d55825cbba4f1cd0327e016dfb7a36b8d20990641bada7221.pdf",
+          "location": "page 1, line 16"
+        },
+        "sponsor": {
+          "result": "found",
+          "recorded_value": "Council President Glass at the request of the County Executive",
+          "matched_string": "Council President Glass at the request of the County Executive",
+          "source_file": ".cache\\pdf_cache\\ef0f2b11973de23d55825cbba4f1cd0327e016dfb7a36b8d20990641bada7221.pdf",
+          "location": "page 1, line 18"
+        }
+      }
+    },
+    {
+      "record": "montgomery\\zta_amendments\\zta_23_09.md",
+      "record_type": "legislative",
+      "jurisdiction": "Maryland / Montgomery County",
+      "sources_available": [
+        ".cache\\pdf_cache\\462401af5834c183176774eedc5f415d6ff4c790f8d9495f26ac523b069bdf63.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "Farming: Incidental Outdoor Stays",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\462401af5834c183176774eedc5f415d6ff4c790f8d9495f26ac523b069bdf63.pdf",
+          "location": null
+        },
+        "action_status": {
+          "result": "not found",
+          "recorded_value": "Pending Committee Review (Public Hearing Held)",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\462401af5834c183176774eedc5f415d6ff4c790f8d9495f26ac523b069bdf63.pdf",
+          "location": null
+        },
+        "introduced_date": {
+          "result": "found",
+          "recorded_value": "11/7/2023",
+          "matched_string": "November 7, 2023",
+          "source_file": ".cache\\pdf_cache\\462401af5834c183176774eedc5f415d6ff4c790f8d9495f26ac523b069bdf63.pdf",
+          "location": "page 1, line 9"
+        },
+        "public_hearing_date": {
+          "result": "not found",
+          "recorded_value": "2024-01-16",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\462401af5834c183176774eedc5f415d6ff4c790f8d9495f26ac523b069bdf63.pdf",
+          "location": null
+        },
+        "zta_number": {
+          "result": "found",
+          "recorded_value": "23-09",
+          "matched_string": "23-09",
+          "source_file": ".cache\\pdf_cache\\462401af5834c183176774eedc5f415d6ff4c790f8d9495f26ac523b069bdf63.pdf",
+          "location": "page 1, line 23"
+        },
+        "sponsor": {
+          "result": "not found",
+          "recorded_value": "Fani-Gonzalez",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\462401af5834c183176774eedc5f415d6ff4c790f8d9495f26ac523b069bdf63.pdf",
+          "location": null
+        }
+      }
+    },
+    {
+      "record": "prince_georges\\council_bills\\cb_015_2024.md",
+      "record_type": "legislative",
+      "jurisdiction": "Prince George's County, Maryland",
+      "sources_available": [
+        ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "An Ordinance Concerning the Zoning Ordinance of Prince George's County - Omnibus Bill",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf",
+          "location": null
+        },
+        "action_status": {
+          "result": "not found",
+          "recorded_value": "Enacted",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf",
+          "location": null
+        },
+        "introduced_date": {
+          "result": "not found",
+          "recorded_value": "2024-01-30",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf",
+          "location": null
+        },
+        "passed_date": {
+          "result": "not found",
+          "recorded_value": "2024-07-16",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf",
+          "location": null
+        },
+        "enacted_date": {
+          "result": "not found",
+          "recorded_value": "2024-07-16",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf",
+          "location": null
+        },
+        "effective_date": {
+          "result": "not found",
+          "recorded_value": "2024-09-03",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf",
+          "location": null
+        },
+        "bill_number": {
+          "result": "found",
+          "recorded_value": "CB-015-2024",
+          "matched_string": "CB-015-2024",
+          "source_file": ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf",
+          "location": "page 1, line 7"
+        },
+        "sponsor": {
+          "result": "found",
+          "recorded_value": "Jolene Ivey",
+          "matched_string": "Jolene Ivey",
+          "source_file": ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf",
+          "location": "page 291, line 16"
+        }
+      }
+    },
+    {
+      "record": "prince_georges\\council_bills\\cb_020_2026.md",
+      "record_type": "legislative",
+      "jurisdiction": "Prince George's County, Maryland",
+      "sources_available": [
+        ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "Administration - Pre-Application Neighborhood Meetings - Transparency in Land Use",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf",
+          "location": null
+        },
+        "action_status": {
+          "result": "not found",
+          "recorded_value": "Enacted",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf",
+          "location": null
+        },
+        "introduced_date": {
+          "result": "not found",
+          "recorded_value": "2026-05-05",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf",
+          "location": null
+        },
+        "passed_date": {
+          "result": "not found",
+          "recorded_value": "2026-06-22",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf",
+          "location": null
+        },
+        "enacted_date": {
+          "result": "not found",
+          "recorded_value": "2026-06-22",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf",
+          "location": null
+        },
+        "effective_date": {
+          "result": "not found",
+          "recorded_value": "2026-12-21",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf",
+          "location": null
+        },
+        "bill_number": {
+          "result": "not found",
+          "recorded_value": "CB-020-2026",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf",
+          "location": null
+        },
+        "sponsor": {
+          "result": "not found",
+          "recorded_value": "Danielle I. Hunter",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf",
+          "location": null
+        }
+      }
+    },
+    {
+      "record": "state_statutes\\critical_area_program.md",
+      "record_type": "legislative",
+      "jurisdiction": "state_statutes",
+      "sources_available": [],
+      "fields": {}
+    },
+    {
+      "record": "state_statutes\\land_use_article_division_1.md",
+      "record_type": "legislative",
+      "jurisdiction": "state_statutes",
+      "sources_available": [],
+      "fields": {}
+    },
+    {
+      "record": "state_statutes\\land_use_article_division_2.md",
+      "record_type": "legislative",
+      "jurisdiction": "state_statutes",
+      "sources_available": [],
+      "fields": {}
+    },
+    {
+      "record": "water\\measurements\\aa_broad_creek\\lead_copper_violation_2025.md",
+      "record_type": "measurement",
+      "jurisdiction": "md/anne_arundel",
+      "sources_available": [
+        ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "Water Quality Report 2025",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": null
+        },
+        "parameter": {
+          "result": "not found",
+          "recorded_value": "Lead and Copper Rule Monitoring and Reporting",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": null
+        },
+        "reported_value": {
+          "result": "found",
+          "recorded_value": "Violation",
+          "matched_string": "Violation",
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": "page 4, line 23"
+        },
+        "unit": {
+          "result": "not found",
+          "recorded_value": "status",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": null
+        },
+        "limit": {
+          "result": "found",
+          "recorded_value": "30",
+          "matched_string": "30",
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": "page 1, line 6"
+        },
+        "determination": {
+          "result": "found",
+          "recorded_value": "As a result, we were assessed a monitoring and reporting violation for October 1 through 14, 2025.",
+          "matched_string": "As a result, we were assessed a monitoring and reporting violation for October 1 through 14, 2025.",
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": "page 4"
+        },
+        "reporting_period": {
+          "result": "found",
+          "recorded_value": "2025",
+          "matched_string": "2025",
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": "page 1, line 1"
+        },
+        "file_last_saved": {
+          "result": "not found",
+          "recorded_value": "2026-06-25",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": null
+        }
+      }
+    },
+    {
+      "record": "water\\measurements\\aa_crofton_odenton\\lead_copper_violation_2025.md",
+      "record_type": "measurement",
+      "jurisdiction": "md/anne_arundel",
+      "sources_available": [
+        ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "Water Quality Report 2025",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": null
+        },
+        "parameter": {
+          "result": "not found",
+          "recorded_value": "Lead and Copper Rule Monitoring and Reporting",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": null
+        },
+        "reported_value": {
+          "result": "found",
+          "recorded_value": "Violation",
+          "matched_string": "Violation",
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": "page 4, line 23"
+        },
+        "unit": {
+          "result": "not found",
+          "recorded_value": "status",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": null
+        },
+        "limit": {
+          "result": "found",
+          "recorded_value": "30",
+          "matched_string": "30",
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": "page 1, line 6"
+        },
+        "determination": {
+          "result": "found",
+          "recorded_value": "As a result, we were assessed a monitoring and reporting violation for October 1 through 14, 2025.",
+          "matched_string": "As a result, we were assessed a monitoring and reporting violation for October 1 through 14, 2025.",
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": "page 4"
+        },
+        "reporting_period": {
+          "result": "found",
+          "recorded_value": "2025",
+          "matched_string": "2025",
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": "page 1, line 1"
+        },
+        "file_last_saved": {
+          "result": "not found",
+          "recorded_value": "2026-06-25",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": null
+        }
+      }
+    },
+    {
+      "record": "water\\measurements\\aa_crownsville\\lead_tap_2025.md",
+      "record_type": "measurement",
+      "jurisdiction": "md/anne_arundel",
+      "sources_available": [
+        ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "Water Quality Report 2025",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": null
+        },
+        "parameter": {
+          "result": "found",
+          "recorded_value": "Lead",
+          "matched_string": "Lead",
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": "page 3, line 39"
+        },
+        "reported_value": {
+          "result": "not found",
+          "recorded_value": "<2.0",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": null
+        },
+        "unit": {
+          "result": "not found",
+          "recorded_value": "\u00b5g/L",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": null
+        },
+        "limit": {
+          "result": "found",
+          "recorded_value": "15",
+          "matched_string": "15",
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": "page 2, line 37"
+        },
+        "determination": {
+          "result": "not found",
+          "recorded_value": "Violation: No",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": null
+        },
+        "reporting_period": {
+          "result": "found",
+          "recorded_value": "2023",
+          "matched_string": "2023",
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": "page 6, line 27"
+        },
+        "file_last_saved": {
+          "result": "not found",
+          "recorded_value": "2026-06-25",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": null
+        }
+      }
+    },
+    {
+      "record": "water\\measurements\\aa_glen_burnie\\copper_tap_2025.md",
+      "record_type": "measurement",
+      "jurisdiction": "md/anne_arundel",
+      "sources_available": [
+        ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "not found",
+          "recorded_value": "Water Quality Report 2025",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": null
+        },
+        "parameter": {
+          "result": "found",
+          "recorded_value": "Copper",
+          "matched_string": "Copper",
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": "page 4, line 23"
+        },
+        "reported_value": {
+          "result": "not found",
+          "recorded_value": "0.07",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": null
+        },
+        "unit": {
+          "result": "not found",
+          "recorded_value": "mg/L",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": null
+        },
+        "limit": {
+          "result": "found",
+          "recorded_value": "1.3",
+          "matched_string": "1.3",
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": "page 6, line 42"
+        },
+        "determination": {
+          "result": "not found",
+          "recorded_value": "Violation: No",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": null
+        },
+        "reporting_period": {
+          "result": "found",
+          "recorded_value": "2023",
+          "matched_string": "2023",
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": "page 6, line 27"
+        },
+        "file_last_saved": {
+          "result": "not found",
+          "recorded_value": "2026-06-25",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576.pdf",
+          "location": null
+        }
+      }
+    },
+    {
+      "record": "water\\measurements\\wssc_customer_tap\\lead_tap_2025.md",
+      "record_type": "measurement",
+      "jurisdiction": "md/wssc",
+      "sources_available": [
+        ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "found",
+          "recorded_value": "2025 Water Quality Report",
+          "matched_string": "2025 Water Quality Report",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 17, line 30"
+        },
+        "parameter": {
+          "result": "found",
+          "recorded_value": "Lead",
+          "matched_string": "Lead",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 6, line 5"
+        },
+        "reported_value": {
+          "result": "found",
+          "recorded_value": "<2.0",
+          "matched_string": "<2.0",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 13, line 34"
+        },
+        "unit": {
+          "result": "found",
+          "recorded_value": "\u00b5g/L",
+          "matched_string": "\u00b5g/L",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 13, line 34"
+        },
+        "limit": {
+          "result": "found",
+          "recorded_value": "15",
+          "matched_string": "15",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 7, line 43"
+        },
+        "determination": {
+          "result": "not found",
+          "recorded_value": "Violation: No",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": null
+        },
+        "reporting_period": {
+          "result": "found",
+          "recorded_value": "2023",
+          "matched_string": "2023",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 15, line 61"
+        },
+        "file_last_saved": {
+          "result": "not found",
+          "recorded_value": "2026-06-17",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": null
+        }
+      }
+    },
+    {
+      "record": "water\\measurements\\wssc_patuxent\\pfoa_2025.md",
+      "record_type": "measurement",
+      "jurisdiction": "md/wssc",
+      "sources_available": [
+        ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "found",
+          "recorded_value": "2025 Water Quality Report",
+          "matched_string": "2025 Water Quality Report",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 17, line 30"
+        },
+        "parameter": {
+          "result": "found",
+          "recorded_value": "Perfluorooctanoic acid (PFOA)",
+          "matched_string": "Perfluorooctanoic acid (PFOA)",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 7, line 24"
+        },
+        "reported_value": {
+          "result": "found",
+          "recorded_value": "1.8",
+          "matched_string": "1.8",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 14, line 16"
+        },
+        "unit": {
+          "result": "found",
+          "recorded_value": "ng/L",
+          "matched_string": "ng/L",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 14, line 16"
+        },
+        "limit": {
+          "result": "found",
+          "recorded_value": "4.0",
+          "matched_string": "4.0",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 14, line 16"
+        },
+        "determination": {
+          "result": "found",
+          "recorded_value": "The PFAS Rule was published in April 2024. MCL compliance determinations are scheduled to go into effect beginning April 26, 2029.",
+          "matched_string": "The PFAS Rule was published in April 2024. MCL compliance determinations are scheduled to go into effect beginning April 26, 2029.",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 15"
+        },
+        "reporting_period": {
+          "result": "found",
+          "recorded_value": "2025",
+          "matched_string": "2025",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 2, line 7"
+        },
+        "file_last_saved": {
+          "result": "not found",
+          "recorded_value": "2026-06-17",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": null
+        }
+      }
+    },
+    {
+      "record": "water\\measurements\\wssc_patuxent\\pfos_2025.md",
+      "record_type": "measurement",
+      "jurisdiction": "md/wssc",
+      "sources_available": [
+        ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "found",
+          "recorded_value": "2025 Water Quality Report",
+          "matched_string": "2025 Water Quality Report",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 17, line 30"
+        },
+        "parameter": {
+          "result": "not found",
+          "recorded_value": "Perfluorooctanesulfonic acid (PFOS)",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": null
+        },
+        "reported_value": {
+          "result": "found",
+          "recorded_value": "1.8",
+          "matched_string": "1.8",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 14, line 16"
+        },
+        "unit": {
+          "result": "found",
+          "recorded_value": "ng/L",
+          "matched_string": "ng/L",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 14, line 16"
+        },
+        "limit": {
+          "result": "found",
+          "recorded_value": "4.0",
+          "matched_string": "4.0",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 14, line 16"
+        },
+        "determination": {
+          "result": "found",
+          "recorded_value": "The PFAS Rule was published in April 2024. MCL compliance determinations are scheduled to go into effect beginning April 26, 2029.",
+          "matched_string": "The PFAS Rule was published in April 2024. MCL compliance determinations are scheduled to go into effect beginning April 26, 2029.",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 15"
+        },
+        "reporting_period": {
+          "result": "found",
+          "recorded_value": "2025",
+          "matched_string": "2025",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 2, line 7"
+        },
+        "file_last_saved": {
+          "result": "not found",
+          "recorded_value": "2026-06-17",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": null
+        }
+      }
+    },
+    {
+      "record": "water\\measurements\\wssc_potomac\\pfoa_2025.md",
+      "record_type": "measurement",
+      "jurisdiction": "md/wssc",
+      "sources_available": [
+        ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "found",
+          "recorded_value": "2025 Water Quality Report",
+          "matched_string": "2025 Water Quality Report",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 17, line 30"
+        },
+        "parameter": {
+          "result": "found",
+          "recorded_value": "Perfluorooctanoic acid (PFOA)",
+          "matched_string": "Perfluorooctanoic acid (PFOA)",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 7, line 24"
+        },
+        "reported_value": {
+          "result": "found",
+          "recorded_value": "3.7",
+          "matched_string": "3.7",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 14, line 16"
+        },
+        "unit": {
+          "result": "found",
+          "recorded_value": "ng/L",
+          "matched_string": "ng/L",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 14, line 16"
+        },
+        "limit": {
+          "result": "found",
+          "recorded_value": "4.0",
+          "matched_string": "4.0",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 14, line 16"
+        },
+        "determination": {
+          "result": "found",
+          "recorded_value": "The PFAS Rule was published in April 2024. MCL compliance determinations are scheduled to go into effect beginning April 26, 2029.",
+          "matched_string": "The PFAS Rule was published in April 2024. MCL compliance determinations are scheduled to go into effect beginning April 26, 2029.",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 15"
+        },
+        "reporting_period": {
+          "result": "found",
+          "recorded_value": "2025",
+          "matched_string": "2025",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 2, line 7"
+        },
+        "file_last_saved": {
+          "result": "not found",
+          "recorded_value": "2026-06-17",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": null
+        }
+      }
+    },
+    {
+      "record": "water\\measurements\\wssc_potomac\\pfos_2025.md",
+      "record_type": "measurement",
+      "jurisdiction": "md/wssc",
+      "sources_available": [
+        ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf"
+      ],
+      "fields": {
+        "title": {
+          "result": "found",
+          "recorded_value": "2025 Water Quality Report",
+          "matched_string": "2025 Water Quality Report",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 17, line 30"
+        },
+        "parameter": {
+          "result": "not found",
+          "recorded_value": "Perfluorooctanesulfonic acid (PFOS)",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": null
+        },
+        "reported_value": {
+          "result": "found",
+          "recorded_value": "4.2",
+          "matched_string": "4.2",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 14, line 22"
+        },
+        "unit": {
+          "result": "found",
+          "recorded_value": "ng/L",
+          "matched_string": "ng/L",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 14, line 16"
+        },
+        "limit": {
+          "result": "found",
+          "recorded_value": "4.0",
+          "matched_string": "4.0",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 14, line 16"
+        },
+        "determination": {
+          "result": "found",
+          "recorded_value": "The PFAS Rule was published in April 2024. MCL compliance determinations are scheduled to go into effect beginning April 26, 2029.",
+          "matched_string": "The PFAS Rule was published in April 2024. MCL compliance determinations are scheduled to go into effect beginning April 26, 2029.",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 15"
+        },
+        "reporting_period": {
+          "result": "found",
+          "recorded_value": "2025",
+          "matched_string": "2025",
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": "page 2, line 7"
+        },
+        "file_last_saved": {
+          "result": "not found",
+          "recorded_value": "2026-06-17",
+          "matched_string": null,
+          "source_file": ".cache\\pdf_cache\\57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa.pdf",
+          "location": null
+        }
+      }
+    }
+  ]
+}
