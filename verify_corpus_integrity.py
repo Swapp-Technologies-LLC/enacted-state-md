@@ -166,6 +166,15 @@ def validate_authority_file(file_path: str, cache_dir: str) -> list:
     jur_name = os.path.basename(os.path.dirname(os.path.abspath(file_path)))
     return validate_authority_data(data, jur_name, cache_dir)
 
+def get_verify_crawler() -> EnactedCrawler:
+    """Return EnactedCrawler for verification suite.
+    Uses crawler default min_interval (5.0 s) when VERIFY_CRAWLER_INTERVAL is unset.
+    VERIFY_CRAWLER_INTERVAL environment variable acts as an override only.
+    """
+    if "VERIFY_CRAWLER_INTERVAL" in os.environ:
+        return EnactedCrawler(min_interval=float(os.environ["VERIFY_CRAWLER_INTERVAL"]))
+    return EnactedCrawler()
+
 def run_verification():
     global failed_checks
     failed_checks = 0
@@ -173,7 +182,7 @@ def run_verification():
     print("  ENACTED / RECORD INTEGRITY VERIFICATION SUITE")
     print("===============================================================\n")
 
-    crawler = EnactedCrawler(min_interval=float(os.environ.get("VERIFY_CRAWLER_INTERVAL", "0.1")))
+    crawler = get_verify_crawler()
     robots_skipped_by_host = {}
     
     # -------------------------------------------------------------
