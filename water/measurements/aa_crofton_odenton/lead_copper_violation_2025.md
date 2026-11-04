@@ -13,6 +13,12 @@ determination:
   status: violation_reported
   quote: "As a result, we were assessed a monitoring and reporting violation for October 1 through 14, 2025."
   source_page: Page 4
+sampling_ref: water/sampling/anne_arundel.yaml
+sites_above_al:
+  quote: "0/30"
+  column_label: "SITES ABOVE AL/TOTAL SITES"
+  source_page: 6
+  glyph: false
 sample_location: Crofton/Odenton Water Service Area
 governing_limit:
   value: '30'

@@ -1,0 +1,17 @@
+system: "Anne Arundel County Department of Public Works"
+how_sampled_url: "/md/anne_arundel/water/how-sampled/"
+source_sha256: 37696b05ddaf815de5da58ff46fa008f182f99041e5bf35d4e77fcc66ef7f576
+passages:
+  - label: "90th percentile"
+    quote: "90th %ile: The levels reported for lead and copper represent the 90th percentile of the total number of sites tested. The 90th percentile is equal to or greater than 90% of our lead and copper detections."
+    source_page: 5
+  - label: "Action level"
+    quote: "AL (Action Level): The concentration of a contaminant which, if exceeded, triggers treatment or other requirements that a water system must follow."
+    source_page: 5
+  - label: "Sampling"
+    quote: "Tap water samples were collected for lead and copper analyses from sample sites throughout the community"
+    source_page: 7
+tap_testing:
+  quote: "If you are concerned about lead in your water and wish to have it tested, contact Anne Arundel County at buo-customer-care@aacounty.org."
+  contact: "buo-customer-care@aacounty.org"
+  source_page: 3

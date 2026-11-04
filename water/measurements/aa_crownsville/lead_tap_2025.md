@@ -6,13 +6,22 @@ jurisdiction: md/anne_arundel
 jurisdiction_name: Anne Arundel County
 system: Crownsville
 parameter: Lead
-value: <2.0
+value: '6.34'
 unit: µg/L
 reporting_period: '2023'
 determination:
   status: no_violation_reported
   quote: "Violation: No"
-  source_page: Page 6
+  source_page: Page 7
+sampling_ref: water/sampling/anne_arundel.yaml
+sites_above_al:
+  quote: "1/10"
+  column_label: "SITES ABOVE AL/TOTAL SITES"
+  source_page: 7
+  glyph: true
+  footnote:
+    text: "Sampled in 2023."
+    page: 8
 sample_location: Customer Taps
 governing_limit:
   value: '15'
@@ -47,22 +56,26 @@ topics:
 - **Reporting Period:** 2023 compliance monitoring (published in 2025 Report)
 - **Parameter:** Lead
 - **Monitoring Location:** Customer Tap
-- **90th Percentile Value:** <2.0 µg/L (ppb)
+- **90th Percentile Value:** 6.34 µg/L
 - **Governing Limit:** 15 µg/L (Action Level)
 - **Compliance Date:** In force
 - **Limit Basis:** 90th percentile of customer tap samples
 - **Violation:** No
 
 ## 2. As Tabulated in the Source (Re-keyed)
-From Anne Arundel County Water Quality Report 2025 (Regulated Contaminants, page 6):
+From Anne Arundel County Water Quality Report 2025 (Tap water samples for lead and copper, page 7):
 ```
-Substance: Lead
-Units: µg/L
-Crownsville 90th Percentile: <2.0
+Substance (Unit of Measure): Lead (ppb)
+Year Sampled: 2025
 AL: 15
 MCLG: 0
+Amount Detected (90th %ile) Crownsville Zone: 6.34
+Range Low-High: NA
+Sites Above AL/Total Sites: 1/10 (Footnote 4)
 Violation: No
-Major Source: Corrosion of household plumbing systems
+Typical Source: Lead service lines; Corrosion of household plumbing systems including fittings and fixtures; Erosion of natural deposits
+
+Footnote 4 (from page 8): "Sampled in 2023."
 ```
 
 ## 3. Agency Inquiries
