@@ -99,7 +99,7 @@ The deterministic workflows interact only with the following official endpoints:
 
 Repositories are organized on a per-state basis (`enacted-state-md`) containing all topics for that state's jurisdictions (alongside `enacted-federal` for federal matters).
 - **Topic is a Directory + Tag, Never a Repo**: Legislative records live in `<jurisdiction>/council_bills/` or `<jurisdiction>/zta_amendments/` with frontmatter tags: `record_type: legislative`, `topic: zoning`, `topics: ["zoning", ...]`.
-- **Measurement Records**: Public water and environmental measurement records live strictly under `water/measurements/<PWSID>/<parameter>_<year>.md` with frontmatter tags: `record_type: measurement`, `topic: water`, `topics: ["water"]`, `system_id: <PWSID>`, and mechanical quotation from Consumer Confidence Reports (CCRs) or SDWIS reports.
+- **Measurement Records**: Public water and environmental measurement records live strictly under `water/measurements/<PWSID>/<parameter>_<year>.md` with frontmatter tags: `record_type: measurement`, `topic: water`, `topics: ["water"]`, `system_id: <PWSID>`, and mechanical quotation from Consumer Confidence Reports (CCRs) or SDWIS reports. `source_page` is the PDF page index, 1-based, as a reader counts pages in the file; printed page numbers are not used.
 - **Feed Topology**: Atom 1.0 and JSON Feed 1.1 syndication feeds are generated for each populated jurisdiction and topic:
   - Per-jurisdiction topic feeds: `feeds/<jur>/<topic>.atom|json`
   - Statewide topic aggregates: `feeds/topics/<topic>.atom|json`
