@@ -8,6 +8,7 @@ import os
 import sys
 import json
 import re
+import time
 import yaml
 from urllib.parse import urlparse
 from scripts.crawler import EnactedCrawler
@@ -174,6 +175,35 @@ def get_verify_crawler() -> EnactedCrawler:
     if "VERIFY_CRAWLER_INTERVAL" in os.environ:
         return EnactedCrawler(min_interval=float(os.environ["VERIFY_CRAWLER_INTERVAL"]))
     return EnactedCrawler()
+
+
+def fetch_corpus_url(crawler: EnactedCrawler, url: str, timeout: int = 25, retries: int = 1):
+    """
+    Founder ruling (2026-11-05): on a timeout, connection error (status_code == 0 or exception)
+    or 5xx, retry once. If still failing, return ('unreachable', status_code, b"", err).
+    For client errors (404, 410, etc.), return ('http_error', status_code, b"", err) immediately.
+    For 200/302, return ('ok', status_code, body, "").
+    If robots.txt disallows, return ('robots_disallowed', status_code, b"", err).
+    """
+    for attempt in range(retries + 1):
+        try:
+            allowed, status_code, data, err = crawler.fetch(url, timeout=timeout)
+            if not allowed:
+                return "robots_disallowed", status_code, data, err
+            if status_code in (200, 302):
+                return "ok", status_code, data, err
+            if status_code in (404, 410) or (400 <= status_code < 500):
+                return "http_error", status_code, data, err
+            # 5xx or 0 (timeout / connection error)
+            if attempt < retries:
+                time.sleep(1.0)
+                continue
+            return "unreachable", status_code, data, err
+        except Exception as exc:
+            if attempt < retries:
+                time.sleep(1.0)
+                continue
+            return "unreachable", 0, b"", str(exc)
 
 def run_verification():
     global failed_checks
@@ -628,16 +658,19 @@ def run_verification():
                 rehash_passed += 1
                 continue
     
-        # Fetch fresh from primary source via EnactedCrawler
+        # Fetch fresh from primary source via EnactedCrawler (Founder ruling: retry then warn on unreachable)
         try:
-            allowed, status_code, data, err = crawler.fetch(pdf_url, timeout=25)
-            if not allowed:
+            status, status_code, data, err = fetch_corpus_url(crawler, pdf_url, timeout=25)
+            if status == "robots_disallowed":
                 host = urlparse(pdf_url).netloc.lower()
                 robots_skipped_by_host[host] = robots_skipped_by_host.get(host, 0) + 1
                 rehash_robots_skipped += 1
                 print(f"  not fetched: robots ({pdf_url})")
                 continue
-            if status_code != 200:
+            if status == "unreachable":
+                print(f"  unreachable at gate time: {pdf_url}")
+                continue
+            if status != "ok":
                 print(f"  FAIL: HTTP {status_code} fetching PDF for {rel} from {pdf_url}: {err}")
                 rehash_failed += 1
                 failed_checks += 1
@@ -800,15 +833,17 @@ def run_verification():
             print(f"  not fetched: robots ({u})")
             continue
 
-        allowed, status_code, body, err = crawler.fetch(u, timeout=25)
-        if not allowed:
+        status, status_code, body, err = fetch_corpus_url(crawler, u, timeout=25)
+        if status == "robots_disallowed":
             host = urlparse(u).netloc.lower()
             robots_skipped_by_host[host] = robots_skipped_by_host.get(host, 0) + 1
             liveness_robots_skipped += 1
             print(f"  not fetched: robots ({u})")
             continue
-
-        if status_code == 200:
+        elif status == "unreachable":
+            print(f"  unreachable at gate time: {u}")
+            continue
+        elif status == "ok":
             liveness_passed += 1
         else:
             print(f"  FAIL: Connection error on corpus URL {u}: HTTP {status_code} {err}")
