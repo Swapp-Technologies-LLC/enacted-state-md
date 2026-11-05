@@ -1,6 +1,6 @@
 {
   "repository": "enacted-state-md",
-  "check_timestamp": "2026-11-04T21:53:24.243672+00:00",
+  "check_timestamp": "2026-11-05T17:54:33.491962+00:00",
   "date_renderings_rules": [
     "YYYY-MM-DD",
     "MM/DD/YYYY",
@@ -273,14 +273,14 @@
       "record": "baltimore_city\\council_bills\\ord_26_128.md",
       "record_type": "legislative",
       "jurisdiction": "City of Baltimore, Maryland",
-      "source_host": "baltimore.legistar.com",
+      "source_host": "baltimore.legistar1.com",
       "sources_available": [
         ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf"
       ],
       "source_metrics": [
         {
           "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "page_count": 8,
           "total_chars": 0,
           "chars_per_page": 0.0,
@@ -293,7 +293,7 @@
           "recorded_value": "Data Centers - Moratorium",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "location": null
         },
         "action_status": {
@@ -301,7 +301,7 @@
           "recorded_value": "Enacted",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "location": null
         },
         "introduced_date": {
@@ -309,7 +309,7 @@
           "recorded_value": "2026-03-23",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "location": null
         },
         "passed_date": {
@@ -317,7 +317,7 @@
           "recorded_value": "2026-05-11",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "location": null
         },
         "enacted_date": {
@@ -325,7 +325,7 @@
           "recorded_value": "2026-06-16",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "location": null
         },
         "effective_date": {
@@ -333,7 +333,7 @@
           "recorded_value": "2026-06-16",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "location": null
         },
         "bill_number": {
@@ -341,7 +341,7 @@
           "recorded_value": "Council Bill 26-0158",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "location": null
         },
         "ordinance_number": {
@@ -349,7 +349,7 @@
           "recorded_value": "Ordinance 26-128",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "location": null
         },
         "sponsor": {
@@ -357,7 +357,7 @@
           "recorded_value": "Zeke Cohen",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "location": null
         }
       }
@@ -366,14 +366,14 @@
       "record": "baltimore_city\\council_bills\\ord_26_146.md",
       "record_type": "legislative",
       "jurisdiction": "City of Baltimore, Maryland",
-      "source_host": "baltimore.legistar.com",
+      "source_host": "baltimore.legistar1.com",
       "sources_available": [
         ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf"
       ],
       "source_metrics": [
         {
           "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "page_count": 4,
           "total_chars": 0,
           "chars_per_page": 0.0,
@@ -386,7 +386,7 @@
           "recorded_value": "Rezoning - 901 S Caton Avenue",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "location": null
         },
         "action_status": {
@@ -394,7 +394,7 @@
           "recorded_value": "Enacted",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "location": null
         },
         "introduced_date": {
@@ -402,7 +402,7 @@
           "recorded_value": "2026-04-27",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "location": null
         },
         "passed_date": {
@@ -410,7 +410,7 @@
           "recorded_value": "2026-07-13",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "location": null
         },
         "enacted_date": {
@@ -418,7 +418,7 @@
           "recorded_value": "2026-08-10",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "location": null
         },
         "effective_date": {
@@ -426,7 +426,7 @@
           "recorded_value": "2026-09-09",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "location": null
         },
         "bill_number": {
@@ -434,7 +434,7 @@
           "recorded_value": "Council Bill 26-0177",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "location": null
         },
         "ordinance_number": {
@@ -442,7 +442,7 @@
           "recorded_value": "Ordinance 26-146",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "location": null
         },
         "sponsor": {
@@ -450,7 +450,7 @@
           "recorded_value": "John Bullock",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
-          "source_host": "baltimore.legistar.com",
+          "source_host": "baltimore.legistar1.com",
           "location": null
         }
       }
@@ -459,14 +459,14 @@
       "record": "baltimore_county\\council_bills\\bill_09_26.md",
       "record_type": "legislative",
       "jurisdiction": "Baltimore County, Maryland",
-      "source_host": "countycouncil.baltimorecountymd.gov",
+      "source_host": "countycouncilweb.s3.amazonaws.com",
       "sources_available": [
         ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf"
       ],
       "source_metrics": [
         {
           "source_file": ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf",
-          "source_host": "countycouncil.baltimorecountymd.gov",
+          "source_host": "countycouncilweb.s3.amazonaws.com",
           "page_count": 7,
           "total_chars": 8743,
           "chars_per_page": 1249.0,
@@ -479,7 +479,7 @@
           "recorded_value": "Zoning Regulations - Data Centers and Energy Storage Devices - Partial Repeal and Clarification",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf",
-          "source_host": "countycouncil.baltimorecountymd.gov",
+          "source_host": "countycouncilweb.s3.amazonaws.com",
           "location": null
         },
         "action_status": {
@@ -487,7 +487,7 @@
           "recorded_value": "Enacted",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf",
-          "source_host": "countycouncil.baltimorecountymd.gov",
+          "source_host": "countycouncilweb.s3.amazonaws.com",
           "location": null
         },
         "introduced_date": {
@@ -495,7 +495,7 @@
           "recorded_value": "2026-01-20",
           "matched_string": "January 20, 2026",
           "source_file": ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf",
-          "source_host": "countycouncil.baltimorecountymd.gov",
+          "source_host": "countycouncilweb.s3.amazonaws.com",
           "location": "page 1, line 16"
         },
         "passed_date": {
@@ -503,7 +503,7 @@
           "recorded_value": "2026-02-17",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf",
-          "source_host": "countycouncil.baltimorecountymd.gov",
+          "source_host": "countycouncilweb.s3.amazonaws.com",
           "location": null
         },
         "enacted_date": {
@@ -511,7 +511,7 @@
           "recorded_value": "2026-02-23",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf",
-          "source_host": "countycouncil.baltimorecountymd.gov",
+          "source_host": "countycouncilweb.s3.amazonaws.com",
           "location": null
         },
         "effective_date": {
@@ -519,7 +519,7 @@
           "recorded_value": "2026-04-06",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf",
-          "source_host": "countycouncil.baltimorecountymd.gov",
+          "source_host": "countycouncilweb.s3.amazonaws.com",
           "location": null
         },
         "bill_number": {
@@ -527,7 +527,7 @@
           "recorded_value": "Bill No. 9-26",
           "matched_string": "Bill No. 9-26",
           "source_file": ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf",
-          "source_host": "countycouncil.baltimorecountymd.gov",
+          "source_host": "countycouncilweb.s3.amazonaws.com",
           "location": "page 1, line 10"
         },
         "sponsor": {
@@ -535,7 +535,7 @@
           "recorded_value": "Councilman Patoka",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf",
-          "source_host": "countycouncil.baltimorecountymd.gov",
+          "source_host": "countycouncilweb.s3.amazonaws.com",
           "location": null
         }
       }
@@ -544,14 +544,14 @@
       "record": "baltimore_county\\council_bills\\bill_21_25.md",
       "record_type": "legislative",
       "jurisdiction": "Baltimore County, Maryland",
-      "source_host": "countycouncil.baltimorecountymd.gov",
+      "source_host": "countycouncilweb.s3.amazonaws.com",
       "sources_available": [
         ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf"
       ],
       "source_metrics": [
         {
           "source_file": ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf",
-          "source_host": "countycouncil.baltimorecountymd.gov",
+          "source_host": "countycouncilweb.s3.amazonaws.com",
           "page_count": 3,
           "total_chars": 3760,
           "chars_per_page": 1253.3333333333333,
@@ -564,7 +564,7 @@
           "recorded_value": "Zoning Regulations - Solar Facilities - Siting Requirements",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf",
-          "source_host": "countycouncil.baltimorecountymd.gov",
+          "source_host": "countycouncilweb.s3.amazonaws.com",
           "location": null
         },
         "action_status": {
@@ -572,7 +572,7 @@
           "recorded_value": "Enacted",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf",
-          "source_host": "countycouncil.baltimorecountymd.gov",
+          "source_host": "countycouncilweb.s3.amazonaws.com",
           "location": null
         },
         "introduced_date": {
@@ -580,7 +580,7 @@
           "recorded_value": "2025-03-03",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf",
-          "source_host": "countycouncil.baltimorecountymd.gov",
+          "source_host": "countycouncilweb.s3.amazonaws.com",
           "location": null
         },
         "passed_date": {
@@ -588,7 +588,7 @@
           "recorded_value": "2025-04-07",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf",
-          "source_host": "countycouncil.baltimorecountymd.gov",
+          "source_host": "countycouncilweb.s3.amazonaws.com",
           "location": null
         },
         "enacted_date": {
@@ -596,7 +596,7 @@
           "recorded_value": "2025-04-14",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf",
-          "source_host": "countycouncil.baltimorecountymd.gov",
+          "source_host": "countycouncilweb.s3.amazonaws.com",
           "location": null
         },
         "effective_date": {
@@ -604,7 +604,7 @@
           "recorded_value": "2025-05-26",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf",
-          "source_host": "countycouncil.baltimorecountymd.gov",
+          "source_host": "countycouncilweb.s3.amazonaws.com",
           "location": null
         },
         "bill_number": {
@@ -612,7 +612,7 @@
           "recorded_value": "Bill No. 21-25",
           "matched_string": "Bill No. 21-25",
           "source_file": ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf",
-          "source_host": "countycouncil.baltimorecountymd.gov",
+          "source_host": "countycouncilweb.s3.amazonaws.com",
           "location": "page 1, line 10"
         },
         "sponsor": {
@@ -620,7 +620,7 @@
           "recorded_value": "Councilman Marks",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf",
-          "source_host": "countycouncil.baltimorecountymd.gov",
+          "source_host": "countycouncilweb.s3.amazonaws.com",
           "location": null
         }
       }
@@ -629,14 +629,14 @@
       "record": "frederick\\council_bills\\bill_23_20.md",
       "record_type": "legislative",
       "jurisdiction": "Frederick County, Maryland",
-      "source_host": "frederickcountymd.gov",
+      "source_host": "www.frederickcountymd.gov",
       "sources_available": [
         ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf"
       ],
       "source_metrics": [
         {
           "source_file": ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf",
-          "source_host": "frederickcountymd.gov",
+          "source_host": "www.frederickcountymd.gov",
           "page_count": 4,
           "total_chars": 0,
           "chars_per_page": 0.0,
@@ -649,7 +649,7 @@
           "recorded_value": "Limited Landscape Contractor Parking and Storage in the A (Agricultural) District",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf",
-          "source_host": "frederickcountymd.gov",
+          "source_host": "www.frederickcountymd.gov",
           "location": null
         },
         "action_status": {
@@ -657,7 +657,7 @@
           "recorded_value": "Enacted",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf",
-          "source_host": "frederickcountymd.gov",
+          "source_host": "www.frederickcountymd.gov",
           "location": null
         },
         "introduced_date": {
@@ -665,7 +665,7 @@
           "recorded_value": "2023-09-19",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf",
-          "source_host": "frederickcountymd.gov",
+          "source_host": "www.frederickcountymd.gov",
           "location": null
         },
         "passed_date": {
@@ -673,7 +673,7 @@
           "recorded_value": "2023-10-24",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf",
-          "source_host": "frederickcountymd.gov",
+          "source_host": "www.frederickcountymd.gov",
           "location": null
         },
         "enacted_date": {
@@ -681,7 +681,7 @@
           "recorded_value": "2023-10-24",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf",
-          "source_host": "frederickcountymd.gov",
+          "source_host": "www.frederickcountymd.gov",
           "location": null
         },
         "effective_date": {
@@ -689,7 +689,7 @@
           "recorded_value": "2023-12-23",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf",
-          "source_host": "frederickcountymd.gov",
+          "source_host": "www.frederickcountymd.gov",
           "location": null
         },
         "bill_number": {
@@ -697,7 +697,7 @@
           "recorded_value": "Bill No. 23-20",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf",
-          "source_host": "frederickcountymd.gov",
+          "source_host": "www.frederickcountymd.gov",
           "location": null
         },
         "sponsor": {
@@ -705,7 +705,7 @@
           "recorded_value": "Council Member Blue",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf",
-          "source_host": "frederickcountymd.gov",
+          "source_host": "www.frederickcountymd.gov",
           "location": null
         }
       }
@@ -714,14 +714,14 @@
       "record": "frederick\\council_bills\\bill_23_21.md",
       "record_type": "legislative",
       "jurisdiction": "Frederick County, Maryland",
-      "source_host": "frederickcountymd.gov",
+      "source_host": "www.frederickcountymd.gov",
       "sources_available": [
         ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf"
       ],
       "source_metrics": [
         {
           "source_file": ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf",
-          "source_host": "frederickcountymd.gov",
+          "source_host": "www.frederickcountymd.gov",
           "page_count": 7,
           "total_chars": 0,
           "chars_per_page": 0.0,
@@ -734,7 +734,7 @@
           "recorded_value": "Amendments to Chapter 1-19 of the FCC - Zoning Ordinance - Add Cannabis Dispensary, Growing Facility & Processing Facility",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf",
-          "source_host": "frederickcountymd.gov",
+          "source_host": "www.frederickcountymd.gov",
           "location": null
         },
         "action_status": {
@@ -742,7 +742,7 @@
           "recorded_value": "Enacted",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf",
-          "source_host": "frederickcountymd.gov",
+          "source_host": "www.frederickcountymd.gov",
           "location": null
         },
         "introduced_date": {
@@ -750,7 +750,7 @@
           "recorded_value": "2023-10-03",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf",
-          "source_host": "frederickcountymd.gov",
+          "source_host": "www.frederickcountymd.gov",
           "location": null
         },
         "passed_date": {
@@ -758,7 +758,7 @@
           "recorded_value": "2023-11-07",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf",
-          "source_host": "frederickcountymd.gov",
+          "source_host": "www.frederickcountymd.gov",
           "location": null
         },
         "enacted_date": {
@@ -766,7 +766,7 @@
           "recorded_value": "2023-11-07",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf",
-          "source_host": "frederickcountymd.gov",
+          "source_host": "www.frederickcountymd.gov",
           "location": null
         },
         "effective_date": {
@@ -774,7 +774,7 @@
           "recorded_value": "2024-01-06",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf",
-          "source_host": "frederickcountymd.gov",
+          "source_host": "www.frederickcountymd.gov",
           "location": null
         },
         "bill_number": {
@@ -782,7 +782,7 @@
           "recorded_value": "Bill No. 23-21",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf",
-          "source_host": "frederickcountymd.gov",
+          "source_host": "www.frederickcountymd.gov",
           "location": null
         },
         "sponsor": {
@@ -790,7 +790,7 @@
           "recorded_value": "Council Member Knapp",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf",
-          "source_host": "frederickcountymd.gov",
+          "source_host": "www.frederickcountymd.gov",
           "location": null
         }
       }
@@ -1343,14 +1343,14 @@
       "record": "prince_georges\\council_bills\\cb_015_2024.md",
       "record_type": "legislative",
       "jurisdiction": "Prince George's County, Maryland",
-      "source_host": "princegeorgescountymd.legistar.com",
+      "source_host": "princegeorgescountymd.legistar1.com",
       "sources_available": [
         ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf"
       ],
       "source_metrics": [
         {
           "source_file": ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf",
-          "source_host": "princegeorgescountymd.legistar.com",
+          "source_host": "princegeorgescountymd.legistar1.com",
           "page_count": 292,
           "total_chars": 632482,
           "chars_per_page": 2166.0342465753424,
@@ -1363,7 +1363,7 @@
           "recorded_value": "An Ordinance Concerning the Zoning Ordinance of Prince George's County - Omnibus Bill",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf",
-          "source_host": "princegeorgescountymd.legistar.com",
+          "source_host": "princegeorgescountymd.legistar1.com",
           "location": null
         },
         "action_status": {
@@ -1371,7 +1371,7 @@
           "recorded_value": "Enacted",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf",
-          "source_host": "princegeorgescountymd.legistar.com",
+          "source_host": "princegeorgescountymd.legistar1.com",
           "location": null
         },
         "introduced_date": {
@@ -1379,7 +1379,7 @@
           "recorded_value": "2024-01-30",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf",
-          "source_host": "princegeorgescountymd.legistar.com",
+          "source_host": "princegeorgescountymd.legistar1.com",
           "location": null
         },
         "passed_date": {
@@ -1387,7 +1387,7 @@
           "recorded_value": "2024-07-16",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf",
-          "source_host": "princegeorgescountymd.legistar.com",
+          "source_host": "princegeorgescountymd.legistar1.com",
           "location": null
         },
         "enacted_date": {
@@ -1395,7 +1395,7 @@
           "recorded_value": "2024-07-16",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf",
-          "source_host": "princegeorgescountymd.legistar.com",
+          "source_host": "princegeorgescountymd.legistar1.com",
           "location": null
         },
         "effective_date": {
@@ -1403,7 +1403,7 @@
           "recorded_value": "2024-09-03",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf",
-          "source_host": "princegeorgescountymd.legistar.com",
+          "source_host": "princegeorgescountymd.legistar1.com",
           "location": null
         },
         "bill_number": {
@@ -1411,7 +1411,7 @@
           "recorded_value": "CB-015-2024",
           "matched_string": "CB-015-2024",
           "source_file": ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf",
-          "source_host": "princegeorgescountymd.legistar.com",
+          "source_host": "princegeorgescountymd.legistar1.com",
           "location": "page 1, line 7"
         },
         "sponsor": {
@@ -1419,7 +1419,7 @@
           "recorded_value": "Jolene Ivey",
           "matched_string": "Jolene Ivey",
           "source_file": ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf",
-          "source_host": "princegeorgescountymd.legistar.com",
+          "source_host": "princegeorgescountymd.legistar1.com",
           "location": "page 291, line 16"
         }
       }
@@ -1428,14 +1428,14 @@
       "record": "prince_georges\\council_bills\\cb_020_2026.md",
       "record_type": "legislative",
       "jurisdiction": "Prince George's County, Maryland",
-      "source_host": "princegeorgescountymd.legistar.com",
+      "source_host": "princegeorgescountymd.legistar1.com",
       "sources_available": [
         ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf"
       ],
       "source_metrics": [
         {
           "source_file": ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf",
-          "source_host": "princegeorgescountymd.legistar.com",
+          "source_host": "princegeorgescountymd.legistar1.com",
           "page_count": 3,
           "total_chars": 2,
           "chars_per_page": 0.6666666666666666,
@@ -1448,7 +1448,7 @@
           "recorded_value": "Administration - Pre-Application Neighborhood Meetings - Transparency in Land Use",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf",
-          "source_host": "princegeorgescountymd.legistar.com",
+          "source_host": "princegeorgescountymd.legistar1.com",
           "location": null
         },
         "action_status": {
@@ -1456,7 +1456,7 @@
           "recorded_value": "Enacted",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf",
-          "source_host": "princegeorgescountymd.legistar.com",
+          "source_host": "princegeorgescountymd.legistar1.com",
           "location": null
         },
         "introduced_date": {
@@ -1464,7 +1464,7 @@
           "recorded_value": "2026-05-05",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf",
-          "source_host": "princegeorgescountymd.legistar.com",
+          "source_host": "princegeorgescountymd.legistar1.com",
           "location": null
         },
         "passed_date": {
@@ -1472,7 +1472,7 @@
           "recorded_value": "2026-06-22",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf",
-          "source_host": "princegeorgescountymd.legistar.com",
+          "source_host": "princegeorgescountymd.legistar1.com",
           "location": null
         },
         "enacted_date": {
@@ -1480,7 +1480,7 @@
           "recorded_value": "2026-06-22",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf",
-          "source_host": "princegeorgescountymd.legistar.com",
+          "source_host": "princegeorgescountymd.legistar1.com",
           "location": null
         },
         "effective_date": {
@@ -1488,7 +1488,7 @@
           "recorded_value": "2026-12-21",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf",
-          "source_host": "princegeorgescountymd.legistar.com",
+          "source_host": "princegeorgescountymd.legistar1.com",
           "location": null
         },
         "bill_number": {
@@ -1496,7 +1496,7 @@
           "recorded_value": "CB-020-2026",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf",
-          "source_host": "princegeorgescountymd.legistar.com",
+          "source_host": "princegeorgescountymd.legistar1.com",
           "location": null
         },
         "sponsor": {
@@ -1504,7 +1504,7 @@
           "recorded_value": "Danielle I. Hunter",
           "matched_string": null,
           "source_file": ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf",
-          "source_host": "princegeorgescountymd.legistar.com",
+          "source_host": "princegeorgescountymd.legistar1.com",
           "location": null
         }
       }
@@ -2183,7 +2183,7 @@
   "source_files": [
     {
       "source_file": ".cache\\pdf_cache\\064fb8d9b3f4e00497845881cc802285b5e749bf2cc9f880c2f12adac83e598d.pdf",
-      "source_host": "frederickcountymd.gov",
+      "source_host": "www.frederickcountymd.gov",
       "page_count": 7,
       "total_chars": 0,
       "chars_per_page": 0.0,
@@ -2191,7 +2191,7 @@
     },
     {
       "source_file": ".cache\\pdf_cache\\13c658c4e056d75f1f8da10a8073a108336f9de72584158a10b3b2c30b2e445b.pdf",
-      "source_host": "baltimore.legistar.com",
+      "source_host": "baltimore.legistar1.com",
       "page_count": 8,
       "total_chars": 0,
       "chars_per_page": 0.0,
@@ -2215,7 +2215,7 @@
     },
     {
       "source_file": ".cache\\pdf_cache\\27862dae61ae6e65cfa29836338d62ac8c14a5dab88b06f716fea104d36f79da.pdf",
-      "source_host": "baltimore.legistar.com",
+      "source_host": "baltimore.legistar1.com",
       "page_count": 4,
       "total_chars": 0,
       "chars_per_page": 0.0,
@@ -2223,7 +2223,7 @@
     },
     {
       "source_file": ".cache\\pdf_cache\\2e6f329aee5f01c70ad729240341908413dd5f56529ef3047047bf5549d60bf1.pdf",
-      "source_host": "princegeorgescountymd.legistar.com",
+      "source_host": "princegeorgescountymd.legistar1.com",
       "page_count": 292,
       "total_chars": 632482,
       "chars_per_page": 2166.0342465753424,
@@ -2255,7 +2255,7 @@
     },
     {
       "source_file": ".cache\\pdf_cache\\5c432b95a135365a61574ac737fc3a4ae2fb9a7a223113a5a1939ee3bb0d7139.pdf",
-      "source_host": "countycouncil.baltimorecountymd.gov",
+      "source_host": "countycouncilweb.s3.amazonaws.com",
       "page_count": 7,
       "total_chars": 8743,
       "chars_per_page": 1249.0,
@@ -2271,7 +2271,7 @@
     },
     {
       "source_file": ".cache\\pdf_cache\\7feed6a836b18a93e7891c858b505dd78f5ad27673bcfcf907d78138db3b8fc3.pdf",
-      "source_host": "frederickcountymd.gov",
+      "source_host": "www.frederickcountymd.gov",
       "page_count": 4,
       "total_chars": 0,
       "chars_per_page": 0.0,
@@ -2303,7 +2303,7 @@
     },
     {
       "source_file": ".cache\\pdf_cache\\ae43e71e5ce291e8b1435916f12a8cf9088bc8942c44ad29e7b2f0b673215775.pdf",
-      "source_host": "countycouncil.baltimorecountymd.gov",
+      "source_host": "countycouncilweb.s3.amazonaws.com",
       "page_count": 3,
       "total_chars": 3760,
       "chars_per_page": 1253.3333333333333,
@@ -2319,7 +2319,7 @@
     },
     {
       "source_file": ".cache\\pdf_cache\\d59cb8013ef3727ad1643cfba24eb1a431a96ede989935c0af190340676856be.pdf",
-      "source_host": "princegeorgescountymd.legistar.com",
+      "source_host": "princegeorgescountymd.legistar1.com",
       "page_count": 3,
       "total_chars": 2,
       "chars_per_page": 0.6666666666666666,
