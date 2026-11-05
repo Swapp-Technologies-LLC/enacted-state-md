@@ -37,6 +37,8 @@ def parse_record_file(filepath: Path) -> dict:
     else:
         frontmatter = {}
         body = text
+    if isinstance(frontmatter, dict):
+        frontmatter["_file_path"] = str(filepath)
     return {"frontmatter": frontmatter, "body": body, "path": filepath}
 
 def render_email_scaffold(jurisdiction_badge: str, jurisdiction_name: str, lead_text: str, items_html: str, contacts_html: str, last_ingested_iso: str, primary_portal: str, primary_domain: str) -> str:
@@ -969,6 +971,202 @@ def render_water_source_found_email(record=None) -> str:
     )
 
 
+def resolve_sampling_data_for_record(record: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    """Resolves sampling.yaml for a record by sampling_ref or system directory lookup.
+    Never hard-codes any quote, page, system name or URL.
+    """
+    sampling_path = None
+    samp_ref = record.get("sampling_ref")
+    if samp_ref:
+        candidates = [
+            REPO_BASE / samp_ref,
+            REPO_BASE.parent / "enacted-state-md" / samp_ref,
+            REPO_BASE.parent / "enacted-state-dc" / samp_ref,
+            REPO_BASE.parent / "enacted-state-va" / samp_ref,
+        ]
+        if record.get("_file_path"):
+            rec_file = Path(record["_file_path"])
+            p = rec_file.parent
+            while p != p.parent:
+                if (p / ".git").exists() or (p / "water").exists():
+                    candidates.insert(0, p / samp_ref)
+                    break
+                p = p.parent
+        for c in candidates:
+            if c.is_file():
+                sampling_path = c
+                break
+
+    if not sampling_path and record.get("_file_path"):
+        direct = Path(record["_file_path"]).parent / "sampling.yaml"
+        if direct.is_file():
+            sampling_path = direct
+
+    if not sampling_path:
+        sys_val = str(record.get("system", "")).lower()
+        agency_val = str(record.get("source_agency", "")).lower()
+        search_roots = [
+            REPO_BASE / "water" / "measurements",
+            REPO_BASE.parent / "enacted-state-md" / "water" / "measurements",
+            REPO_BASE.parent / "enacted-state-dc" / "water" / "measurements",
+            REPO_BASE.parent / "enacted-state-va" / "water" / "measurements",
+        ]
+        for sroot in search_roots:
+            if not sroot.is_dir():
+                continue
+            for sdir in sroot.iterdir():
+                if not sdir.is_dir():
+                    continue
+                sy = sdir / "sampling.yaml"
+                if sy.is_file():
+                    try:
+                        s_data = yaml.safe_load(sy.read_text(encoding="utf-8"))
+                        s_name = str(s_data.get("system", "")).lower()
+                        if s_name and (s_name in sys_val or s_name in agency_val or sys_val in s_name or agency_val in s_name):
+                            sampling_path = sy
+                            break
+                    except Exception:
+                        pass
+            if sampling_path:
+                break
+
+    if not sampling_path or not sampling_path.is_file():
+        return None
+
+    try:
+        return yaml.safe_load(sampling_path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+
+
+def render_email_sites_above_al_block(record: Dict[str, Any], base_url: str = "https://enacted.app") -> str:
+    sa = record.get("sites_above_al")
+    if not sa or not isinstance(sa, dict):
+        return ""
+    
+    quote_raw = str(sa.get("quote", "")).strip()
+    quote = html.escape(quote_raw)
+    col_label = str(sa.get("column_label", "")).strip()
+    source_page = sa.get("source_page", "")
+    glyph_flag = sa.get("glyph", False)
+    
+    footnote = sa.get("footnote")
+    if isinstance(footnote, dict):
+        fn_text = str(footnote.get("text", "")).strip()
+        fn_page = footnote.get("page", "")
+        fn_str = f" ({html.escape(fn_text)} Report, page {fn_page})"
+    elif footnote:
+        fn_str = f" ({html.escape(str(footnote))})"
+    else:
+        fn_str = ""
+    
+    det_quote_raw = str(record.get("determination", {}).get("quote", "")).strip()
+    is_same_quote = bool(quote_raw and det_quote_raw and quote_raw == det_quote_raw)
+    
+    if is_same_quote:
+        cell_text = f"Report, page {source_page}"
+    elif col_label and col_label.lower() != "none":
+        cell_text = f"<strong>{html.escape(col_label)}:</strong> {quote}{fn_str} &middot; Report, page {source_page}"
+    else:
+        cell_text = f"&ldquo;{quote}&rdquo;{fn_str} &middot; Report, page {source_page}"
+    
+    glyph_html = ""
+    label_html = ""
+    if glyph_flag:
+        glyph_html = f'<img src="{base_url}/static/glyphs/water/sites_above_action_level_reported.png" width="13" height="15" alt="" style="vertical-align: middle; margin-right: 6px;">'
+        label_html = '<strong style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #0b2732; margin-right: 6px;">Sites above action level reported</strong> '
+    
+    site_data_line = f'''
+              <!-- SITE DATA LINE -->
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-top: 14px; margin-bottom: 12px; font-size: 13px; line-height: 1.5; color: #2c3e44;">
+                <tr>
+                  <td valign="middle">
+                    {glyph_html}{label_html}{cell_text}
+                  </td>
+                </tr>
+              </table>
+    '''
+    
+    # Resolve sampling info dynamically from sampling.yaml
+    sampling_data = resolve_sampling_data_for_record(record)
+    if not sampling_data:
+        return site_data_line
+
+    passages = sampling_data.get("passages", [])
+    p_90th = next((p for p in passages if "90th" in p.get("label", "").lower()), None)
+    p_al = next((p for p in passages if "action level" in p.get("label", "").lower()), None)
+    rule_ref = sampling_data.get("rule_passage_ref")
+    if not p_al or (not p_90th and not rule_ref):
+        return site_data_line
+    p_al_quote = p_al.get("quote", "")
+    p_al_p = p_al.get("source_page", "")
+    rule_passage = None
+    if rule_ref:
+        fed_candidates = [
+            Path(__file__).resolve().parent.parent / "enacted-federal",
+            Path(__file__).resolve().parent / "sibling" / "enacted-federal",
+        ]
+        fed_dir = next((c for c in fed_candidates if c.is_dir()), None)
+        if fed_dir and (fed_dir / rule_ref).is_file():
+            rf_data = yaml.safe_load((fed_dir / rule_ref).read_text(encoding="utf-8"))
+            param = record.get("parameter", "")
+            is_copper = "copper" in str(param).lower()
+            if is_copper and isinstance(rf_data.get("copper"), dict):
+                r_entry = rf_data["copper"]
+                r_quote = r_entry.get("quote")
+                r_cit = r_entry.get("citation")
+            else:
+                r_quote = rf_data.get("quote")
+                r_cit = rf_data.get("citation")
+            r_ed = rf_data.get("edition")
+            r_dt = rf_data.get("source_fetched_at", "")[:10]
+            rule_passage = {
+                "quote": r_quote,
+                "citation": r_cit,
+                "edition": r_ed,
+                "fetched_date": r_dt
+            }
+
+    sys_name = sampling_data.get("system", "")
+    raw_url = sampling_data.get("how_sampled_url", "")
+    if raw_url.startswith("/"):
+        how_sampled_url = f"{base_url}{raw_url}"
+    else:
+        how_sampled_url = raw_url
+    if rule_passage:
+        note_body = f"The report prints a figure for the system and a count of individual sites. The report prints no definition of the 90th percentile. The federal rule says: &ldquo;{html.escape(rule_passage['quote'])}&rdquo; ({html.escape(rule_passage['citation'])}, {html.escape(rule_passage['edition'])}, fetched {rule_passage['fetched_date']}). In the report's words: &ldquo;{html.escape(p_al_quote)}&rdquo; (page {p_al_p})."
+    else:
+        p_90th_quote = p_90th.get("quote", "") if p_90th else ""
+        p_90th_p = p_90th.get("source_page", "") if p_90th else ""
+        note_body = f"The report prints a figure for the system and a count of individual sites. In the report's words: &ldquo;{html.escape(p_90th_quote)}&rdquo; (page {p_90th_p}). &ldquo;{html.escape(p_al_quote)}&rdquo; (page {p_al_p})."
+
+    note_line = f'''
+              <!-- FIXED NOTE -->
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="border: 1px solid #d8d2c6; background-color: #fbfaf6; margin-bottom: 12px;">
+                <tr>
+                  <td style="padding: 12px 14px; font-size: 13px; line-height: 1.55; color: #2c3e44;">
+                    {note_body}
+                  </td>
+                </tr>
+              </table>
+    '''
+
+    link_line = f'''
+              <!-- LINK TO SAMPLING PAGE -->
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 16px;">
+                <tr>
+                  <td>
+                    <a href="{how_sampled_url}" style="font-size: 13px; color: #3f646c; text-decoration: underline; font-weight: 500;">
+                      How {html.escape(sys_name)} samples for lead and copper &rarr;
+                    </a>
+                  </td>
+                </tr>
+              </table>
+    '''
+
+    return site_data_line + note_line + link_line
+
+
 def render_water_notice_email(record: Optional[Dict[str, Any]] = None, show_first_issue_key: bool = False) -> str:
     """
     Renders water notice email matching WaterNotice.dc.html artboard.
@@ -1006,6 +1204,10 @@ def render_water_notice_email(record: Optional[Dict[str, Any]] = None, show_firs
                       <tr>
                         <td width="24" valign="middle"><svg width="13" height="15" viewBox="0 0 18 20" aria-hidden="true"><path d="M9 1.5C9 1.5 3 9 3 13a6 6 0 0 0 12 0C15 9 9 1.5 9 1.5Z" fill="none" stroke="#527a83" stroke-width="1.8"/><circle cx="9" cy="13" r="1.5" fill="#527a83"/></svg></td>
                         <td><strong>Not stated:</strong> The report gives no determination.</td>
+                      </tr>
+                      <tr>
+                        <td width="24" valign="middle"><svg width="13" height="15" viewBox="0 0 18 20" aria-hidden="true"><path d="M9 1.5C9 1.5 3 9 3 13a6 6 0 0 0 12 0C15 9 9 1.5 9 1.5Z" fill="none" stroke="#0b2732" stroke-width="1.8"/><path d="M9 1.5C9 1.5 3 9 3 13a6 6 0 0 0 12 0C15 9 9 1.5 9 1.5Z" transform="translate(9 12.6) scale(0.42) translate(-9 -11)" fill="#0b2732"/></svg></td>
+                        <td><strong>Sites above action level reported:</strong> The report printed a count of individual sites above the action level; the count and the report&rsquo;s own definitions sit beside it.</td>
                       </tr>
                     </table>
                   </td>
@@ -1102,6 +1304,7 @@ def render_water_notice_email(record: Optional[Dict[str, Any]] = None, show_firs
                 <div style="color: #3f646c; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px;">From the report &middot; {source_title}, {quote_page.lower()}</div>
                 <div style="color: #2c3e44;">&ldquo;{quote_text}&rdquo;</div>
               </div>
+{render_email_sites_above_al_block(record)}
 
               <div style="margin-bottom: 16px;">
                 <div style="color: #3f646c; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px;">Against the earlier record</div>
@@ -1186,6 +1389,10 @@ def render_water_digest_email(records: Optional[List[Dict[str, Any]]] = None, sh
                         <td width="24" valign="middle"><svg width="13" height="15" viewBox="0 0 18 20" aria-hidden="true"><path d="M9 1.5C9 1.5 3 9 3 13a6 6 0 0 0 12 0C15 9 9 1.5 9 1.5Z" fill="none" stroke="#527a83" stroke-width="1.8"/><circle cx="9" cy="13" r="1.5" fill="#527a83"/></svg></td>
                         <td><strong>Not stated:</strong> The report gives no determination.</td>
                       </tr>
+                      <tr>
+                        <td width="24" valign="middle"><svg width="13" height="15" viewBox="0 0 18 20" aria-hidden="true"><path d="M9 1.5C9 1.5 3 9 3 13a6 6 0 0 0 12 0C15 9 9 1.5 9 1.5Z" fill="none" stroke="#0b2732" stroke-width="1.8"/><path d="M9 1.5C9 1.5 3 9 3 13a6 6 0 0 0 12 0C15 9 9 1.5 9 1.5Z" transform="translate(9 12.6) scale(0.42) translate(-9 -11)" fill="#0b2732"/></svg></td>
+                        <td><strong>Sites above action level reported:</strong> The report printed a count of individual sites above the action level; the count and the report&rsquo;s own definitions sit beside it.</td>
+                      </tr>
                     </table>
                   </td>
                 </tr>
@@ -1248,6 +1455,14 @@ def render_water_digest_email(records: Optional[List[Dict[str, Any]]] = None, sh
             period_label = f"reporting period {rec_period}" if rec_period else ""
 
         mclg_val = html.escape(str(rec.get("mclg", "")))
+
+        site_data_block = ""
+        if rec.get("sites_above_al"):
+            site_data_block = f"""
+                <div style="padding: 10px 14px; border-top: 1px solid #d8d2c6;">
+                  {render_email_sites_above_al_block(rec)}
+                </div>
+            """
 
         extra_card_bottom = ""
         comp_date_val = gov_limit.get("compliance_date", "")
@@ -1315,6 +1530,7 @@ def render_water_digest_email(records: Optional[List[Dict[str, Any]]] = None, sh
                   </tr>
                 </table>
                 {extra_card_bottom}
+                {site_data_block}
               </div>
             </td>
           </tr>
@@ -1477,6 +1693,9 @@ def main():
     water_found_html = render_water_source_found_email()
     water_notice_later_html = render_water_notice_email(show_first_issue_key=False)
     water_notice_first_html = render_water_notice_email(show_first_issue_key=True)
+    crownsville_rec_path = REPO_BASE / "water" / "measurements" / "aa_crownsville" / "lead_tap_2025.md"
+    crownsville_rec = parse_record_file(crownsville_rec_path)["frontmatter"]
+    water_notice_crownsville_html = render_water_notice_email(record=crownsville_rec, show_first_issue_key=False)
     water_digest_later_html = render_water_digest_email(show_first_issue_key=False)
     water_digest_first_html = render_water_digest_email(show_first_issue_key=True)
 
@@ -1494,6 +1713,7 @@ def main():
     (DEV_DIR / "water_source_found_email.html").write_text(water_found_html, encoding="utf-8")
     (DEV_DIR / "water_notice_email.html").write_text(water_notice_later_html, encoding="utf-8")
     (DEV_DIR / "water_notice_first_issue_email.html").write_text(water_notice_first_html, encoding="utf-8")
+    (DEV_DIR / "water_notice_crownsville_email.html").write_text(water_notice_crownsville_html, encoding="utf-8")
     (DEV_DIR / "water_digest_email.html").write_text(water_digest_later_html, encoding="utf-8")
     (DEV_DIR / "water_digest_first_issue_email.html").write_text(water_digest_first_html, encoding="utf-8")
 
@@ -1506,6 +1726,7 @@ def main():
     (BRAIN_DIR / "water_source_found_email.html").write_text(water_found_html, encoding="utf-8")
     (BRAIN_DIR / "water_notice_email.html").write_text(water_notice_later_html, encoding="utf-8")
     (BRAIN_DIR / "water_notice_first_issue_email.html").write_text(water_notice_first_html, encoding="utf-8")
+    (BRAIN_DIR / "water_notice_crownsville_email.html").write_text(water_notice_crownsville_html, encoding="utf-8")
     (BRAIN_DIR / "water_digest_email.html").write_text(water_digest_later_html, encoding="utf-8")
     (BRAIN_DIR / "water_digest_first_issue_email.html").write_text(water_digest_first_html, encoding="utf-8")
 
