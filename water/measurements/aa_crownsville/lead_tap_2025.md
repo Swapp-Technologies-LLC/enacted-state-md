@@ -1,6 +1,5 @@
 ---
 record_type: measurement
-title: Lead Tap Water Compliance (Anne Arundel County - Crownsville)
 source_title: Water Quality Report 2025
 source_agency: Anne Arundel County Department of Public Works
 jurisdiction: md/anne_arundel

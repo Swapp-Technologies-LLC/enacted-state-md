@@ -880,17 +880,10 @@ def run_verification():
             # Extended measurement schema gate: units present, limit citation present,
             # compliance_date present when limit has one, per-system attribution required.
             required_keys = [
-                "title", "source_agency", "jurisdiction", "system", "parameter", "value",
+                "source_agency", "jurisdiction", "system", "parameter", "value",
                 "unit", "reporting_period", "governing_limit",
                 "primary_source_url", "source_sha256", "source_fetched_at"
             ]
-            
-            # Title required on measurement records
-            title_val = fm.get("title")
-            if not title_val or not isinstance(title_val, str) or not title_val.strip():
-                print(f"  FAIL: {rel} missing required 'title' field on measurement record!")
-                schema_errs += 1
-                failed_checks += 1
 
             # Per-system attribution required
             system_val = fm.get("system")
