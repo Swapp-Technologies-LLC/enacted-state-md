@@ -1,5 +1,6 @@
 ---
 record_type: measurement
+title: Lead Tap Water Compliance (WSSC Water)
 source_title: 2025 Water Quality Report
 source_agency: Washington Suburban Sanitary Commission (WSSC Water)
 jurisdiction: md/wssc

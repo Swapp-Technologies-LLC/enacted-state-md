@@ -1,5 +1,6 @@
 ---
 record_type: measurement
+title: Lead and Copper Monitoring Compliance (Anne Arundel County - Broad Creek)
 source_title: Water Quality Report 2025
 source_agency: Anne Arundel County Department of Public Works
 jurisdiction: md/anne_arundel

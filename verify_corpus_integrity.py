@@ -192,7 +192,7 @@ def fetch_corpus_url(crawler: EnactedCrawler, url: str, timeout: int = 25, retri
                 return "robots_disallowed", status_code, data, err
             if status_code == 200:
                 return "ok", status_code, data, err
-            if 300 <= status_code < 500:
+            if 200 < status_code < 500:
                 return "http_error", status_code, data, err
             # 5xx or 0 (timeout / connection error)
             if attempt < retries:
@@ -880,11 +880,18 @@ def run_verification():
             # Extended measurement schema gate: units present, limit citation present,
             # compliance_date present when limit has one, per-system attribution required.
             required_keys = [
-                "source_agency", "jurisdiction", "system", "parameter", "value",
+                "title", "source_agency", "jurisdiction", "system", "parameter", "value",
                 "unit", "reporting_period", "governing_limit",
                 "primary_source_url", "source_sha256", "source_fetched_at"
             ]
             
+            # Title required on measurement records
+            title_val = fm.get("title")
+            if not title_val or not isinstance(title_val, str) or not title_val.strip():
+                print(f"  FAIL: {rel} missing required 'title' field on measurement record!")
+                schema_errs += 1
+                failed_checks += 1
+
             # Per-system attribution required
             system_val = fm.get("system")
             if not system_val or not isinstance(system_val, str) or not system_val.strip():
@@ -1025,7 +1032,7 @@ def run_verification():
             if ".git" in root.split(os.sep) or "__pycache__" in root.split(os.sep) or ".cache" in root.split(os.sep):
                 continue
             for fname in files:
-                if fname == "verify_corpus_integrity.py" or fname.lower().endswith(binary_extensions):
+                if fname in (".git", "verify_corpus_integrity.py") or fname.lower().endswith(binary_extensions):
                     continue
                 fpath = os.path.join(root, fname)
                 relpath = os.path.relpath(fpath, STAGING_DIR)
