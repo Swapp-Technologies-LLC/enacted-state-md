@@ -8,6 +8,7 @@ import os
 import sys
 import json
 import re
+import time
 import yaml
 from urllib.parse import urlparse
 from scripts.crawler import EnactedCrawler
@@ -166,6 +167,44 @@ def validate_authority_file(file_path: str, cache_dir: str) -> list:
     jur_name = os.path.basename(os.path.dirname(os.path.abspath(file_path)))
     return validate_authority_data(data, jur_name, cache_dir)
 
+def get_verify_crawler() -> EnactedCrawler:
+    """Return EnactedCrawler for verification suite.
+    Uses crawler default min_interval (5.0 s) when VERIFY_CRAWLER_INTERVAL is unset.
+    VERIFY_CRAWLER_INTERVAL environment variable acts as an override only.
+    """
+    if "VERIFY_CRAWLER_INTERVAL" in os.environ:
+        return EnactedCrawler(min_interval=float(os.environ["VERIFY_CRAWLER_INTERVAL"]))
+    return EnactedCrawler()
+
+
+def fetch_corpus_url(crawler: EnactedCrawler, url: str, timeout: int = 25, retries: int = 1):
+    """
+    Founder ruling (2026-11-05): on a timeout, connection error (status_code == 0 or exception)
+    or 5xx, retry once. If still failing, return ('unreachable', status_code, b"", err).
+    For client errors (404, 410, etc.), return ('http_error', status_code, b"", err) immediately.
+    For 200/302, return ('ok', status_code, body, "").
+    If robots.txt disallows, return ('robots_disallowed', status_code, b"", err).
+    """
+    for attempt in range(retries + 1):
+        try:
+            allowed, status_code, data, err = crawler.fetch(url, timeout=timeout)
+            if not allowed:
+                return "robots_disallowed", status_code, data, err
+            if status_code == 200:
+                return "ok", status_code, data, err
+            if 200 < status_code < 500:
+                return "http_error", status_code, data, err
+            # 5xx or 0 (timeout / connection error)
+            if attempt < retries:
+                time.sleep(1.0)
+                continue
+            return "unreachable", status_code, data, err
+        except Exception as exc:
+            if attempt < retries:
+                time.sleep(1.0)
+                continue
+            return "unreachable", 0, b"", str(exc)
+
 def run_verification():
     global failed_checks
     failed_checks = 0
@@ -173,7 +212,7 @@ def run_verification():
     print("  ENACTED / RECORD INTEGRITY VERIFICATION SUITE")
     print("===============================================================\n")
 
-    crawler = EnactedCrawler(min_interval=float(os.environ.get("VERIFY_CRAWLER_INTERVAL", "0.1")))
+    crawler = get_verify_crawler()
     robots_skipped_by_host = {}
     
     # -------------------------------------------------------------
@@ -619,16 +658,19 @@ def run_verification():
                 rehash_passed += 1
                 continue
     
-        # Fetch fresh from primary source via EnactedCrawler
+        # Fetch fresh from primary source via EnactedCrawler (Founder ruling: retry then warn on unreachable)
         try:
-            allowed, status_code, data, err = crawler.fetch(pdf_url, timeout=25)
-            if not allowed:
+            status, status_code, data, err = fetch_corpus_url(crawler, pdf_url, timeout=25)
+            if status == "robots_disallowed":
                 host = urlparse(pdf_url).netloc.lower()
                 robots_skipped_by_host[host] = robots_skipped_by_host.get(host, 0) + 1
                 rehash_robots_skipped += 1
                 print(f"  not fetched: robots ({pdf_url})")
                 continue
-            if status_code != 200:
+            if status == "unreachable":
+                print(f"  unreachable at gate time: {pdf_url}")
+                continue
+            if status != "ok":
                 print(f"  FAIL: HTTP {status_code} fetching PDF for {rel} from {pdf_url}: {err}")
                 rehash_failed += 1
                 failed_checks += 1
@@ -698,6 +740,13 @@ def run_verification():
                     print(f"  FAIL Date Chronology in {rel}: invalid or missing published_date: {fm.get('published_date')}")
                     date_errors += 1
                     failed_checks += 1
+            corr_raw = fm.get("corrected_on")
+            if corr_raw:
+                corr = parse_date_val(corr_raw)
+                if not corr:
+                    print(f"  FAIL Date Chronology in {rel}: invalid corrected_on: {corr_raw}")
+                    date_errors += 1
+                    failed_checks += 1
             continue
         intro = parse_date_val(fm.get("introduced_date"))
         passed = parse_date_val(fm.get("passed_date") or fm.get("adopted_date") or fm.get("enacted_date"))
@@ -722,6 +771,11 @@ def run_verification():
             item_errs.append(f"passed ({passed.date()}) > effective_override ({eff_override.date()})")
         if intro and withdrawn and intro > withdrawn:
             item_errs.append(f"introduced ({intro.date()}) > withdrawn ({withdrawn.date()})")
+        corr_raw = fm.get("corrected_on")
+        if corr_raw:
+            corr = parse_date_val(corr_raw)
+            if not corr:
+                item_errs.append(f"invalid corrected_on: {corr_raw}")
     
         # DC Emergency Act check
         if fm.get("dc_act_kind") == "emergency":
@@ -791,15 +845,17 @@ def run_verification():
             print(f"  not fetched: robots ({u})")
             continue
 
-        allowed, status_code, body, err = crawler.fetch(u, timeout=25)
-        if not allowed:
+        status, status_code, body, err = fetch_corpus_url(crawler, u, timeout=25)
+        if status == "robots_disallowed":
             host = urlparse(u).netloc.lower()
             robots_skipped_by_host[host] = robots_skipped_by_host.get(host, 0) + 1
             liveness_robots_skipped += 1
             print(f"  not fetched: robots ({u})")
             continue
-
-        if status_code == 200:
+        elif status == "unreachable":
+            print(f"  unreachable at gate time: {u}")
+            continue
+        elif status == "ok":
             liveness_passed += 1
         else:
             print(f"  FAIL: Connection error on corpus URL {u}: HTTP {status_code} {err}")
@@ -840,7 +896,7 @@ def run_verification():
                 "unit", "reporting_period", "governing_limit",
                 "primary_source_url", "source_sha256", "source_fetched_at"
             ]
-            
+
             # Per-system attribution required
             system_val = fm.get("system")
             if not system_val or not isinstance(system_val, str) or not system_val.strip():
@@ -981,7 +1037,7 @@ def run_verification():
             if ".git" in root.split(os.sep) or "__pycache__" in root.split(os.sep) or ".cache" in root.split(os.sep):
                 continue
             for fname in files:
-                if fname == "verify_corpus_integrity.py" or fname.lower().endswith(binary_extensions):
+                if fname in (".git", "verify_corpus_integrity.py") or fname.lower().endswith(binary_extensions):
                     continue
                 fpath = os.path.join(root, fname)
                 relpath = os.path.relpath(fpath, STAGING_DIR)
@@ -1095,6 +1151,22 @@ def run_verification():
                     failed_checks += 1
             else:
                 print(f"  ✓ {jur}: Verified authority.yaml contact integrity.")
+
+        # -------------------------------------------------------------
+        # CHECK 10: Field Accuracy Verification Gate for Measurement Records
+        # -------------------------------------------------------------
+        print("\n[CHECK 10] Field Accuracy Verification Gate for Measurement Records:")
+        try:
+            from scripts.check_field_accuracy import run_field_accuracy_check
+            fa_res = run_field_accuracy_check(REPO_BASE)
+            if fa_res != 0:
+                print("  FAIL: Field accuracy check failed for measurement records!")
+                failed_checks += 1
+            else:
+                print("  ✓ Measurement records field accuracy verified.")
+        except Exception as e:
+            print(f"  FAIL: Error executing field accuracy check: {e}")
+            failed_checks += 1
     
         if robots_skipped_by_host:
             print("\nRobots.txt Skipped URLs by Host:")

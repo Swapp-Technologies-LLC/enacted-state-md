@@ -889,6 +889,23 @@ class TestIngestSliceI1(unittest.TestCase):
         # Allowed URL is permitted
         self.assertTrue(crawler.can_fetch("https://allowed.gov/doc.pdf"))
 
+    # 22b. Verify Gate Crawler Default Interval Test
+    def test_verify_crawler_default_interval_unset(self):
+        """With VERIFY_CRAWLER_INTERVAL unset, verify gate crawler must have min_interval == 5.0 (the crawler default)."""
+        import verify_corpus_integrity as vci
+        old_val = os.environ.pop("VERIFY_CRAWLER_INTERVAL", None)
+        try:
+            crawler = vci.get_verify_crawler()
+            self.assertEqual(crawler.min_interval, 5.0)
+            os.environ["VERIFY_CRAWLER_INTERVAL"] = "1.5"
+            crawler_override = vci.get_verify_crawler()
+            self.assertEqual(crawler_override.min_interval, 1.5)
+        finally:
+            if old_val is not None:
+                os.environ["VERIFY_CRAWLER_INTERVAL"] = old_val
+            else:
+                os.environ.pop("VERIFY_CRAWLER_INTERVAL", None)
+
     # 23. Stale Source Alert Lifecycle & Run Summary Order Test
     def test_stale_source_alert_lifecycle(self):
         client = StubIssueClient()
