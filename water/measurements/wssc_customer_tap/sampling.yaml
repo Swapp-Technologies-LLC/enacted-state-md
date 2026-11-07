@@ -1,0 +1,15 @@
+system: "WSSC Water"
+how_sampled_url: "/md/wssc/water/how-sampled/"
+source_sha256: 57deb9ff067f204678a62c8fe2bedb7cb13f3bf207af6485c95421fd08b7a0fa
+rule_passage_ref: "water/rules/lcr_90th_percentile_codified_2020-07-01.yaml"
+passages:
+  - label: "Action level"
+    quote: "AL: Action Level. The concentration of a contaminant that, if exceeded, triggers treatment or other requirements which a water system must follow."
+    source_page: 14
+  - label: "Sampling"
+    quote: "4. Most recent required compliance sampling conducted between June and September 2023."
+    source_page: 15
+tap_testing:
+  quote: "If you are concerned about lead in your water and wish to have your water tested, contact pipetype@wsscwater.com."
+  contact: "pipetype@wsscwater.com"
+  source_page: 6

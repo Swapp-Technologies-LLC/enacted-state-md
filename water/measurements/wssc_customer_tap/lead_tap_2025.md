@@ -17,6 +17,11 @@ determination:
   status: no_violation_reported
   quote: "Violation: No"
   source_page: Page 13
+sites_above_al:
+  quote: "0 of 69 sites"
+  column_label: "# of sites above AL"
+  source_page: 13
+  glyph: false
 sample_location: Customer Taps (69 compliance sites)
 governing_limit:
   value: '15'
