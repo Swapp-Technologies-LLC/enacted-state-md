@@ -740,6 +740,13 @@ def run_verification():
                     print(f"  FAIL Date Chronology in {rel}: invalid or missing published_date: {fm.get('published_date')}")
                     date_errors += 1
                     failed_checks += 1
+            corr_raw = fm.get("corrected_on")
+            if corr_raw:
+                corr = parse_date_val(corr_raw)
+                if not corr:
+                    print(f"  FAIL Date Chronology in {rel}: invalid corrected_on: {corr_raw}")
+                    date_errors += 1
+                    failed_checks += 1
             continue
         intro = parse_date_val(fm.get("introduced_date"))
         passed = parse_date_val(fm.get("passed_date") or fm.get("adopted_date") or fm.get("enacted_date"))
@@ -764,6 +771,11 @@ def run_verification():
             item_errs.append(f"passed ({passed.date()}) > effective_override ({eff_override.date()})")
         if intro and withdrawn and intro > withdrawn:
             item_errs.append(f"introduced ({intro.date()}) > withdrawn ({withdrawn.date()})")
+        corr_raw = fm.get("corrected_on")
+        if corr_raw:
+            corr = parse_date_val(corr_raw)
+            if not corr:
+                item_errs.append(f"invalid corrected_on: {corr_raw}")
     
         # DC Emergency Act check
         if fm.get("dc_act_kind") == "emergency":

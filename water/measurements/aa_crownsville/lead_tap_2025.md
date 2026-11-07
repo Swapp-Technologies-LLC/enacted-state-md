@@ -9,6 +9,7 @@ parameter: Lead
 value: '6.34'
 unit: µg/L
 reporting_period: '2023'
+corrected_on: '2026-11-03'
 determination:
   status: no_violation_reported
   quote: "Violation: No"
